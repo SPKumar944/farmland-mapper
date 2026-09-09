@@ -185,31 +185,6 @@ const [points, setPoints] = useState([]);
           Demarcate Farm<br/><span style={{fontSize: '14px', fontWeight: '500'}}>பண்ணையின் எல்லையை குறிக்கவும்</span>
         </h3>
         
-        {/* Search Bar */}
-        <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
-          <input 
-            type="text" 
-            placeholder="Search location... / இடத்தை தேடுங்கள்..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            style={{ 
-              flex: 1, padding: '10px 14px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.1)',
-              fontSize: '15px', outline: 'none', backgroundColor: 'rgba(255,255,255,0.9)',
-              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)'
-            }}
-          />
-          <button 
-            type="submit"
-            disabled={isSearching}
-            style={{
-              padding: '10px 16px', borderRadius: '12px', border: 'none',
-              backgroundColor: '#007AFF', color: 'white', fontWeight: '600', cursor: 'pointer',
-              boxShadow: '0 2px 4px rgba(0,122,255,0.3)', transition: '0.2s'
-            }}
-          >
-            {isSearching ? '...' : '🔍'}
-          </button>
-        </form>
 
         {/* Mode Toggles */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
