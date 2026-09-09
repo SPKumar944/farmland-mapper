@@ -157,33 +157,38 @@ export default function MapComponent({ userPhone }) {
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
       {/* Top Control Panel */}
       <div style={{ 
-        position: 'absolute', top: 10, left: '50%', transform: 'translateX(-50%)', zIndex: 1000, 
-        backgroundColor: 'rgba(255,255,255,0.95)', padding: '15px', borderRadius: '12px',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.2)', textAlign: 'center', width: '90%', maxWidth: '350px'
+        position: 'absolute', top: 16, left: '50%', transform: 'translateX(-50%)', zIndex: 1000, 
+        backgroundColor: 'rgba(255, 255, 255, 0.85)', padding: '16px', borderRadius: '20px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)', textAlign: 'center', width: '92%', maxWidth: '380px',
+        backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.5)'
       }}>
-        <h3 style={{ margin: '0 0 12px 0', fontSize: '20px' }}>Demarcate Farm</h3>
+        <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f' }}>
+          Demarcate Farm / பண்ணையை வரையறு
+        </h3>
         
         {/* Mode Toggles */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '15px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
           <button 
             onClick={() => toggleMode('draw')}
             style={{
-              flex: 1, padding: '10px', borderRadius: '8px', border: '2px solid #4CAF50',
-              backgroundColor: mode === 'draw' ? '#4CAF50' : 'white',
-              color: mode === 'draw' ? 'white' : '#4CAF50', cursor: 'pointer', fontWeight: 'bold'
+              flex: 1, padding: '10px', borderRadius: '12px', border: '1px solid transparent',
+              backgroundColor: mode === 'draw' ? '#007AFF' : '#e5e5ea',
+              color: mode === 'draw' ? 'white' : '#1d1d1f', cursor: 'pointer', fontWeight: '500',
+              fontSize: '15px', transition: '0.2s'
             }}
           >
-            👆 Draw Mode
+            👆 Draw / வரைதல்
           </button>
           <button 
             onClick={() => toggleMode('record')}
             style={{
-              flex: 1, padding: '10px', borderRadius: '8px', border: '2px solid #2196F3',
-              backgroundColor: mode === 'record' ? '#2196F3' : 'white',
-              color: mode === 'record' ? 'white' : '#2196F3', cursor: 'pointer', fontWeight: 'bold'
+              flex: 1, padding: '10px', borderRadius: '12px', border: '1px solid transparent',
+              backgroundColor: mode === 'record' ? '#007AFF' : '#e5e5ea',
+              color: mode === 'record' ? 'white' : '#1d1d1f', cursor: 'pointer', fontWeight: '500',
+              fontSize: '15px', transition: '0.2s'
             }}
           >
-            🚶 Walk Mode
+            🚶 Walk / நடை
           </button>
         </div>
 
@@ -192,20 +197,20 @@ export default function MapComponent({ userPhone }) {
           <button 
             onClick={isRecording ? stopRecording : startRecording}
             style={{
-              backgroundColor: isRecording ? '#f44336' : '#2196F3', color: 'white', padding: '12px',
-              border: 'none', borderRadius: '8px', fontWeight: 'bold', width: '100%', marginBottom: '15px',
-              cursor: 'pointer', fontSize: '16px'
+              backgroundColor: isRecording ? '#FF3B30' : '#007AFF', color: 'white', padding: '14px',
+              border: 'none', borderRadius: '14px', fontWeight: '600', width: '100%', marginBottom: '16px',
+              cursor: 'pointer', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
             }}
           >
-            {isRecording ? "⏹ Stop Walking" : "▶️ Start Walking"}
+            {isRecording ? "⏹ Stop / நிறுத்து" : "▶️ Start Walk / தொடங்கு"}
           </button>
         )}
 
         {/* Status Text */}
-        <p style={{ margin: '0 0 15px 0', fontSize: '14px', color: '#555' }}>
+        <p style={{ margin: '0 0 16px 0', fontSize: '13px', color: '#86868b', fontWeight: '500' }}>
           {mode === 'draw' 
-            ? `Tap map to add corners (${points.length} points)` 
-            : `Walk boundary to record (${points.length} points)`
+            ? `Tap map to add corners (${points.length} points) / தொட்டு சேர்க்கவும்` 
+            : `Walk boundary to record (${points.length} points) / நடந்து பதிவு செய்யவும்`
           }
         </p>
 
@@ -214,24 +219,25 @@ export default function MapComponent({ userPhone }) {
           <button 
             onClick={handleClear}
             style={{
-              flex: 1, backgroundColor: 'white', color: '#f44336', padding: '12px',
-              border: '2px solid #f44336', borderRadius: '8px', fontWeight: 'bold', 
-              cursor: 'pointer', fontSize: '16px'
+              flex: 1, backgroundColor: '#f2f2f7', color: '#FF3B30', padding: '14px',
+              border: 'none', borderRadius: '14px', fontWeight: '600', 
+              cursor: 'pointer', fontSize: '15px'
             }}
           >
-            Clear
+            Clear / அழி
           </button>
 
           <button 
             onClick={handleSave}
             disabled={isSaving || points.length < 3 || isRecording}
             style={{
-              flex: 2, backgroundColor: (isSaving || points.length < 3 || isRecording) ? '#aaa' : '#4CAF50', 
-              color: 'white', padding: '12px', border: 'none', borderRadius: '8px', 
-              fontWeight: 'bold', cursor: 'pointer', fontSize: '16px'
+              flex: 2, backgroundColor: (isSaving || points.length < 3 || isRecording) ? '#d1d1d6' : '#34C759', 
+              color: 'white', padding: '14px', border: 'none', borderRadius: '14px', 
+              fontWeight: '600', cursor: 'pointer', fontSize: '15px',
+              boxShadow: (isSaving || points.length < 3 || isRecording) ? 'none' : '0 2px 8px rgba(52, 199, 89, 0.3)'
             }}
           >
-            {isSaving ? "Saving..." : "Save Area"}
+            {isSaving ? "Saving..." : "Save Area / சேமி"}
           </button>
         </div>
       </div>
