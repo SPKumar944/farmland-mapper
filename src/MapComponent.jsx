@@ -163,7 +163,7 @@ export default function MapComponent({ userPhone }) {
         backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.5)'
       }}>
         <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f' }}>
-          Demarcate Farm / பண்ணையை வரையறு
+          Demarcate Farm<br/><span style={{fontSize: '14px', fontWeight: '500'}}>பண்ணையின் எல்லையை குறிக்கவும்</span>
         </h3>
         
         {/* Mode Toggles */}
@@ -171,24 +171,24 @@ export default function MapComponent({ userPhone }) {
           <button 
             onClick={() => toggleMode('draw')}
             style={{
-              flex: 1, padding: '10px', borderRadius: '12px', border: '1px solid transparent',
+              flex: 1, padding: '8px', borderRadius: '12px', border: '1px solid transparent',
               backgroundColor: mode === 'draw' ? '#007AFF' : '#e5e5ea',
               color: mode === 'draw' ? 'white' : '#1d1d1f', cursor: 'pointer', fontWeight: '500',
-              fontSize: '15px', transition: '0.2s'
+              fontSize: '15px', transition: '0.2s', lineHeight: '1.4'
             }}
           >
-            👆 Draw / வரைதல்
+            👆 Draw<br/><span style={{fontSize: '12px', fontWeight: '400'}}>வரைந்து குறிக்கவும்</span>
           </button>
           <button 
             onClick={() => toggleMode('record')}
             style={{
-              flex: 1, padding: '10px', borderRadius: '12px', border: '1px solid transparent',
+              flex: 1, padding: '8px', borderRadius: '12px', border: '1px solid transparent',
               backgroundColor: mode === 'record' ? '#007AFF' : '#e5e5ea',
               color: mode === 'record' ? 'white' : '#1d1d1f', cursor: 'pointer', fontWeight: '500',
-              fontSize: '15px', transition: '0.2s'
+              fontSize: '15px', transition: '0.2s', lineHeight: '1.4'
             }}
           >
-            🚶 Walk / நடை
+            🚶 Walk<br/><span style={{fontSize: '12px', fontWeight: '400'}}>நடந்து குறிக்கவும்</span>
           </button>
         </div>
 
@@ -197,20 +197,23 @@ export default function MapComponent({ userPhone }) {
           <button 
             onClick={isRecording ? stopRecording : startRecording}
             style={{
-              backgroundColor: isRecording ? '#FF3B30' : '#007AFF', color: 'white', padding: '14px',
+              backgroundColor: isRecording ? '#FF3B30' : '#007AFF', color: 'white', padding: '12px',
               border: 'none', borderRadius: '14px', fontWeight: '600', width: '100%', marginBottom: '16px',
-              cursor: 'pointer', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+              cursor: 'pointer', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', lineHeight: '1.4'
             }}
           >
-            {isRecording ? "⏹ Stop / நிறுத்து" : "▶️ Start Walk / தொடங்கு"}
+            {isRecording 
+              ? <>⏹ Stop<br/><span style={{fontSize: '13px', fontWeight: '400'}}>நிறுத்தவும்</span></> 
+              : <>▶️ Start Walk<br/><span style={{fontSize: '13px', fontWeight: '400'}}>நடக்கத் தொடங்கவும்</span></>
+            }
           </button>
         )}
 
         {/* Status Text */}
-        <p style={{ margin: '0 0 16px 0', fontSize: '13px', color: '#86868b', fontWeight: '500' }}>
+        <p style={{ margin: '0 0 16px 0', fontSize: '13px', color: '#86868b', fontWeight: '500', lineHeight: '1.4' }}>
           {mode === 'draw' 
-            ? `Tap map to add corners (${points.length} points) / தொட்டு சேர்க்கவும்` 
-            : `Walk boundary to record (${points.length} points) / நடந்து பதிவு செய்யவும்`
+            ? <>Tap map to add corners ({points.length})<br/>மூலைகளைக் குறிக்க வரைபடத்தைத் தொடவும்</> 
+            : <>Walk boundary to record ({points.length})<br/>எல்லையை பதிவு செய்ய நடக்கவும்</>
           }
         </p>
 
@@ -219,25 +222,25 @@ export default function MapComponent({ userPhone }) {
           <button 
             onClick={handleClear}
             style={{
-              flex: 1, backgroundColor: '#f2f2f7', color: '#FF3B30', padding: '14px',
+              flex: 1, backgroundColor: '#f2f2f7', color: '#FF3B30', padding: '12px',
               border: 'none', borderRadius: '14px', fontWeight: '600', 
-              cursor: 'pointer', fontSize: '15px'
+              cursor: 'pointer', fontSize: '15px', lineHeight: '1.4'
             }}
           >
-            Clear / அழி
+            Clear<br/><span style={{fontSize: '12px', fontWeight: '400'}}>மீண்டும் தொடங்கவும்</span>
           </button>
 
           <button 
             onClick={handleSave}
             disabled={isSaving || points.length < 3 || isRecording}
             style={{
-              flex: 2, backgroundColor: (isSaving || points.length < 3 || isRecording) ? '#d1d1d6' : '#34C759', 
-              color: 'white', padding: '14px', border: 'none', borderRadius: '14px', 
-              fontWeight: '600', cursor: 'pointer', fontSize: '15px',
+              flex: 1.5, backgroundColor: (isSaving || points.length < 3 || isRecording) ? '#d1d1d6' : '#34C759', 
+              color: 'white', padding: '12px', border: 'none', borderRadius: '14px', 
+              fontWeight: '600', cursor: 'pointer', fontSize: '15px', lineHeight: '1.4',
               boxShadow: (isSaving || points.length < 3 || isRecording) ? 'none' : '0 2px 8px rgba(52, 199, 89, 0.3)'
             }}
           >
-            {isSaving ? "Saving..." : "Save Area / சேமி"}
+            {isSaving ? "Saving..." : <>Save Area<br/><span style={{fontSize: '12px', fontWeight: '400'}}>குறித்த பகுதியை சேமிக்கவும்</span></>}
           </button>
         </div>
       </div>

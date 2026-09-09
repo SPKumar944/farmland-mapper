@@ -28,7 +28,7 @@ function App() {
           border: '1px solid rgba(255,255,255,0.4)'
         }}>
           <h1 style={{ fontSize: '24px', fontWeight: '600', color: '#1d1d1f', marginBottom: '8px' }}>
-            Farm Mapper<br/><span style={{fontSize: '18px', fontWeight: '500'}}>பண்ணை வரைபடம்</span>
+            Farm Mapper<br/><span style={{fontSize: '16px', fontWeight: '500'}}>பண்ணை எல்லை குறிப்பான்</span>
           </h1>
           <p style={{ color: '#86868b', marginBottom: '32px', fontSize: '15px' }}>
             Enter your phone number to begin.<br/>தொடங்க உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்.
@@ -48,11 +48,11 @@ function App() {
               required
             />
             <button type="submit" style={{ 
-              padding: '16px', fontSize: '17px', backgroundColor: '#007AFF', 
+              padding: '14px', fontSize: '17px', backgroundColor: '#007AFF', 
               color: 'white', border: 'none', borderRadius: '12px', 
               cursor: 'pointer', fontWeight: '600', width: '100%'
             }}>
-              Continue / தொடரவும்
+              Continue<br/><span style={{fontSize: '14px', fontWeight: '400'}}>தொடரவும்</span>
             </button>
           </form>
         </div>
