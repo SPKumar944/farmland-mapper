@@ -32,9 +32,8 @@ function App() {
             src={logo} 
             alt="Farm Mapper Logo" 
             style={{ 
-              width: '90px', height: '90px', borderRadius: '22px', 
-              marginBottom: '16px', objectFit: 'cover',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.1)' 
+              width: '100%', maxWidth: '200px', height: 'auto', borderRadius: '12px', 
+              marginBottom: '16px', objectFit: 'contain'
             }} 
           />
           <h1 style={{ fontSize: '24px', fontWeight: '600', color: '#1d1d1f', marginBottom: '8px' }}>
