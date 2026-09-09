@@ -3,15 +3,15 @@ import MapComponent from './MapComponent';
 import logo from './assets/logo.jpeg';
 
 function App() {
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (phone.length >= 10) {
+    if (name.trim().length > 0) {
       setIsLoggedIn(true);
     } else {
-      alert("Please enter a valid phone number.");
+      alert("Please enter your name.");
     }
   };
 
@@ -40,14 +40,14 @@ function App() {
             Farm Mapper<br/><span style={{fontSize: '16px', fontWeight: '500'}}>பண்ணை எல்லை குறிப்பான்</span>
           </h1>
           <p style={{ color: '#86868b', marginBottom: '32px', fontSize: '15px' }}>
-            Enter your phone number to begin.<br/>தொடங்க உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்.
+            Enter your name to begin.<br/>தொடங்க உங்கள் பெயரை உள்ளிடவும்.
           </p>
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <input 
-              type="tel" 
-              placeholder="+91 9876543210" 
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              type="text" 
+              placeholder="Your Name / உங்கள் பெயர்" 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               style={{ 
                 padding: '16px', fontSize: '17px', borderRadius: '12px', 
                 border: '1px solid #d2d2d7', outline: 'none', width: '100%',
@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <MapComponent userPhone={phone} />
+      <MapComponent userName={name} />
     </div>
   );
 }

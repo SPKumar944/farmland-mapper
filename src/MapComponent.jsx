@@ -50,7 +50,7 @@ function RecenterOnRecord({ latestPoint, isRecording }) {
   return null;
 }
 
-export default function MapComponent({ userPhone }) {
+export default function MapComponent({ userName }) {
 const [points, setPoints] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
   
@@ -102,7 +102,7 @@ const [points, setPoints] = useState([]);
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify({
-          email: userPhone,
+          email: userName, // Sending name in the email field for Apps Script compatibility
           polygon: closedPoints 
         }),
       });
