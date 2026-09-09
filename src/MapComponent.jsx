@@ -30,21 +30,13 @@ function MapEvents({ points, setPoints, mode, isRecording }) {
 
 // Component to recenter map on user when GPS updates
 
-function SearchField() {
+function SearchController({ target }) {
   const map = useMap();
   useEffect(() => {
-    const provider = new OpenStreetMapProvider();
-    const searchControl = new GeoSearchControl({
-      provider: provider,
-      style: 'bar',
-      showMarker: false,
-      autoClose: true,
-      searchLabel: 'Search places...',
-      position: 'topleft'
-    });
-    map.addControl(searchControl);
-    return () => map.removeControl(searchControl);
-  }, [map]);
+    if (target) {
+      map.flyTo(target, 16, { animate: true, duration: 1.5 });
+    }
+  }, [target, map]);
   return null;
 }
 
@@ -165,9 +157,35 @@ const [points, setPoints] = useState([]);
         backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.5)',
         display: 'flex', flexDirection: 'column', gap: '16px', boxSizing: 'border-box'
       }}>
-        <h3 style={{ margin: '0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f', lineHeight: '1.4' }}>
+<h3 style={{ margin: '0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f', lineHeight: '1.4' }}>
           Demarcate Farm<br/><span style={{fontSize: '14px', fontWeight: '500'}}>பண்ணையின் எல்லையை குறிக்கவும்</span>
         </h3>
+        
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', margin: '0', width: '100%', boxSizing: 'border-box' }}>
+          <input 
+            type="text" 
+            placeholder="Search location... / இடத்தை தேடுங்கள்..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ 
+              flex: 1, padding: '12px 14px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.1)',
+              fontSize: '15px', outline: 'none', backgroundColor: 'rgba(255,255,255,0.9)',
+              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)', boxSizing: 'border-box', minWidth: '0'
+            }}
+          />
+          <button 
+            type="submit"
+            disabled={isSearching}
+            style={{
+              padding: '12px 16px', borderRadius: '12px', border: 'none',
+              backgroundColor: '#007AFF', color: 'white', fontWeight: '600', cursor: 'pointer',
+              boxShadow: '0 2px 4px rgba(0,122,255,0.3)', transition: '0.2s', flexShrink: 0
+            }}
+          >
+            {isSearching ? '...' : '🔍'}
+          </button>
+        </form>
 
         {/* Mode Toggles */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', width: '100%' }}>
@@ -255,7 +273,7 @@ const [points, setPoints] = useState([]);
         zoomControl={false}
         style={{ width: '100%', height: '100%', zIndex: 1 }}
       >
-        <SearchField />
+        <SearchController target={searchTarget} />
         <RecenterOnRecord latestPoint={points[points.length - 1]} isRecording={isRecording} />
         
         <ZoomControl position="bottomright" />
