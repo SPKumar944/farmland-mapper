@@ -172,6 +172,7 @@ const [points, setPoints] = useState([]);
     setMode(newMode);
   };
 
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
       {/* Top Control Panel */}
@@ -179,19 +180,45 @@ const [points, setPoints] = useState([]);
         position: 'absolute', top: 16, left: '50%', transform: 'translateX(-50%)', zIndex: 1000, 
         backgroundColor: 'rgba(255, 255, 255, 0.85)', padding: '16px', borderRadius: '20px',
         boxShadow: '0 8px 32px rgba(0,0,0,0.12)', textAlign: 'center', width: '92%', maxWidth: '380px',
-        backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.5)'
+        backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.5)',
+        display: 'flex', flexDirection: 'column', gap: '16px', boxSizing: 'border-box'
       }}>
-<h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f' }}>
+        <h3 style={{ margin: '0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f', lineHeight: '1.4' }}>
           Demarcate Farm<br/><span style={{fontSize: '14px', fontWeight: '500'}}>பண்ணையின் எல்லையை குறிக்கவும்</span>
         </h3>
         
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', margin: '0', width: '100%', boxSizing: 'border-box' }}>
+          <input 
+            type="text" 
+            placeholder="Search location... / இடத்தை தேடுங்கள்..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ 
+              flex: 1, padding: '12px 14px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.1)',
+              fontSize: '15px', outline: 'none', backgroundColor: 'rgba(255,255,255,0.9)',
+              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)', boxSizing: 'border-box', minWidth: '0'
+            }}
+          />
+          <button 
+            type="submit"
+            disabled={isSearching}
+            style={{
+              padding: '12px 16px', borderRadius: '12px', border: 'none',
+              backgroundColor: '#007AFF', color: 'white', fontWeight: '600', cursor: 'pointer',
+              boxShadow: '0 2px 4px rgba(0,122,255,0.3)', transition: '0.2s', flexShrink: 0
+            }}
+          >
+            {isSearching ? '...' : '🔍'}
+          </button>
+        </form>
 
         {/* Mode Toggles */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', width: '100%' }}>
           <button 
             onClick={() => toggleMode('draw')}
             style={{
-              flex: 1, padding: '8px', borderRadius: '12px', border: '1px solid transparent',
+              flex: 1, padding: '10px 8px', borderRadius: '12px', border: '1px solid transparent',
               backgroundColor: mode === 'draw' ? '#007AFF' : '#e5e5ea',
               color: mode === 'draw' ? 'white' : '#1d1d1f', cursor: 'pointer', fontWeight: '500',
               fontSize: '15px', transition: '0.2s', lineHeight: '1.4'
@@ -202,7 +229,7 @@ const [points, setPoints] = useState([]);
           <button 
             onClick={() => toggleMode('record')}
             style={{
-              flex: 1, padding: '8px', borderRadius: '12px', border: '1px solid transparent',
+              flex: 1, padding: '10px 8px', borderRadius: '12px', border: '1px solid transparent',
               backgroundColor: mode === 'record' ? '#007AFF' : '#e5e5ea',
               color: mode === 'record' ? 'white' : '#1d1d1f', cursor: 'pointer', fontWeight: '500',
               fontSize: '15px', transition: '0.2s', lineHeight: '1.4'
@@ -218,7 +245,7 @@ const [points, setPoints] = useState([]);
             onClick={isRecording ? stopRecording : startRecording}
             style={{
               backgroundColor: isRecording ? '#FF3B30' : '#007AFF', color: 'white', padding: '12px',
-              border: 'none', borderRadius: '14px', fontWeight: '600', width: '100%', marginBottom: '16px',
+              border: 'none', borderRadius: '14px', fontWeight: '600', width: '100%', margin: '0',
               cursor: 'pointer', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', lineHeight: '1.4'
             }}
           >
@@ -230,7 +257,7 @@ const [points, setPoints] = useState([]);
         )}
 
         {/* Status Text */}
-        <p style={{ margin: '0 0 16px 0', fontSize: '13px', color: '#86868b', fontWeight: '500', lineHeight: '1.4' }}>
+        <p style={{ margin: '0', fontSize: '13px', color: '#86868b', fontWeight: '500', lineHeight: '1.4' }}>
           {mode === 'draw' 
             ? <>Tap map to add corners ({points.length})<br/>மூலைகளைக் குறிக்க வரைபடத்தைத் தொடவும்</> 
             : <>Walk boundary to record ({points.length})<br/>எல்லையை பதிவு செய்ய நடக்கவும்</>
@@ -238,7 +265,7 @@ const [points, setPoints] = useState([]);
         </p>
 
         {/* Action Buttons (Clear & Save) */}
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div style={{ display: 'flex', gap: '10px', width: '100%' }}>
           <button 
             onClick={handleClear}
             style={{
@@ -265,7 +292,8 @@ const [points, setPoints] = useState([]);
         </div>
       </div>
 
-      <MapContainer 
+      <MapContainer
+ 
         center={[20.5937, 78.9629]}
         zoom={5} 
         zoomControl={false}
