@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MapComponent from './MapComponent';
+import logo from './assets/logo.jpeg';
 
 function App() {
   const [phone, setPhone] = useState('');
@@ -27,6 +28,15 @@ function App() {
           width: '90%', maxWidth: '360px', textAlign: 'center',
           border: '1px solid rgba(255,255,255,0.4)'
         }}>
+          <img 
+            src={logo} 
+            alt="Farm Mapper Logo" 
+            style={{ 
+              width: '90px', height: '90px', borderRadius: '22px', 
+              marginBottom: '16px', objectFit: 'cover',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)' 
+            }} 
+          />
           <h1 style={{ fontSize: '24px', fontWeight: '600', color: '#1d1d1f', marginBottom: '8px' }}>
             Farm Mapper<br/><span style={{fontSize: '16px', fontWeight: '500'}}>பண்ணை எல்லை குறிப்பான்</span>
           </h1>
