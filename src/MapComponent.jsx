@@ -27,25 +27,19 @@ function MapEvents({ points, setPoints, mode, isRecording }) {
   return null;
 }
 
-function SearchField() {
+
+// Component to recenter map on user when GPS updates
+
+function SearchController({ target }) {
   const map = useMap();
   useEffect(() => {
-    const provider = new OpenStreetMapProvider();
-    const searchControl = new GeoSearchControl({
-      provider: provider,
-      style: 'bar',
-      showMarker: false,
-      autoClose: true,
-      searchLabel: 'Search places...',
-      position: 'topright'
-    });
-    map.addControl(searchControl);
-    return () => map.removeControl(searchControl);
-  }, [map]);
+    if (target) {
+      map.flyTo(target, 16, { animate: true, duration: 1.5 });
+    }
+  }, [target, map]);
   return null;
 }
 
-// Component to recenter map on user when GPS updates
 function RecenterOnRecord({ latestPoint, isRecording }) {
   const map = useMap();
   useEffect(() => {
@@ -57,13 +51,38 @@ function RecenterOnRecord({ latestPoint, isRecording }) {
 }
 
 export default function MapComponent({ userPhone }) {
-  const [points, setPoints] = useState([]);
+const [points, setPoints] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
   
   // New states for GPS tracking
   const [mode, setMode] = useState('draw'); // 'draw' or 'record'
   const [isRecording, setIsRecording] = useState(false);
   const watchIdRef = useRef(null);
+
+  // Search states
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchTarget, setSearchTarget] = useState(null);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (!searchQuery) return;
+    setIsSearching(true);
+    try {
+      const provider = new OpenStreetMapProvider();
+      const results = await provider.search({ query: searchQuery });
+      if (results && results.length > 0) {
+        setSearchTarget([results[0].y, results[0].x]);
+      } else {
+        alert("Location not found.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error searching location.");
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
   const handleSave = async () => {
     if (points.length < 3) {
@@ -162,10 +181,36 @@ export default function MapComponent({ userPhone }) {
         boxShadow: '0 8px 32px rgba(0,0,0,0.12)', textAlign: 'center', width: '92%', maxWidth: '380px',
         backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.5)'
       }}>
-        <h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f' }}>
+<h3 style={{ margin: '0 0 12px 0', fontSize: '18px', fontWeight: '600', color: '#1d1d1f' }}>
           Demarcate Farm<br/><span style={{fontSize: '14px', fontWeight: '500'}}>பண்ணையின் எல்லையை குறிக்கவும்</span>
         </h3>
         
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+          <input 
+            type="text" 
+            placeholder="Search location... / இடத்தை தேடுங்கள்..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ 
+              flex: 1, padding: '10px 14px', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.1)',
+              fontSize: '15px', outline: 'none', backgroundColor: 'rgba(255,255,255,0.9)',
+              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)'
+            }}
+          />
+          <button 
+            type="submit"
+            disabled={isSearching}
+            style={{
+              padding: '10px 16px', borderRadius: '12px', border: 'none',
+              backgroundColor: '#007AFF', color: 'white', fontWeight: '600', cursor: 'pointer',
+              boxShadow: '0 2px 4px rgba(0,122,255,0.3)', transition: '0.2s'
+            }}
+          >
+            {isSearching ? '...' : '🔍'}
+          </button>
+        </form>
+
         {/* Mode Toggles */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
           <button 
@@ -251,7 +296,7 @@ export default function MapComponent({ userPhone }) {
         zoomControl={false}
         style={{ width: '100%', height: '100%', zIndex: 1 }}
       >
-        <SearchField />
+        <SearchController target={searchTarget} />
         <RecenterOnRecord latestPoint={points[points.length - 1]} isRecording={isRecording} />
         
         <ZoomControl position="bottomright" />
