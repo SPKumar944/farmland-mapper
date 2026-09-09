@@ -155,19 +155,20 @@ export default function MapComponent({ userPhone }) {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-      {/* Top Header / Mode Switcher */}
+      {/* Top Control Panel */}
       <div style={{ 
         position: 'absolute', top: 10, left: '50%', transform: 'translateX(-50%)', zIndex: 1000, 
-        backgroundColor: 'rgba(255,255,255,0.95)', padding: '10px', borderRadius: '8px',
-        boxShadow: '0 2px 5px rgba(0,0,0,0.2)', textAlign: 'center', width: '90%', maxWidth: '350px'
+        backgroundColor: 'rgba(255,255,255,0.95)', padding: '15px', borderRadius: '12px',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.2)', textAlign: 'center', width: '90%', maxWidth: '350px'
       }}>
-        <h3 style={{ margin: '0 0 10px 0' }}>Demarcate Farm</h3>
+        <h3 style={{ margin: '0 0 12px 0', fontSize: '20px' }}>Demarcate Farm</h3>
         
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '10px' }}>
+        {/* Mode Toggles */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '15px' }}>
           <button 
             onClick={() => toggleMode('draw')}
             style={{
-              padding: '8px 15px', borderRadius: '20px', border: '1px solid #4CAF50',
+              flex: 1, padding: '10px', borderRadius: '8px', border: '2px solid #4CAF50',
               backgroundColor: mode === 'draw' ? '#4CAF50' : 'white',
               color: mode === 'draw' ? 'white' : '#4CAF50', cursor: 'pointer', fontWeight: 'bold'
             }}
@@ -177,7 +178,7 @@ export default function MapComponent({ userPhone }) {
           <button 
             onClick={() => toggleMode('record')}
             style={{
-              padding: '8px 15px', borderRadius: '20px', border: '1px solid #2196F3',
+              flex: 1, padding: '10px', borderRadius: '8px', border: '2px solid #2196F3',
               backgroundColor: mode === 'record' ? '#2196F3' : 'white',
               color: mode === 'record' ? 'white' : '#2196F3', cursor: 'pointer', fontWeight: 'bold'
             }}
@@ -186,12 +187,53 @@ export default function MapComponent({ userPhone }) {
           </button>
         </div>
 
-        <p style={{ margin: 0, fontSize: '14px', color: '#555' }}>
+        {/* Walk Mode Specific Button */}
+        {mode === 'record' && (
+          <button 
+            onClick={isRecording ? stopRecording : startRecording}
+            style={{
+              backgroundColor: isRecording ? '#f44336' : '#2196F3', color: 'white', padding: '12px',
+              border: 'none', borderRadius: '8px', fontWeight: 'bold', width: '100%', marginBottom: '15px',
+              cursor: 'pointer', fontSize: '16px'
+            }}
+          >
+            {isRecording ? "⏹ Stop Walking" : "▶️ Start Walking"}
+          </button>
+        )}
+
+        {/* Status Text */}
+        <p style={{ margin: '0 0 15px 0', fontSize: '14px', color: '#555' }}>
           {mode === 'draw' 
             ? `Tap map to add corners (${points.length} points)` 
             : `Walk boundary to record (${points.length} points)`
           }
         </p>
+
+        {/* Action Buttons (Clear & Save) */}
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button 
+            onClick={handleClear}
+            style={{
+              flex: 1, backgroundColor: 'white', color: '#f44336', padding: '12px',
+              border: '2px solid #f44336', borderRadius: '8px', fontWeight: 'bold', 
+              cursor: 'pointer', fontSize: '16px'
+            }}
+          >
+            Clear
+          </button>
+
+          <button 
+            onClick={handleSave}
+            disabled={isSaving || points.length < 3 || isRecording}
+            style={{
+              flex: 2, backgroundColor: (isSaving || points.length < 3 || isRecording) ? '#aaa' : '#4CAF50', 
+              color: 'white', padding: '12px', border: 'none', borderRadius: '8px', 
+              fontWeight: 'bold', cursor: 'pointer', fontSize: '16px'
+            }}
+          >
+            {isSaving ? "Saving..." : "Save Area"}
+          </button>
+        </div>
       </div>
 
       <MapContainer 
@@ -235,51 +277,6 @@ export default function MapComponent({ userPhone }) {
           <Polygon positions={points} pathOptions={{ color: 'blue', fillColor: 'blue', fillOpacity: 0.4 }} />
         )}
       </MapContainer>
-      
-      {/* Bottom Actions */}
-      <div style={{
-        position: 'absolute', bottom: 30, left: '50%', transform: 'translateX(-50%)',
-        zIndex: 1000, display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'center'
-      }}>
-        
-        {mode === 'record' && (
-          <button 
-            onClick={isRecording ? stopRecording : startRecording}
-            style={{
-              backgroundColor: isRecording ? '#f44336' : '#2196F3', color: 'white', padding: '12px 25px',
-              border: 'none', borderRadius: '25px', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-              cursor: 'pointer', fontSize: '16px', width: '200px'
-            }}
-          >
-            {isRecording ? "⏹ Stop Walking" : "▶️ Start Walking"}
-          </button>
-        )}
-
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button 
-            onClick={handleClear}
-            style={{
-              backgroundColor: 'white', color: '#f44336', padding: '10px 20px',
-              border: '2px solid #f44336', borderRadius: '25px', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-              cursor: 'pointer'
-            }}
-          >
-            Clear
-          </button>
-
-          <button 
-            onClick={handleSave}
-            disabled={isSaving || points.length < 3 || isRecording}
-            style={{
-              backgroundColor: (isSaving || points.length < 3 || isRecording) ? '#aaa' : '#4CAF50', 
-              color: 'white', padding: '10px 20px', border: 'none', borderRadius: '25px', 
-              fontWeight: 'bold', boxShadow: '0 4px 6px rgba(0,0,0,0.3)', cursor: 'pointer'
-            }}
-          >
-            {isSaving ? "Saving..." : "Save Area"}
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
