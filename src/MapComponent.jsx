@@ -58,6 +58,32 @@ const [points, setPoints] = useState([]);
   const [mode, setMode] = useState('draw'); // 'draw' or 'record'
   const [isRecording, setIsRecording] = useState(false);
   const watchIdRef = useRef(null);
+
+  // Search states
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchTarget, setSearchTarget] = useState(null);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (!searchQuery) return;
+    setIsSearching(true);
+    try {
+      const provider = new OpenStreetMapProvider();
+      const results = await provider.search({ query: searchQuery });
+      if (results && results.length > 0) {
+        setSearchTarget([results[0].y, results[0].x]);
+      } else {
+        alert("Location not found.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error searching location.");
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
   const handleSave = async () => {
     if (points.length < 3) {
       alert("Please ensure you have at least 3 points for your farmland boundary.");
