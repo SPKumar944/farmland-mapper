@@ -1,684 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>TerraCrop | Crop Health & Telemetry Intelligence Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "on-surface": "#1a1c1f",
-            "outline": "#78767b",
-            "surface": "#f9f9fe",
-            "surface-container-low": "#f3f3f8",
-            "surface-container-lowest": "#ffffff",
-            "surface-container": "#ededf2",
-            "surface-container-high": "#e8e8ed",
-            "primary": "#000000",
-            "on-primary": "#ffffff",
-            "secondary": "#5e5e63",
-            "outline-variant": "#c8c5ca"
-          },
-          fontFamily: {
-            "body-md": ["Hanken Grotesk", "sans-serif"],
-            "headline-sm": ["Space Grotesk", "sans-serif"],
-            "headline-md": ["Space Grotesk", "sans-serif"],
-            "headline-xl": ["Space Grotesk", "sans-serif"],
-            "label-caps": ["Space Grotesk", "sans-serif"],
-            "label-mono-num": ["Space Grotesk", "monospace"]
-          }
-        }
-      }
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#1a1c1f","outline":"#78767b","surface":"#f9f9fe","error-container":"#ffdad6","secondary-fixed":"#e3e2e7","surface-container-low":"#f3f3f8","on-background":"#1a1c1f","on-primary":"#ffffff","on-tertiary-fixed":"#1e1b17","on-primary-fixed-variant":"#474649","outline-variant":"#c8c5ca","inverse-on-surface":"#f0f0f5","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","inverse-surface":"#2f3034","primary":"#000000","on-surface-variant":"#47464a","surface-container":"#ededf2","on-secondary":"#ffffff","on-secondary-fixed-variant":"#46464b","secondary-container":"#e0dfe4","tertiary-container":"#1e1b17","on-tertiary-container":"#88837e","surface-bright":"#f9f9fe","background":"#f9f9fe","on-error":"#ffffff","error":"#ba1a1a","inverse-primary":"#c8c6c8","primary-fixed":"#e5e1e4","on-tertiary-fixed-variant":"#4a4642","tertiary-fixed":"#e8e1db","primary-fixed-dim":"#c8c6c8","surface-container-highest":"#e2e2e7","secondary":"#5e5e63","primary-container":"#1c1b1d","on-primary-fixed":"#1c1b1d","on-primary-container":"#858386","secondary-fixed-dim":"#c7c6cb","on-secondary-fixed":"#1a1b1f","on-secondary-container":"#626267","surface-dim":"#d9dade","tertiary-fixed-dim":"#ccc5bf","surface-variant":"#e2e2e7","on-error-container":"#93000a","surface-tint":"#5f5e60","tertiary":"#000000","surface-container-high":"#e8e8ed"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-mobile":"0.75rem","space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","margin":"3rem","space-xl":"2.5rem"},fontFamily:{"body-md":["Hanken Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"label-caps":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-mono-num":["Space Grotesk"],"headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"headline-md":["Space Grotesk"],"display-hero":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"]},fontSize:{"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"600"}],"display-hero-mobile":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"label-mono-num":["0.8125rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"headline-lg":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"500"}],"display-hero":["5rem",{"lineHeight":"5rem","letterSpacing":"-0.04em","fontWeight":"500"}],"headline-xl-mobile":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-16 px-space-lg flex items-center justify-between border-b border-surface-container"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-on-primary text-[16px]">satellite_alt</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold">TerraCrop</span></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-secondary"><span class="hover:text-primary transition-colors cursor-pointer">Tamil Nadu</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="hover:text-primary transition-colors cursor-pointer">Salem</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="text-primary font-medium">Parcel #86032</span></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low border border-surface-container"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Synced with Sentinel</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md py-space-md flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><h1 class="text-headline-md font-headline-md font-semibold text-primary tracking-tight">Sugarcane Parcel Co 86032</h1><span class="px-space-sm py-0.5 rounded-full bg-surface-container font-label-mono-num text-label-mono-num text-primary font-medium">3.40 Acres</span><span class="px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-caps text-label-caps uppercase tracking-wider font-semibold">Healthy</span></div><p class="text-body-sm font-body-sm text-secondary">Attur Taluk, Salem District · Sown June 12, 2025 · Day 128 (Grand Growth Phase)</p></div><div class="flex items-center gap-space-lg"><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider">Target Yield</span><span class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">134 MT / Ha</span></div><div class="h-8 w-px bg-outline-variant/40"></div><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider">Pass Interval</span><span class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">T-24h (SAR+MSI)</span></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch"><section class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm relative min-h-[520px]"><div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBriJpaFB1CZw60gD-Ja0g6bKY0FlzMMt850DBc_YBygmFwakJWpHygbBiqbMYqxKtHShKjTwTyI_f7IovWw3GehRecTvmVEd76XGHzFfcFqIwEsXVMDO5KZppmJEFbpuUeQ9CYZW4QaRv0jeM3tXjLRdl0SUHMXNZo-XX1RfIkdUQpXCkYGy5d8Lb1JbXDMtoyLKqfXZYZXm4NBblkfC_-YPjNLeeQjeUa-OYSsdqeKK_7YoSv5eWFSg')"></div><div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/30 pointer-events-none"></div><div class="relative z-10 p-space-md flex items-center justify-between"><div class="flex items-center gap-1 p-1 bg-surface-container-lowest/90 backdrop-blur-xl rounded-full shadow-sm border border-surface-container"><button class="px-space-md py-1 rounded-full bg-primary text-on-primary font-label-caps text-label-caps transition-all">Overview</button><button class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all">Vegetation</button><button class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all">Moisture</button><button class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all">Radar</button></div><div class="flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-xl p-1 rounded-full shadow-sm border border-surface-container text-primary"><button class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom in"><span class="material-symbols-outlined text-[16px]">add</span></button><button class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom out"><span class="material-symbols-outlined text-[16px]">remove</span></button></div></div><div class="relative z-10 flex-1 flex items-center justify-center pointer-events-none p-space-lg"><div class="relative flex flex-col items-center"><svg class="w-80 h-56 overflow-visible filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]" viewbox="0 0 320 240"><polygon fill="rgba(255, 255, 255, 0.08)" points="52,24 286,40 262,216 112,228 36,140" stroke="#ffffff" stroke-dasharray="4 4" stroke-width="1.5"></polygon><circle cx="165" cy="125" fill="#ffffff" r="4" stroke="#000000" stroke-width="1.5"></circle></svg><div class="pointer-events-auto -mt-24 bg-surface-container-lowest/95 backdrop-blur-xl px-space-md py-1.5 rounded-full shadow-lg flex items-center gap-space-sm border border-surface-container"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-body-sm text-body-sm text-primary font-medium">Field NDVI: <strong class="text-emerald-700">0.74 (Optimal)</strong></span></div></div></div><div class="relative z-10 p-space-md mt-auto flex items-center justify-between"><div class="bg-surface-container-lowest/90 backdrop-blur-xl px-space-md py-space-xs rounded-full shadow-sm border border-surface-container flex items-center gap-space-md text-primary"><span class="font-label-mono-num text-label-mono-num text-secondary">11.594° N, 78.598° E</span><div class="h-3 w-px bg-outline-variant/40"></div><span class="font-label-caps text-label-caps uppercase text-secondary">Resolution 10m Ground Pixel</span></div><div class="bg-surface-container-lowest/90 backdrop-blur-xl px-space-md py-space-xs rounded-full shadow-sm border border-surface-container flex items-center gap-space-sm"><span class="font-label-caps text-label-caps text-secondary">Vigor Scale</span><div class="h-2 w-24 rounded-full bg-gradient-to-r from-[#e11d48] via-[#eab308] to-[#10b981]"></div><span class="font-label-mono-num text-label-mono-num text-primary font-medium">0.0 — 1.0</span></div></div></section><section class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-space-md"><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Irrigation Status</span><div class="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600"><span class="material-symbols-outlined text-[18px]">water_drop</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">0.28</div><span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Adequate Reserve</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Next watering</span><span class="font-medium text-primary font-label-mono-num">In 4 days (Oct 23)</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Canopy Greenness</span><div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><span class="material-symbols-outlined text-[18px]">eco</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div class="text-headline-xl font-headline-xl font-bold text-primary font-label-mono-num tracking-tight">78<span class="text-headline-sm font-normal text-secondary">/100</span></div><span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-1">Peak Canopy Vigor</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">District benchmark</span><span class="font-semibold text-emerald-600 font-label-mono-num">92nd Percentile</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Root Zone Moisture</span><div class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600"><span class="material-symbols-outlined text-[18px]">grain</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">68%</div><span class="text-body-sm font-body-sm text-secondary mt-1">Normal Aerobic Drainage</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Optimal bracket</span><span class="font-medium text-primary font-label-mono-num">65% — 75%</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Pest &amp; Foliar Risk</span><div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><span class="material-symbols-outlined text-[18px]">verified</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div class="text-headline-xl font-headline-xl font-bold text-emerald-600 tracking-tight">Low</div><span class="text-body-sm font-body-sm text-secondary mt-1">Healthy Leaf Carotenoid</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Infestation detected</span><span class="font-semibold text-emerald-700">None</span></div></div></section></div><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container">
+<div>
+<div class="flex items-center gap-space-sm">
+<h2 class="text-headline-sm font-headline-sm font-semibold text-primary tracking-tight">Agronomic Telemetry Matrix</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/80 font-label-mono-num text-[11px] text-emerald-700 font-semibold tracking-wide">22 Live KPIs</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary mt-0.5">Categorical multi-spectral, biophysical &amp; synthetic aperture radar indicators calibrated at 10m spatial resolution.</p>
+</div>
+<div class="flex items-center gap-space-md text-body-sm">
+<span class="flex items-center gap-1.5 font-label-mono-num text-[11px] text-secondary bg-surface-container-low px-2.5 py-1 rounded-full border border-surface-container">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>Pass Interval T-24h
+</span>
+<span class="font-label-mono-num text-label-mono-num text-outline">Updated 3h ago</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md"><!-- COLUMN 1: Crop Health & Emergence -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs"><div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">psychiatry</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold">1. Crop Health &amp; Emergence</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Overall Greenness with Segmented Radial Arc Gauge -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Overall Greenness</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">+8.2% vs avg</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">0.74</div>
+<span class="text-body-sm font-body-sm text-slate-500">NDVI / EVI Calibrated</span>
+</div>
+<!-- Clean geometric radial arc gauge (reference image #8/#12) -->
+<div class="w-14 h-14 relative flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 48 48">
+<circle cx="24" cy="24" fill="none" r="19" stroke="#e2e8f0" stroke-width="4.5"></circle>
+<circle cx="24" cy="24" fill="none" r="19" stroke="#059669" stroke-dasharray="119.38" stroke-dashoffset="31" stroke-linecap="round" stroke-width="4.5"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-label-mono-num text-[10px] font-bold text-slate-800">74%</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Stalk growth status</span>
+<span class="font-medium text-slate-900 text-[11px]">Optimal Trajectory</span>
+</div>
+</div>
+<!-- Card 2: Sprout Health with Lollipop / Stem-and-Marker Chart -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Sprout Health (SAVI)</span>
+<span class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">0.68</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">85%</div>
+<span class="text-body-sm font-body-sm text-slate-500">Canopy emergence</span>
+</div>
+<!-- Lollipop / Stem-and-Marker SVG (reference image #3 & #12) -->
+<div class="w-28 h-11 flex items-center justify-center">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 110 40">
+<!-- Baseline -->
+<line stroke="#e2e8f0" stroke-linecap="round" stroke-width="1.5" x1="5" x2="105" y1="35" y2="35"></line>
+<!-- Stem 1: Sown -->
+<line stroke="#94a3b8" stroke-linecap="round" stroke-width="2" x1="20" x2="20" y1="35" y2="22"></line>
+<circle cx="20" cy="22" fill="#64748b" r="3.5"></circle>
+<text fill="#94a3b8" font-family="Space Grotesk" font-size="8" font-weight="600" text-anchor="middle" x="20" y="15">42%</text>
+<!-- Stem 2: Tillering -->
+<line stroke="#0f172a" stroke-linecap="round" stroke-width="2" x1="55" x2="55" y1="35" y2="14"></line>
+<circle cx="55" cy="14" fill="#0f172a" r="3.5"></circle>
+<text fill="#0f172a" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="55" y="8">68%</text>
+<!-- Stem 3: Grand Growth (Current) -->
+<line stroke="#059669" stroke-linecap="round" stroke-width="2" x1="90" x2="90" y1="35" y2="6"></line>
+<circle cx="90" cy="6" fill="#059669" r="4"></circle>
+<circle cx="90" cy="6" fill="#ffffff" r="1.5"></circle>
+<text fill="#059669" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="90" y="-1">85%</text>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Tillering distribution</span>
+<span class="font-medium text-slate-900 text-[11px]">Uniform Stance</span>
+</div>
+</div>
+<!-- Card 3: Deep Leaf Stamina -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Deep Leaf Stamina</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">High</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">0.65</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">GNDVI / VARI</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Vascular status</span>
+<span class="font-medium text-slate-900 text-[11px]">Robust Hydration</span>
+</div>
+</div>
+<!-- Card 4: Emergence Uniformity -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Emergence Uniformity</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">3.40 ac</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">94.6%</div>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> Zero skips
+    </span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Solar absorption</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">34.8 MJ/m²·d</span>
+</div>
+</div></div>
+<!-- COLUMN 2: Water & Soil Status -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold">2. Water &amp; Soil Status</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Crop Thirst Level (NDMI) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Crop Thirst (NDMI)</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">Adequate</span>
+</div>
+<div class="my-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">+0.42</div>
+<span class="text-body-sm font-body-sm text-slate-500">Moisture Index</span>
+</div>
+<!-- Crisp micro sparkline -->
+<div class="w-24 h-10">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 96 36">
+<defs>
+<lineargradient id="sparkGradSky" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0284c7" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#0284c7" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 4 22 C 26 24, 46 16, 64 14 C 76 12, 84 8, 92 7 L 92 34 L 4 34 Z" fill="url(#sparkGradSky)"></path>
+<path d="M 4 22 C 26 24, 46 16, 64 14 C 76 12, 84 8, 92 7" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="92" cy="7" fill="#ffffff" r="3" stroke="#0284c7" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Turgor pressure</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">96% Cellular</span>
+</div>
+</div>
+<!-- Card 2: Plowed Ground -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Plowed Ground (BSI)</span>
+<span class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">-0.31</span>
+</div>
+<div class="my-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">82%</span>
+<span class="text-[10px] font-label-caps text-slate-400 uppercase font-medium">Canopy</span>
+</div>
+<span class="text-[11px] font-body-sm text-slate-500">Cane cover ratio</span>
+</div>
+<!-- 2x10 Tile Matrix / Waffle Grid (Reference IMAGE_8 / IMAGE_10) -->
+<div class="flex flex-col gap-1 p-1 bg-slate-50 rounded border border-slate-200/80">
+<div class="grid grid-cols-10 gap-1">
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+</div>
+<div class="grid grid-cols-10 gap-1">
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-300" title="Bare furrow"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-300" title="Bare furrow"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-amber-500/80" title="Exposed soil"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-amber-500/80" title="Exposed soil"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Soil erosion index</span>
+<span class="font-medium text-slate-900 text-[11px]">Protected (18% bare)</span>
+</div></div>
+<!-- Card 3: White Salt Warning -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">White Salt Warning</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Safe</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">&lt; 1.1</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">dS/m (Normal)</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Salinity status</span>
+<span class="font-medium text-slate-900 text-[11px]">No Alkalization</span>
+</div>
+</div>
+<!-- Card 4: Topsoil Moisture -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Topsoil Moisture (0-10cm)</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">Target 65-75%</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">68%</div>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> In Range
+      </span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Oxygen diffusion</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.32 g/m²·h</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: Canopy & Nutrients -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">grain</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold">3. Canopy &amp; Nutrients</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Foliage Volume -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Foliage Volume (LAI)</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Grand Growth</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">3.8</div>
+<span class="text-body-sm font-body-sm text-slate-500">m²/m² Area Density</span>
+</div>
+<!-- Crisp Semi-Circular Arch Gauge with calibration ticks (reference #2 in IMAGE_13) -->
+<div class="w-24 h-12 relative flex items-end justify-center">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 96 48">
+<!-- Track arc: 180 degrees from (8,44) to (88,44) -->
+<path d="M 10 44 A 38 38 0 0 1 86 44" fill="none" stroke="#e2e8f0" stroke-linecap="round" stroke-width="4"></path>
+<!-- Value arc (76% fill) -->
+<path d="M 10 44 A 38 38 0 0 1 76 16" fill="none" stroke="#0f172a" stroke-linecap="round" stroke-width="4.5"></path>
+<!-- Marker cap -->
+<circle cx="76" cy="16" fill="#059669" r="4" stroke="#ffffff" stroke-width="1.5"></circle>
+<!-- Benchmark tick -->
+<line stroke="#94a3b8" stroke-width="1.5" x1="48" x2="48" y1="6" y2="12"></line>
+<!-- Numeric bounds -->
+<text fill="#94a3b8" font-family="Space Grotesk" font-size="7" font-weight="600" text-anchor="start" x="8" y="47">0</text>
+<text fill="#64748b" font-family="Space Grotesk" font-size="7" font-weight="600" text-anchor="middle" x="48" y="20">Opt 3.5</text>
+<text fill="#94a3b8" font-family="Space Grotesk" font-size="7" font-weight="600" text-anchor="end" x="88" y="47">5.0</text>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Density benchmark</span>
+<span class="font-medium text-slate-900 text-[11px]">Optimal Vigor (95%)</span>
+</div></div>
+<!-- Card 2: Ground Coverage -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Ground Coverage (fCOVER)</span>
+<span class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">82%</span>
+</div>
+<div class="my-space-sm flex items-center justify-between py-1">
+<div class="flex-1">
+<div class="flex justify-between text-[11px] font-label-mono-num text-slate-500 mb-1">
+<span>Sub-canopy retention</span>
+<span class="font-semibold text-slate-900">High</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="h-full bg-slate-900 rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Shadow ratio</span>
+<span class="font-medium text-slate-900 text-[11px]">76% Interception</span>
+</div>
+</div>
+<!-- Card 3: Nitrogen Reserve -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Nitrogen Reserve (CCC)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Optimal</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">3.2</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">g/m² Canopy Content</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Urea top dressing</span>
+<span class="font-medium text-slate-900 text-[11px]">Not Required</span>
+</div>
+</div>
+<!-- Card 4: Chlorophyll Trajectory -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Chlorophyll Trajectory</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">Optimal Band</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">48.2</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">SPAD / MCARI</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Thermal anomaly</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">27.4°C (-3.8°C)</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 4: Monsoon & SAR Radar -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">radar</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold">4. Monsoon &amp; SAR Radar</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Cloud-Proof Growth -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Cloud-Proof Growth</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Sentinel-1</span>
+</div>
+<div class="my-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">0.62</div>
+<span class="text-body-sm font-body-sm text-slate-500">SAR RVI Index</span>
+</div>
+<!-- Crisp micro sparkline with indigo accent -->
+<div class="w-24 h-10">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 96 36">
+<defs>
+<lineargradient id="sparkGradIndigo" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4f46e5" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#4f46e5" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 4 24 C 24 22, 46 16, 64 12 C 74 9, 84 8, 92 6 L 92 34 L 4 34 Z" fill="url(#sparkGradIndigo)"></path>
+<path d="M 4 24 C 24 22, 46 16, 64 12 C 74 9, 84 8, 92 6" fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="92" cy="6" fill="#ffffff" r="3" stroke="#4f46e5" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Biomass rate</span>
+<span class="font-medium text-slate-900 text-[11px]">Stalk Thickening</span>
+</div>
+</div>
+<!-- Card 2: Stalk Rigidity / Height (VH/VV) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Stalk Rigidity (VH/VV)</span>
+<span class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">-6.8 dB</span>
+</div>
+<!-- Calibrated Dumbbell Span / Range Chart (reference #7 & #9 in IMAGE_13) -->
+<div class="my-space-sm flex flex-col gap-1.5 py-1 px-0.5">
+<div class="flex items-center justify-between text-[10px] font-label-mono-num text-slate-400">
+<span>Lodged (-14dB)</span>
+<span class="text-slate-700 font-semibold">Erect (-4dB)</span>
+</div>
+<div class="w-full h-6">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 200 24">
+<!-- Background full guide rail -->
+<line stroke="#e2e8f0" stroke-linecap="round" stroke-width="2" x1="8" x2="192" y1="12" y2="12"></line>
+<!-- Safe / Optimal Stance Span Bar -->
+<line stroke="#cbd5e1" stroke-linecap="round" stroke-width="4" x1="80" x2="175" y1="12" y2="12"></line>
+<!-- Measured Current Range (Dumbbell from 2024 to 2026) -->
+<line stroke="#0f172a" stroke-linecap="round" stroke-width="3" x1="98" x2="158" y1="12" y2="12"></line>
+<!-- Previous Pass Anchor Dot (Reference point) -->
+<circle cx="98" cy="12" fill="#94a3b8" r="4" stroke="#ffffff" stroke-width="1.5"></circle>
+<!-- Current Calibration Marker (Solid dark anchor) -->
+<circle cx="158" cy="12" fill="#0f172a" r="5.5" stroke="#ffffff" stroke-width="2"></circle>
+<!-- Dynamic current reading label -->
+<text fill="#0f172a" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="158" y="4">-6.8</text>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Canopy stance</span>
+<span class="font-medium text-slate-900 text-[11px]">Well-Anchored · No Lodging</span>
+</div></div>
+<!-- Card 3: Standing Water Flag -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Standing Water Flag</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Clear</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">-11.4</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">dB VV Backscatter</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Ponding detection</span>
+<span class="font-medium text-slate-900 text-[11px]">No Flooding</span>
+</div>
+</div>
+<!-- Card 4: Wind Lodging Risk -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium">Wind Lodging Risk</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">14 km/h Calm</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">8%</div>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[15px]">shield</span> Low Vulnerability
+      </span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Phase coherence</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.89 Solid</span>
+</div>
+</div>
+</div></div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
+<span class="text-secondary">Continuous all-weather monitoring powered by synthesized multi-spectral optical and Sentinel-1 synthetic aperture radar.</span>
+</div>
+<span class="font-label-mono-num text-label-mono-num text-primary font-semibold">Telemetry Confidence: 99.8%</span>
+</div>
+</section></div>
+</div>
+<script>
+  (function initDashboard() {
+    // Mode toggling micro-interaction
+    const farmerBtn = document.getElementById('farmerModeBtn');
+    const expertBtn = document.getElementById('expertModeBtn');
+
+    if (farmerBtn && expertBtn) {
+      farmerBtn.addEventListener('click', () => {
+        farmerBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps bg-primary text-on-primary font-semibold shadow-sm transition-all';
+        expertBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps text-secondary transition-all';
+      });
+
+      expertBtn.addEventListener('click', () => {
+        expertBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps bg-primary text-on-primary font-semibold shadow-sm transition-all';
+        farmerBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps text-secondary transition-all';
+      });
     }
-  </script>
-  <style>
-    @layer base {
-      html, body { margin: 0; padding: 0; }
-      body { overscroll-behavior: none; }
-    }
-    ::-webkit-scrollbar { display: none; }
-  </style>
-</head>
-<body class="bg-surface font-body-md text-on-surface antialiased">
-  <!-- Top Navigation Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 h-16 bg-white/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-b border-surface-container">
-    <div class="w-full h-16 px-6 flex items-center justify-between">
-      <div class="flex items-center gap-6">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 bg-black flex items-center justify-center rounded-lg text-white">
-            <span class="material-symbols-outlined text-[18px]">satellite_alt</span>
-          </div>
-          <span class="font-headline-sm text-lg tracking-tight text-primary font-bold">TerraCrop Intelligence</span>
-        </div>
-        <div class="h-4 w-px bg-outline-variant/40 hidden sm:block"></div>
-        <nav class="hidden sm:flex items-center gap-1.5 text-xs text-secondary font-medium">
-          <span class="hover:text-primary transition-colors cursor-pointer">Tamil Nadu</span>
-          <span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
-          <span class="hover:text-primary transition-colors cursor-pointer">Neivelivadapathy</span>
-          <span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
-          <span class="text-primary font-semibold">Asset #v_04183</span>
-        </nav>
-      </div>
 
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low border border-surface-container text-xs">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="font-label-caps text-[11px] text-secondary uppercase tracking-wider font-semibold">Synced: Sentinel-1 & 2</span>
-        </div>
-        <div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container">
-          <button class="px-3 py-1 rounded-full text-xs font-semibold text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer View</button>
-          <button class="px-3 py-1 rounded-full text-xs bg-primary text-on-primary font-semibold transition-all" id="expertModeBtn">Analyst Matrix</button>
-        </div>
-        <a href="./" class="h-8 px-4 flex items-center gap-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-xs font-semibold uppercase tracking-wider transition-colors border border-surface-container">
-          <span class="material-symbols-outlined text-[16px]">map</span>
-          <span>Farm Mapper</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Left Sidebar Navigation -->
-  <aside class="fixed left-0 top-16 bottom-0 w-64 bg-white/70 backdrop-blur-xl z-40 hidden md:flex flex-col justify-between py-6 px-4 border-r border-surface-container">
-    <div class="flex flex-col gap-4">
-      <div class="px-2">
-        <span class="text-[10px] font-label-caps text-outline uppercase tracking-widest font-bold">Telemetry Modules</span>
-      </div>
-      <nav class="flex flex-col gap-1 text-sm font-medium">
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-on-primary font-semibold" href="#">
-          <span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:bg-surface-container hover:text-primary transition-colors" href="#spectral">
-          <span class="material-symbols-outlined text-[20px]">nature</span>Spectral Indices (16)
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:bg-surface-container hover:text-primary transition-colors" href="#biophysical">
-          <span class="material-symbols-outlined text-[20px]">biotech</span>Biophysical Canopy
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-secondary hover:bg-surface-container hover:text-primary transition-colors" href="#radar">
-          <span class="material-symbols-outlined text-[20px]">radar</span>Monsoon & SAR Radar
-        </a>
-      </nav>
-    </div>
-
-    <div class="bg-surface-container-low rounded-xl p-3 border border-surface-container flex flex-col gap-2">
-      <div class="flex items-center justify-between text-xs">
-        <span class="text-secondary font-label-caps font-semibold">TARGET ASSET</span>
-        <span class="font-label-mono-num font-bold text-primary">v_04183</span>
-      </div>
-      <div class="flex items-center justify-between text-xs">
-        <span class="text-secondary font-label-caps font-semibold">PIXEL GRID</span>
-        <span class="font-label-mono-num font-bold text-emerald-700">10m Centroids</span>
-      </div>
-      <div class="flex items-center justify-between text-xs">
-        <span class="text-secondary font-label-caps font-semibold">HISTORICAL DEPTH</span>
-        <span class="font-label-mono-num font-bold text-primary">365 Days</span>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Main Content Body -->
-  <div class="md:pl-64">
-    <main class="w-full pt-20 px-4 md:px-8 pb-12 max-w-[1720px] mx-auto flex flex-col gap-6">
-
-      <!-- Header Banner Card -->
-      <section class="bg-white rounded-2xl p-6 border border-surface-container shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div class="flex flex-col gap-1">
-          <div class="flex items-center gap-3 flex-wrap">
-            <h1 class="text-2xl font-bold font-headline-md text-primary tracking-tight">Neivelivadapathy Parcel Matrix</h1>
-            <span class="px-3 py-0.5 rounded-full bg-surface-container font-label-mono-num text-xs font-semibold text-primary">Multi-Polygon Cluster</span>
-            <span class="px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold uppercase tracking-wider">Active Monitoring</span>
-          </div>
-          <p class="text-sm text-secondary">Thanjavur Delta Region · Tamil Nadu · Sentinel-2 MSI Optical & Sentinel-1 C-Band SAR Synthesis</p>
-        </div>
-
-        <div class="flex items-center gap-6 self-start lg:self-auto">
-          <div class="flex flex-col text-right">
-            <span class="text-[11px] font-label-caps text-outline uppercase tracking-wider font-semibold">Pixel Resolution</span>
-            <span class="text-xl font-bold text-primary font-label-mono-num">10m × 10m</span>
-          </div>
-          <div class="h-8 w-px bg-outline-variant/40"></div>
-          <div class="flex flex-col text-right">
-            <span class="text-[11px] font-label-caps text-outline uppercase tracking-wider font-semibold">Total Indicators</span>
-            <span class="text-xl font-bold text-emerald-700 font-label-mono-num">23 Live KPIs</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Key Diagnostic Overview Row -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-        
-        <!-- Spatial Map Viewport -->
-        <section class="lg:col-span-7 flex flex-col bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-md relative min-h-[460px]">
-          <!-- Interactive Map Container Canvas Simulation -->
-          <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-85" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-slate-950/60 pointer-events-none"></div>
-
-          <!-- Floating Map Control Header -->
-          <div class="relative z-10 p-4 flex items-center justify-between">
-            <div class="flex items-center gap-1 p-1 bg-white/90 backdrop-blur-md rounded-full shadow-sm border border-slate-200">
-              <button class="px-3 py-1 rounded-full bg-black text-white text-xs font-semibold" onclick="switchLayer('overview')">Overview</button>
-              <button class="px-3 py-1 rounded-full text-slate-600 hover:text-black text-xs font-semibold" onclick="switchLayer('ndvi')">NDVI Vigor</button>
-              <button class="px-3 py-1 rounded-full text-slate-600 hover:text-black text-xs font-semibold" onclick="switchLayer('moisture')">Moisture (NDMI)</button>
-              <button class="px-3 py-1 rounded-full text-slate-600 hover:text-black text-xs font-semibold" onclick="switchLayer('sar')">SAR Radar</button>
-            </div>
-            <div class="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-semibold text-slate-800 shadow-sm border border-slate-200">
-              10.449° N, 79.147° E
-            </div>
-          </div>
-
-          <!-- Centered Polygon Graphic Representation -->
-          <div class="relative z-10 flex-1 flex flex-col items-center justify-center p-6">
-            <svg class="w-80 h-48 overflow-visible filter drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]" viewBox="0 0 320 200">
-              <!-- Sub-Polygon North -->
-              <polygon fill="rgba(16, 185, 129, 0.25)" points="60,30 260,45 240,110 120,110 50,75" stroke="#10b981" stroke-width="2.5"></polygon>
-              <!-- Sub-Polygon South -->
-              <polygon fill="rgba(14, 165, 233, 0.25)" points="120,110 240,110 220,180 90,175 60,135" stroke="#0ea5e9" stroke-width="2.5"></polygon>
-              
-              <!-- 10m Sampled Pixel Points (Yellow centroids) -->
-              <circle cx="90" cy="55" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="130" cy="58" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="170" cy="62" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="210" cy="65" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="100" cy="85" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="140" cy="88" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="180" cy="92" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="110" cy="135" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="150" cy="138" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              <circle cx="190" cy="142" fill="#facc15" r="3.5" stroke="#000" stroke-width="1"></circle>
-              
-              <!-- Selected Target Pin -->
-              <circle cx="150" cy="88" fill="#ef4444" r="6" stroke="#fff" stroke-width="2" class="animate-ping"></circle>
-              <circle cx="150" cy="88" fill="#ef4444" r="5" stroke="#fff" stroke-width="1.5"></circle>
-            </svg>
-
-            <!-- Floating Badge for Selected Pixel -->
-            <div class="mt-2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-lg border border-slate-200 flex items-center gap-2.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span class="text-xs font-medium text-slate-800">
-                Selected Pixel: <strong class="text-emerald-700 font-bold">Field_North_px_104496_791472 (NDVI: 0.74)</strong>
-              </span>
-            </div>
-          </div>
-
-          <!-- Bottom Footer Bar -->
-          <div class="relative z-10 p-4 mt-auto flex items-center justify-between text-xs text-white">
-            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 font-mono">
-              Sentinel-2 L2A Harmonized + Sentinel-1 IW GRD
-            </span>
-            <div class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-              <span class="text-slate-300 font-medium">Vigor Scale</span>
-              <div class="h-2 w-20 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500"></div>
-              <span class="font-mono font-bold">0.0 - 1.0</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Top Level Quick Gauge Cards -->
-        <section class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <!-- Card 1: Crop Moisture -->
-          <div class="bg-white rounded-2xl p-5 border border-surface-container shadow-xs flex flex-col justify-between">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-label-caps text-secondary uppercase tracking-wider font-semibold">Irrigation (NDMI)</span>
-              <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600">
-                <span class="material-symbols-outlined text-[18px]">water_drop</span>
-              </div>
-            </div>
-            <div class="my-4 flex flex-col items-center">
-              <div class="text-3xl font-bold text-slate-900 font-label-mono-num">+0.42</div>
-              <span class="text-xs text-emerald-700 font-semibold mt-1 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Optimal Cell Turgor
-              </span>
-            </div>
-            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500">Moisture Stress</span>
-              <span class="font-bold text-slate-800 font-mono">MSI 0.58 (Low)</span>
-            </div>
-          </div>
-
-          <!-- Card 2: Canopy Greenness -->
-          <div class="bg-white rounded-2xl p-5 border border-surface-container shadow-xs flex flex-col justify-between">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-label-caps text-secondary uppercase tracking-wider font-semibold">Canopy Greenness</span>
-              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
-                <span class="material-symbols-outlined text-[18px]">eco</span>
-              </div>
-            </div>
-            <div class="my-4 flex flex-col items-center">
-              <div class="text-3xl font-bold text-slate-900 font-label-mono-num">0.74 <span class="text-sm font-normal text-slate-400">NDVI</span></div>
-              <span class="text-xs text-emerald-700 font-semibold mt-1">Peak Vegetative Phase</span>
-            </div>
-            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500">EVI High Biomass</span>
-              <span class="font-bold text-emerald-600 font-mono">0.68 Calibrated</span>
-            </div>
-          </div>
-
-          <!-- Card 3: Leaf Area Index -->
-          <div class="bg-white rounded-2xl p-5 border border-surface-container shadow-xs flex flex-col justify-between">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-label-caps text-secondary uppercase tracking-wider font-semibold">Foliage Density</span>
-              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
-                <span class="material-symbols-outlined text-[18px]">grain</span>
-              </div>
-            </div>
-            <div class="my-4 flex flex-col items-center">
-              <div class="text-3xl font-bold text-slate-900 font-label-mono-num">3.8 <span class="text-sm font-normal text-slate-400">m²/m²</span></div>
-              <span class="text-xs text-emerald-700 font-semibold mt-1">LAI Biophysical Proxy</span>
-            </div>
-            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500">Fraction Cover (fCOVER)</span>
-              <span class="font-bold text-slate-800 font-mono">82% Ground</span>
-            </div>
-          </div>
-
-          <!-- Card 4: SAR All-Weather Radar -->
-          <div class="bg-white rounded-2xl p-5 border border-surface-container shadow-xs flex flex-col justify-between">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-label-caps text-secondary uppercase tracking-wider font-semibold">SAR Radar (S1)</span>
-              <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
-                <span class="material-symbols-outlined text-[18px]">radar</span>
-              </div>
-            </div>
-            <div class="my-4 flex flex-col items-center">
-              <div class="text-3xl font-bold text-slate-900 font-label-mono-num">0.62 <span class="text-sm font-normal text-slate-400">RVI</span></div>
-              <span class="text-xs text-indigo-700 font-semibold mt-1">Cloud-Penetrating Biomass</span>
-            </div>
-            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-slate-500">Inundation Flag</span>
-              <span class="font-bold text-emerald-700">Clear (No Flood)</span>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Full Agronomic Telemetry Matrix Section (All 23 KPIs) -->
-      <section class="bg-white rounded-2xl p-6 border border-surface-container shadow-xs flex flex-col gap-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-surface-container">
-          <div>
-            <div class="flex items-center gap-3">
-              <h2 class="text-xl font-bold font-headline-md text-primary tracking-tight">Full Agronomic Telemetry Matrix</h2>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 font-mono text-xs text-emerald-800 font-bold">23 Active Indices</span>
-            </div>
-            <p class="text-xs text-secondary mt-1">Synchronized 10m spatial resolution indicators across optical multi-spectral and synthetic aperture radar.</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-mono text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-              Coverage: 365 Days Historical
-            </span>
-          </div>
-        </div>
-
-        <!-- 4 Thematic Indicator Columns -->
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-
-          <!-- COLUMN 1: Vegetation & Emergence -->
-          <div class="flex flex-col gap-3 bg-surface-container-low p-4 rounded-xl border border-slate-200">
-            <div class="flex items-center justify-between pb-2 border-b border-slate-200">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-slate-800">psychiatry</span>
-                <h3 class="text-xs font-bold font-label-caps text-slate-900 uppercase tracking-wider">1. Vigor & Emergence</h3>
-              </div>
-              <span class="text-[11px] font-mono text-slate-500 font-semibold">6 metrics</span>
-            </div>
-
-            <!-- Metric 1: NDVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">NDVI (Canopy Vigor)</span>
-                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">+8.2%</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.74</div>
-                <span class="text-[11px] text-slate-500 font-medium">B8 - B4</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Healthy vegetative canopy</span>
-            </div>
-
-            <!-- Metric 2: EVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">EVI (High Biomass)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">0.68</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.68</div>
-                <span class="text-[11px] text-slate-500 font-medium">Aerosol Corrected</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Dense growth without saturation</span>
-            </div>
-
-            <!-- Metric 3: SAVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">SAVI (Soil-Adjusted)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">L = 0.5</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.64</div>
-                <span class="text-[11px] text-slate-500 font-medium">Early Cover</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Eliminates soil glare</span>
-            </div>
-
-            <!-- Metric 4: MSAVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">MSAVI (Modified Soil)</span>
-                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Self-adjusting</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.71</div>
-                <span class="text-[11px] text-slate-500 font-medium">Dynamic L</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Sparse dryland monitoring</span>
-            </div>
-
-            <!-- Metric 5: OSAVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">OSAVI (Optimized)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">0.69</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.69</div>
-                <span class="text-[11px] text-slate-500 font-medium">Boundaries</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Edge transition accuracy</span>
-            </div>
-
-            <!-- Metric 6: VARI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">VARI (RGB Fraction)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">+0.22</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">+0.22</div>
-                <span class="text-[11px] text-slate-500 font-medium">RGB Optical</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Haze-tolerant green fraction</span>
-            </div>
-          </div>
-
-          <!-- COLUMN 2: Chlorophyll & Nutrients -->
-          <div class="flex flex-col gap-3 bg-surface-container-low p-4 rounded-xl border border-slate-200">
-            <div class="flex items-center justify-between pb-2 border-b border-slate-200">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-slate-800">eco</span>
-                <h3 class="text-xs font-bold font-label-caps text-slate-900 uppercase tracking-wider">2. Chlorophyll & Nutrients</h3>
-              </div>
-              <span class="text-[11px] font-mono text-slate-500 font-semibold">5 metrics</span>
-            </div>
-
-            <!-- Metric 1: NDRE -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">NDRE (Red Edge)</span>
-                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Optimal</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.36</div>
-                <span class="text-[11px] text-slate-500 font-medium">B8 - B5</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Early nitrogen stress detection</span>
-            </div>
-
-            <!-- Metric 2: GNDVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">GNDVI (Green Chlorophyll)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">0.65</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.65</div>
-                <span class="text-[11px] text-slate-500 font-medium">B8 - B3</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Mid-season chlorophyll monitoring</span>
-            </div>
-
-            <!-- Metric 3: ReCI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">ReCI (Red-Edge Index)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">2.41</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">2.41</div>
-                <span class="text-[11px] text-slate-500 font-medium">(B8/B4) - 1</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Canopy nitrogen absorption</span>
-            </div>
-
-            <!-- Metric 4: GCI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">GCI (Green Index)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">2.85</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">2.85</div>
-                <span class="text-[11px] text-slate-500 font-medium">(B8/B3) - 1</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Informs urea top dressing rate</span>
-            </div>
-
-            <!-- Metric 5: SIPI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">SIPI (Carotenoid/Pigment)</span>
-                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Normal</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.92</div>
-                <span class="text-[11px] text-slate-500 font-medium">(B8-B2)/(B8-B4)</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Early disease & pest stress alert</span>
-            </div>
-          </div>
-
-          <!-- COLUMN 3: Moisture, Soil & Biophysical -->
-          <div class="flex flex-col gap-3 bg-surface-container-low p-4 rounded-xl border border-slate-200">
-            <div class="flex items-center justify-between pb-2 border-b border-slate-200">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-slate-800">water_drop</span>
-                <h3 class="text-xs font-bold font-label-caps text-slate-900 uppercase tracking-wider">3. Water, Soil & Canopy</h3>
-              </div>
-              <span class="text-[11px] font-mono text-slate-500 font-semibold">7 metrics</span>
-            </div>
-
-            <!-- Metric 1: NDMI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">NDMI (Canopy Moisture)</span>
-                <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded">+0.42</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">+0.42</div>
-                <span class="text-[11px] text-slate-500 font-medium">B8 - B11</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Early dehydration detection</span>
-            </div>
-
-            <!-- Metric 2: MSI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">MSI (Moisture Stress)</span>
-                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Adequate</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.58</div>
-                <span class="text-[11px] text-slate-500 font-medium">B11 / B8</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Lower values indicate higher water</span>
-            </div>
-
-            <!-- Metric 3: BSI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">BSI (Bare Soil Index)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">-0.31</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">-0.31</div>
-                <span class="text-[11px] text-slate-500 font-medium">Vegetated</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Verifies seedbed vs foliage</span>
-            </div>
-
-            <!-- Metric 4: LAI Proxy -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">LAI (Leaf Area Index)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">3.8 m²/m²</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">3.8</div>
-                <span class="text-[11px] text-slate-500 font-medium">Biophysical</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Total green foliage density</span>
-            </div>
-
-            <!-- Metric 5: fCOVER Proxy -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">fCOVER (Ground Cover)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">82%</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">82%</div>
-                <span class="text-[11px] text-slate-500 font-medium">Fraction</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Vertical foliage coverage</span>
-            </div>
-
-            <!-- Metric 6: fAPAR Proxy -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">fAPAR (Photosynthesis)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">0.75</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.75</div>
-                <span class="text-[11px] text-slate-500 font-medium">Solar Absorbed</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Biomass yield projection driver</span>
-            </div>
-
-            <!-- Metric 7: CCC Proxy -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">CCC (Canopy Chlorophyll)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">3.2 g/m²</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">3.2</div>
-                <span class="text-[11px] text-slate-500 font-medium">LAI × Cab</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Total canopy nitrogen mass</span>
-            </div>
-          </div>
-
-          <!-- COLUMN 4: Monsoon & SAR Radar -->
-          <div class="flex flex-col gap-3 bg-surface-container-low p-4 rounded-xl border border-slate-200">
-            <div class="flex items-center justify-between pb-2 border-b border-slate-200">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-slate-800">radar</span>
-                <h3 class="text-xs font-bold font-label-caps text-slate-900 uppercase tracking-wider">4. Monsoon & SAR Radar</h3>
-              </div>
-              <span class="text-[11px] font-mono text-slate-500 font-semibold">5 metrics</span>
-            </div>
-
-            <!-- Metric 1: SAR RVI -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">SAR RVI (Radar Biomass)</span>
-                <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">All-Weather</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.62</div>
-                <span class="text-[11px] text-slate-500 font-medium">4VH / (VV+VH)</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Penetrates thick monsoon clouds</span>
-            </div>
-
-            <!-- Metric 2: SAR CR (VH/VV) -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">Cross-Pol Ratio (CR)</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">-6.8 dB</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">-6.8 dB</div>
-                <span class="text-[11px] text-slate-500 font-medium">VH - VV</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Canopy structure & stalk erectness</span>
-            </div>
-
-            <!-- Metric 3: SAR VV Backscatter -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">SAR VV Backscatter</span>
-                <span class="text-[11px] font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">-11.4 dB</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">-11.4 dB</div>
-                <span class="text-[11px] text-slate-500 font-medium">Co-Polarized</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Surface roughness & soil moisture</span>
-            </div>
-
-            <!-- Metric 4: Inundation Flag -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">Inundation / Flood Flag</span>
-                <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">0 (Clear)</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0</div>
-                <span class="text-[11px] text-slate-500 font-medium">Threshold &lt; -18dB</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">Flags puddled paddy or flood water</span>
-            </div>
-
-            <!-- Metric 5: Soil Moisture Proxy -->
-            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex flex-col justify-between shadow-2xs">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-semibold text-slate-500 uppercase">Soil Moisture Proxy</span>
-                <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded">0.57</span>
-              </div>
-              <div class="my-2 flex items-baseline justify-between">
-                <div class="text-2xl font-bold font-mono text-slate-900">0.57</div>
-                <span class="text-[11px] text-slate-500 font-medium">(VV + 20) / 15</span>
-              </div>
-              <span class="text-[11px] text-slate-500 border-t border-slate-100 pt-1">0–5cm topsoil relative water</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- System Confidence Footer -->
-        <div class="bg-surface-container-low px-4 py-3 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
-            <span class="text-secondary font-medium">All 23 indicators calibrated for Indian cropping ecosystems across Sentinel-2 (Optical) and Sentinel-1 (Radar).</span>
-          </div>
-          <span class="font-mono text-primary font-bold">Confidence: 99.8%</span>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <script>
-    function switchLayer(type) {
-      alert("Switched map visualization layer to: " + type.toUpperCase() + ". Click any pixel on the map to inspect its time-series values.");
-    }
-  </script>
-</body>
-</html>
+    // Interactive Layer selection pills
+    const layerPills = document.querySelectorAll('.layer-pill');
+    layerPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        layerPills.forEach((p) => {
+          p.className = 'layer-pill px-space-sm py-1 rounded text-secondary hover:text-primary font-label-caps text-label-caps transition-colors';
+        });
+        pill.className = 'layer-pill px-space-sm py-1 rounded bg-primary text-on-primary font-label-caps text-label-caps';
+      });
+    });
+  })();
+</script></main></div></body></html>
