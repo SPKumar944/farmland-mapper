@@ -1,0 +1,59 @@
+{
+  "shape": [
+    10
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        10
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 0.0,
+    "technical_abbreviation": "SAR_Inundated_Flag",
+    "suggested_name": "Waterlogging & Flood Alert",
+    "farmer_friendly_name": "Flooding / Standing Water Alert",
+    "category": "Monsoon / Radar (SAR)",
+    "what_it_tells": "Instantly flags waterlogged spots, flood zones, or successful paddy puddling/transplanting ponds.",
+    "timeseries": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

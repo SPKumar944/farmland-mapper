@@ -1,0 +1,8 @@
+{
+  "attributes": {
+    "title": "Multipolygon Farmland Pixel Agro-Telemetry Datacube",
+    "source": "farmland_polygons.shp, jANA_FAMRLAND.shp, input.csv"
+  },
+  "zarr_format": 3,
+  "node_type": "group"
+}

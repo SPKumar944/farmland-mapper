@@ -753,40 +753,94 @@
         coordsEl.innerText = `${parcel.center[0].toFixed(4)}° N, ${parcel.center[1].toFixed(4)}° E`;
       }
 
-      // Strict Zarr Fetch when running locally on localhost
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        fetch('/api/zarr/kpi?parcel_id=' + parcelId)
+      // Universal Zarr Datacube Fetcher (Localhost Python Server or Cloud-Native Static Zarr Store on GitHub)
+      function applyZarrMetrics(m, sourceLabel) {
+        if (!m) return;
+        if (m.NDVI && vNdvi) vNdvi.innerText = m.NDVI.latest.toFixed(2);
+        if (m.SAVI && vSavi) vSavi.innerText = Math.round(m.SAVI.latest * 100) + '%';
+        if (m.GNDVI && vGndvi) vGndvi.innerText = m.GNDVI.latest.toFixed(2);
+        if (m.VARI && vVari) vVari.innerText = Math.round(m.VARI.latest * 100) + '%';
+        if (m.NDMI && vNdmi) vNdmi.innerText = (m.NDMI.latest > 0 ? '+' : '') + m.NDMI.latest.toFixed(2);
+        if (m.BSI && vBsi) vBsi.innerText = m.BSI.latest.toFixed(2);
+        if (m.NDSI && vNdsi) vNdsi.innerText = '< ' + m.NDSI.latest.toFixed(1);
+        if (m.SAR_SoilMoisture_Proxy && vSm) vSm.innerText = Math.round(m.SAR_SoilMoisture_Proxy.latest) + '%';
+        if (m.LAI_proxy && vLai) vLai.innerText = m.LAI_proxy.latest.toFixed(1);
+        if (m.fCOVER_proxy && vFcover) vFcover.innerText = Math.round(m.fCOVER_proxy.latest) + '%';
+        if (m.CCC_proxy && vCcc) vCcc.innerText = m.CCC_proxy.latest.toFixed(1);
+        if (m.ReCI && vReci) vReci.innerText = m.ReCI.latest.toFixed(1);
+        if (m.SAR_RVI && vRvi) vRvi.innerText = m.SAR_RVI.latest.toFixed(2);
+        if (m.SAR_VV_VH_CR && vRig) vRig.innerText = m.SAR_VV_VH_CR.latest.toFixed(1) + ' dB';
+        if (m.SAR_Inundated_Flag && vInun) vInun.innerText = m.SAR_Inundated_Flag.latest === 0 ? 'Clear' : 'Flooded';
+        if (m.SIPI && vSipi) vSipi.innerText = Math.round(m.SIPI.latest) + '%';
+
+        if (m.NDMI && kpiWater) kpiWater.innerText = (m.NDMI.latest > 0 ? '+' : '') + m.NDMI.latest.toFixed(2);
+        if (m.NDVI && kpiGreen) kpiGreen.innerHTML = Math.round(m.NDVI.latest * 100) + '<span class="text-headline-sm font-normal text-secondary">/100</span>';
+        if (m.SAR_SoilMoisture_Proxy && kpiMoist) kpiMoist.innerText = Math.round(m.SAR_SoilMoisture_Proxy.latest) + '%';
+        if (m.SIPI && kpiPest) kpiPest.innerText = 'Low (' + Math.round(m.SIPI.latest) + '%)';
+
+        const statusPill = document.getElementById('zarr-status-pill');
+        if (statusPill) statusPill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr Read: ${parcelId} (${sourceLabel})</span>`;
+      }
+
+      function logClientZarrPull(pId, metricsObj, durationMs) {
+        if (!window.CLIENT_ZARR_LOGS) window.CLIENT_ZARR_LOGS = [];
+        const nowIso = new Date().toISOString();
+        const varCount = Object.keys(metricsObj || {}).length;
+        const logLine = `[${nowIso}] [ZARR_KPI_PULL] Parcel: ${pId} | Vars: ${varCount} arrays from multipolygon_pixels.zarr | Latency: ${durationMs.toFixed(2)}ms`;
+        window.CLIENT_ZARR_LOGS.push(logLine);
+      }
+
+      function fetchStaticZarr(pId, startTime) {
+        if (window.ZARR_CACHE && window.ZARR_CACHE[pId]) {
+          applyZarrMetrics(window.ZARR_CACHE[pId], 'ZARR CLOUD');
+          logClientZarrPull(pId, window.ZARR_CACHE[pId], performance.now() - startTime);
+          return;
+        }
+        fetch('./multipolygon_pixels.zarr/zarr_catalog.json')
           .then(res => res.json())
-          .then(zarrData => {
-            const m = zarrData.metrics;
-            if (m) {
-              if (m.NDVI && vNdvi) vNdvi.innerText = m.NDVI.latest.toFixed(2);
-              if (m.SAVI && vSavi) vSavi.innerText = Math.round(m.SAVI.latest * 100) + '%';
-              if (m.GNDVI && vGndvi) vGndvi.innerText = m.GNDVI.latest.toFixed(2);
-              if (m.VARI && vVari) vVari.innerText = Math.round(m.VARI.latest * 100) + '%';
-              if (m.NDMI && vNdmi) vNdmi.innerText = (m.NDMI.latest > 0 ? '+' : '') + m.NDMI.latest.toFixed(2);
-              if (m.BSI && vBsi) vBsi.innerText = m.BSI.latest.toFixed(2);
-              if (m.NDSI && vNdsi) vNdsi.innerText = '< ' + m.NDSI.latest.toFixed(1);
-              if (m.SAR_SoilMoisture_Proxy && vSm) vSm.innerText = Math.round(m.SAR_SoilMoisture_Proxy.latest) + '%';
-              if (m.LAI_proxy && vLai) vLai.innerText = m.LAI_proxy.latest.toFixed(1);
-              if (m.fCOVER_proxy && vFcover) vFcover.innerText = Math.round(m.fCOVER_proxy.latest) + '%';
-              if (m.CCC_proxy && vCcc) vCcc.innerText = m.CCC_proxy.latest.toFixed(1);
-              if (m.ReCI && vReci) vReci.innerText = m.ReCI.latest.toFixed(1);
-              if (m.SAR_RVI && vRvi) vRvi.innerText = m.SAR_RVI.latest.toFixed(2);
-              if (m.SAR_VV_VH_CR && vRig) vRig.innerText = m.SAR_VV_VH_CR.latest.toFixed(1) + ' dB';
-              if (m.SAR_Inundated_Flag && vInun) vInun.innerText = m.SAR_Inundated_Flag.latest === 0 ? 'Clear' : 'Flooded';
-              if (m.SIPI && vSipi) vSipi.innerText = Math.round(m.SIPI.latest) + '%';
-
-              if (m.NDMI && kpiWater) kpiWater.innerText = (m.NDMI.latest > 0 ? '+' : '') + m.NDMI.latest.toFixed(2);
-              if (m.NDVI && kpiGreen) kpiGreen.innerHTML = Math.round(m.NDVI.latest * 100) + '<span class="text-headline-sm font-normal text-secondary">/100</span>';
-              if (m.SAR_SoilMoisture_Proxy && kpiMoist) kpiMoist.innerText = Math.round(m.SAR_SoilMoisture_Proxy.latest) + '%';
-              if (m.SIPI && kpiPest) kpiPest.innerText = 'Low (' + Math.round(m.SIPI.latest) + '%)';
-
-              const statusPill = document.getElementById('zarr-status-pill');
-              if (statusPill) statusPill.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr Read: ' + parcelId + ' (LIVE)</span>';
+          .then(cat => {
+            if (cat && cat.parcels) {
+              window.ZARR_CATALOG = cat;
+              window.ZARR_CACHE = {};
+              for (const [k, v] of Object.entries(cat.parcels)) {
+                window.ZARR_CACHE[k] = v.metrics;
+              }
+              if (window.ZARR_CACHE[pId]) {
+                applyZarrMetrics(window.ZARR_CACHE[pId], 'ZARR CLOUD');
+                logClientZarrPull(pId, window.ZARR_CACHE[pId], performance.now() - startTime);
+              }
             }
           })
-          .catch(e => console.warn('Zarr live query error:', e));
+          .catch(err => {
+            console.warn('Direct Zarr catalog load note:', err);
+            // Fallback to individual array zarr.json
+            fetch(`./multipolygon_pixels.zarr/${pId}/NDVI/zarr.json`)
+              .then(r => r.json())
+              .then(arrJson => {
+                if (arrJson && arrJson.attributes) {
+                  const pill = document.getElementById('zarr-status-pill');
+                  if (pill) pill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr Read: ${pId} (DIRECT)</span>`;
+                }
+              })
+              .catch(() => {});
+          });
+      }
+
+      const tStart = performance.now();
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        fetch('/api/zarr/kpi?parcel_id=' + parcelId)
+          .then(res => {
+            if (!res.ok) throw new Error('API offline');
+            return res.json();
+          })
+          .then(zarrData => {
+            applyZarrMetrics(zarrData.metrics, 'LIVE LOCAL');
+          })
+          .catch(() => {
+            fetchStaticZarr(parcelId, tStart);
+          });
+      } else {
+        fetchStaticZarr(parcelId, tStart);
       }
 
     };
@@ -1202,9 +1256,17 @@
             container.innerHTML = '<div class="text-slate-500 italic">No Zarr reads logged yet. Click any cropland on the map to trigger an array pull.</div>';
           }
         })
-        .catch(err => {
-          container.innerHTML = `<div class="text-rose-400">Log fetch error: ${err.message}. (Server is reading zarr_access.log directly on localhost:8080)</div>`;
-        });
+          if (window.CLIENT_ZARR_LOGS && window.CLIENT_ZARR_LOGS.length > 0) {
+            container.innerHTML = window.CLIENT_ZARR_LOGS.map(line => {
+              return `<div class="py-0.5 border-b border-slate-900/50 text-emerald-300">
+                <span class="text-slate-500">${line.substring(0, 25)}</span>
+                <span>${line.substring(25)}</span>
+              </div>`;
+            }).reverse().join('');
+            if (summary) summary.innerText = `Logged ${window.CLIENT_ZARR_LOGS.length} direct Zarr pulls via HTTP · Store: ./multipolygon_pixels.zarr`;
+          } else {
+            container.innerHTML = `<div class="text-emerald-400">Direct Zarr V3 Store Active (GitHub Cloud-Native). Click any parcel on the map to trigger live telemetry.</div>`;
+          }
     };
   })();
 </script>

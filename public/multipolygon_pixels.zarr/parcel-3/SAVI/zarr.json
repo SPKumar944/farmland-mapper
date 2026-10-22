@@ -1,0 +1,59 @@
+{
+  "shape": [
+    10
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        10
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 0.78,
+    "technical_abbreviation": "SAVI",
+    "suggested_name": "Seedling Check (Normal Soil)",
+    "farmer_friendly_name": "Early Sprout Health (Wet/Normal Soil)",
+    "category": "Sprouting & Seedlings",
+    "what_it_tells": "Checks seedling growth without getting tricked by dark or wet soil underneath.",
+    "timeseries": [
+      0.39,
+      0.433,
+      0.477,
+      0.52,
+      0.563,
+      0.607,
+      0.65,
+      0.693,
+      0.737,
+      0.78
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

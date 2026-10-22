@@ -1,0 +1,14 @@
+{
+  "attributes": {
+    "id": "jana-farmland",
+    "name": "Jana Farmland",
+    "timestamp": "jANA_FAMRLAND.shp",
+    "area_acres": "1.68 Acres",
+    "area_m2": 6786.79,
+    "vertices_count": 18,
+    "center_lat": 10.453350081538268,
+    "center_lng": 79.14853543043138
+  },
+  "zarr_format": 3,
+  "node_type": "group"
+}

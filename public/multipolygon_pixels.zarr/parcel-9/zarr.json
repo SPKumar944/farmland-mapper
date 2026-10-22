@@ -1,0 +1,14 @@
+{
+  "attributes": {
+    "id": "parcel-9",
+    "name": "Farmland Parcel #9",
+    "timestamp": "2026-09-09T08:34:33.688Z",
+    "area_acres": "3.53 Acres",
+    "area_m2": 14265.45,
+    "vertices_count": 5,
+    "center_lat": 12.699898827413529,
+    "center_lng": 77.2728216648102
+  },
+  "zarr_format": 3,
+  "node_type": "group"
+}

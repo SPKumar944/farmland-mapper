@@ -1,0 +1,59 @@
+{
+  "shape": [
+    10
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        10
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 0.65,
+    "technical_abbreviation": "NDRE",
+    "suggested_name": "Early Nutrient Stress Alert",
+    "farmer_friendly_name": "Early Nitrogen & Chlorophyll Health",
+    "category": "Crop Health & Growth",
+    "what_it_tells": "Spots yellowing and nutrient shortages deep inside leaves before eyes can see it.",
+    "timeseries": [
+      0.325,
+      0.361,
+      0.397,
+      0.433,
+      0.469,
+      0.506,
+      0.542,
+      0.578,
+      0.614,
+      0.65
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}
