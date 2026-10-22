@@ -35,12 +35,14 @@ try:
         parcels_data.append({
             'id': 'jana-farmland',
             'name': 'Jana Farmland',
+            'survey_no': '80434',
             'timestamp': 'jANA_FAMRLAND.shp',
             'area_m2': round(abs(area), 2),
             'area_acres': f"{acres:.2f} Acres",
             'vertices_count': len(coords),
             'center': [center_lat, center_lng],
-            'coords': coords
+            'coords': coords,
+            'aliases': ['jana', 'jana farmland', '80434', 'parcel 0', 'p0', 'p-0', '1.68', '1.68 acres', 'manapparai', 'ஜனா பண்ணை']
         })
 except Exception as e:
     print('Error loading jana:', e)
@@ -56,22 +58,35 @@ try:
         time_val = str(sf.record(i)[0])
         center_lat = sum(p[0] for p in coords) / len(coords)
         center_lng = sum(p[1] for p in coords) / len(coords)
+        p_num = i + 1
+        survey_code = str(80434 + p_num)
         parcels_data.append({
-            'id': f'parcel-{i+1}',
-            'name': f'Farmland Parcel #{i+1}',
+            'id': f'parcel-{p_num}',
+            'name': f'Farmland Parcel #{p_num}',
+            'survey_no': survey_code,
             'timestamp': time_val,
             'area_m2': round(abs(area), 2),
             'area_acres': f"{acres:.2f} Acres",
             'vertices_count': len(coords),
             'center': [center_lat, center_lng],
-            'coords': coords
+            'coords': coords,
+            'aliases': [
+                f'parcel {p_num}',
+                f'parcel{p_num}',
+                f'parcel-{p_num}',
+                f'parcel #{p_num}',
+                f'p{p_num}',
+                f'p-{p_num}',
+                str(p_num),
+                survey_code,
+                f"{acres:.2f}",
+                f"{acres:.2f} acres",
+                f"பண்ணை நிலம் #{p_num}",
+                "salem"
+            ]
         })
 except Exception as e:
     print('Error loading farmland_polygons:', e)
-
-# Save clean ground-truth parcels JSON
-with open('public/cropland_parcels.json', 'w') as f:
-    json.dump(parcels_data, f, indent=2)
 
 dates = [
     'Pass 1', 'Pass 2', 'Pass 3', 'Pass 4',
@@ -93,6 +108,7 @@ for p in parcels_data:
     p_grp = root.create_group(p_id)
     p_grp.attrs['id'] = p['id']
     p_grp.attrs['name'] = p['name']
+    p_grp.attrs['survey_no'] = p['survey_no']
     p_grp.attrs['timestamp'] = p['timestamp']
     p_grp.attrs['area_acres'] = p['area_acres']
     p_grp.attrs['area_m2'] = p['area_m2']
@@ -104,12 +120,14 @@ for p in parcels_data:
     parcel_catalog_entry = {
         'id': p['id'],
         'name': p['name'],
+        'survey_no': p['survey_no'],
         'timestamp': p['timestamp'],
         'area_acres': p['area_acres'],
         'area_m2': p['area_m2'],
         'vertices_count': p['vertices_count'],
         'center': p['center'],
         'coords': p['coords'],
+        'aliases': p['aliases'],
         'metrics': {}
     }
 
@@ -123,6 +141,7 @@ for p in parcels_data:
         # Telemetry calculations
         if 'NDVI' in abbr:
             val = round(base_val, 2)
+            p['ndvi'] = val
         elif 'EVI' in abbr:
             val = round(base_val * 0.94, 2)
         elif 'NDRE' in abbr:
@@ -141,6 +160,7 @@ for p in parcels_data:
             val = round(base_val * 0.91, 2)
         elif 'NDMI' in abbr:
             val = round(0.40 + (base_val * 0.1), 2)
+            p['ndmi'] = f"+{val}" if val > 0 else str(val)
         elif 'MSI' in abbr:
             val = round(0.60 - (base_val * 0.1), 2)
         elif 'BSI' in abbr:
@@ -153,6 +173,7 @@ for p in parcels_data:
             val = round(base_val * 1.25, 2)
         elif 'SIPI' in abbr:
             val = round(7.0 + (1.0 - base_val) * 10, 1)
+            p['sipi'] = f"Low ({int(round(val))}%)"
         elif 'LAI' in abbr:
             val = round(base_val * 5.0, 1)
         elif 'fCOVER' in abbr:
@@ -167,8 +188,10 @@ for p in parcels_data:
             val = round(-10.0 + (base_val * 4.5), 1)
         elif 'SoilMoisture' in abbr:
             val = round(60.0 + (base_val * 12.0), 1)
+            p['soil_moisture'] = f"{int(round(val))}%"
         elif 'Inundated' in abbr:
             val = 0.0
+            p['inundated'] = 'Clear'
         else:
             val = round(base_val, 2)
 
@@ -195,9 +218,14 @@ for p in parcels_data:
 
     catalog['parcels'][p_id] = parcel_catalog_entry
 
-# Write catalog inside zarr store
-catalog_path = os.path.join(zarr_path, 'zarr_catalog.json')
-with open(catalog_path, 'w') as f:
+# Write parcels JSON
+with open('public/cropland_parcels.json', 'w') as f:
+    json.dump(parcels_data, f, indent=2)
+
+# Write catalog alongside zarr store and in public/dist
+with open('public/zarr_catalog.json', 'w') as f:
+    json.dump(catalog, f, indent=2)
+with open('multipolygon_pixels.zarr/zarr_catalog.json', 'w') as f:
     json.dump(catalog, f, indent=2)
 
 # Copy multipolygon_pixels.zarr to public and dist folders for direct web access
@@ -206,4 +234,7 @@ for dest in ['public/multipolygon_pixels.zarr', 'dist/multipolygon_pixels.zarr']
         shutil.rmtree(dest)
     shutil.copytree(zarr_path, dest)
 
-print(f"Re-generated {zarr_path} with 100% clean ground truth metadata, timeseries arrays, and catalog!")
+shutil.copy2('public/cropland_parcels.json', 'dist/cropland_parcels.json')
+shutil.copy2('public/zarr_catalog.json', 'dist/zarr_catalog.json')
+
+print(f"Re-generated {zarr_path} and cropland_parcels.json with complete Zarr telemetry & aliases!")
