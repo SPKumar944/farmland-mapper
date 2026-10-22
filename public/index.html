@@ -1,32 +1,1212 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/farmland-mapper/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Farm Mapper | பண்ணை வரைபடம்</title>
-    
-    <!-- PWA App Icons -->
-    <link rel="manifest" href="/farmland-mapper/manifest.json" />
-    <link rel="apple-touch-icon" href="/farmland-mapper/logo.jpeg" />
-    <meta name="theme-color" content="#007AFF" />
-    
-    <!-- Open Graph / WhatsApp / Facebook Link Previews -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://SPKumar944.github.io/farmland-mapper/" />
-    <meta property="og:title" content="Farm Mapper | பண்ணை வரைபடம்" />
-    <meta property="og:description" content="Demarcate your farmland boundaries easily. பண்ணையின் எல்லையை எளிதாக குறிக்கவும்." />
-    <meta property="og:image" content="https://SPKumar944.github.io/farmland-mapper/logo.jpeg" />
-    
-    <!-- Twitter Link Previews -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Farm Mapper | பண்ணை வரைபடம்" />
-    <meta name="twitter:description" content="Demarcate your farmland boundaries easily." />
-    <meta name="twitter:image" content="https://SPKumar944.github.io/farmland-mapper/logo.jpeg" />
-    <script type="module" crossorigin src="/farmland-mapper/assets/index-C8CYJx3a.js"></script>
-    <link rel="stylesheet" crossorigin href="/farmland-mapper/assets/index-xxdsbAuw.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#1a1c1f","outline":"#78767b","surface":"#f9f9fe","error-container":"#ffdad6","secondary-fixed":"#e3e2e7","surface-container-low":"#f3f3f8","on-background":"#1a1c1f","on-primary":"#ffffff","on-tertiary-fixed":"#1e1b17","on-primary-fixed-variant":"#474649","outline-variant":"#c8c5ca","inverse-on-surface":"#f0f0f5","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","inverse-surface":"#2f3034","primary":"#000000","on-surface-variant":"#47464a","surface-container":"#ededf2","on-secondary":"#ffffff","on-secondary-fixed-variant":"#46464b","secondary-container":"#e0dfe4","tertiary-container":"#1e1b17","on-tertiary-container":"#88837e","surface-bright":"#f9f9fe","background":"#f9f9fe","on-error":"#ffffff","error":"#ba1a1a","inverse-primary":"#c8c6c8","primary-fixed":"#e5e1e4","on-tertiary-fixed-variant":"#4a4642","tertiary-fixed":"#e8e1db","primary-fixed-dim":"#c8c6c8","surface-container-highest":"#e2e2e7","secondary":"#5e5e63","primary-container":"#1c1b1d","on-primary-fixed":"#1c1b1d","on-primary-container":"#858386","secondary-fixed-dim":"#c7c6cb","on-secondary-fixed":"#1a1b1f","on-secondary-container":"#626267","surface-dim":"#d9dade","tertiary-fixed-dim":"#ccc5bf","surface-variant":"#e2e2e7","on-error-container":"#93000a","surface-tint":"#5f5e60","tertiary":"#000000","surface-container-high":"#e8e8ed"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-mobile":"0.75rem","space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","margin":"3rem","space-xl":"2.5rem"},fontFamily:{"body-md":["Hanken Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"label-caps":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-mono-num":["Space Grotesk"],"headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"headline-md":["Space Grotesk"],"display-hero":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"]},fontSize:{"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"600"}],"display-hero-mobile":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"label-mono-num":["0.8125rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"headline-lg":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"500"}],"display-hero":["5rem",{"lineHeight":"5rem","letterSpacing":"-0.04em","fontWeight":"500"}],"headline-xl-mobile":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}]}}}}</script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-16 px-space-lg flex items-center justify-between border-b border-surface-container"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-on-primary text-[16px]">satellite_alt</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold">TerraCrop</span></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-secondary"><span id="nav-state" class="hover:text-primary transition-colors cursor-pointer">Tamil Nadu</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-district" class="hover:text-primary transition-colors cursor-pointer">Salem</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-parcel" class="text-primary font-medium">Parcel #86032</span></nav></div>
+<div class="relative flex-1 max-w-md mx-space-md hidden sm:block">
+  <div class="relative flex items-center">
+    <span class="material-symbols-outlined absolute left-3 text-slate-400 text-[18px]">search</span>
+    <input type="text" id="topParcelSearchInput" oninput="window.handleTopSearchInput(this.value)" onfocus="window.handleTopSearchInput(this.value)" placeholder="Search farmland by parcel ID or timestamp (e.g. Jana, Parcel #1, Parcel #2)..." class="w-full pl-9 pr-8 py-1.5 bg-surface-container-low hover:bg-surface-container focus:bg-white text-xs text-slate-800 rounded-full border border-surface-container focus:border-slate-400 focus:outline-none transition-all shadow-inner" />
+    <button onclick="window.clearSearchInput()" id="clearSearchBtn" class="hidden absolute right-2.5 text-slate-400 hover:text-slate-600 text-[16px]"><span class="material-symbols-outlined text-[16px]">cancel</span></button>
+  </div>
+  <div id="searchSuggestionsDropdown" class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden z-50 divide-y divide-slate-100 max-h-72 overflow-y-auto">
+  </div>
+</div><div class="flex items-center gap-space-md"><div id="zarr-status-pill" onclick="window.toggleZarrLogModal()" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors" title="Click to view live Zarr query audit log"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md py-space-md flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><h1 id="parcel-title" class="text-headline-md font-headline-md font-semibold text-primary tracking-tight" data-i18n="title">Farmland Parcel #1</h1><span id="parcel-acreage" class="px-space-sm py-0.5 rounded-full bg-surface-container font-label-mono-num text-label-mono-num text-primary font-medium">1.83 Acres</span><span class="px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-caps text-label-caps uppercase tracking-wider font-semibold" data-i18n="healthyBadge">Healthy / ஆரோக்கியம்</span></div><p class="text-body-sm font-body-sm text-secondary" id="parcel-sub" data-i18n="parcelSub">Recorded: 2026-09-09 07:59:58 UTC · Vertices: 5</p></div><div class="flex items-center gap-space-lg"><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="targetYieldLabel">Measured Area / சர்வே பரப்பளவு</span><span id="parcel-target-yield" class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">7,425 m²</span></div><div class="h-8 w-px bg-outline-variant/40"></div><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="passIntervalLabel">Pass Interval / செயற்கைக்கோள் இடைவெளி</span><span class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">T-24h (SAR+MSI)</span></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch"><section class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm relative min-h-[520px]">
+  <!-- Interactive Leaflet Map Viewport -->
+  <div id="field-interactive-map" class="absolute inset-0 w-full h-full z-0" style="background: #e2e8f0;"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/20 pointer-events-none z-10"></div>
+
+  <!-- Top Controls: Layer Selectors & Zoom Buttons -->
+  <div class="relative z-20 p-space-md flex items-center justify-between pointer-events-none">
+    <div class="flex items-center gap-1 p-1 bg-surface-container-lowest/90 backdrop-blur-xl rounded-full shadow-sm border border-surface-container pointer-events-auto">
+      <button id="layer-overview" class="px-space-md py-1 rounded-full bg-primary text-on-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('overview')">Overview</button>
+      <button id="layer-vegetation" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('vegetation')">Vegetation</button>
+      <button id="layer-moisture" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('moisture')">Moisture</button>
+      <button id="layer-radar" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('radar')">Radar</button>
+      <div class="h-3 w-px bg-slate-200"></div>
+      <button onclick="window.fitAllParcels()" class="px-space-md py-1 rounded-full text-slate-700 hover:bg-slate-100 font-label-caps text-label-caps transition-all flex items-center gap-1 font-semibold" title="View all 10 cropland parcels"><span class="material-symbols-outlined text-[14px]">grid_view</span><span>All Croplands (10)</span></button>
+    </div>
+    <div class="flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-xl p-1 rounded-full shadow-sm border border-surface-container text-primary pointer-events-auto">
+      <button onclick="window.fieldMap.zoomIn()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom in"><span class="material-symbols-outlined text-[16px]">add</span></button>
+      <button onclick="window.fieldMap.zoomOut()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom out"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+      <button onclick="resetFieldView()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-secondary hover:text-primary" title="Recenter field"><span class="material-symbols-outlined text-[15px]">my_location</span></button>
+    </div>
+  </div>
+
+  <!-- Center Status Pill -->
+  <div class="relative z-20 flex-1 flex items-center justify-center pointer-events-none p-space-lg">
+    <div id="selected-pixel-pill" class="pointer-events-auto -mt-24 bg-surface-container-lowest/95 backdrop-blur-xl px-space-md py-1.5 rounded-full shadow-lg flex items-center gap-space-sm border border-surface-container transition-all cursor-pointer">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="font-body-sm text-body-sm text-primary font-medium" id="pixel-status-text">Field NDVI: <strong class="text-emerald-700">0.74 (Optimal)</strong></span>
+    </div>
+  </div>
+
+  <!-- Bottom Telemetry HUD Overlay -->
+  <div class="relative z-20 p-space-md mt-auto flex items-center justify-between pointer-events-none">
+    <div class="bg-surface-container-lowest/90 backdrop-blur-xl px-space-md py-space-xs rounded-full shadow-sm border border-surface-container flex items-center gap-space-md text-primary pointer-events-auto">
+      <span id="cursor-coords" class="font-label-mono-num text-label-mono-num text-secondary">11.594° N, 78.598° E</span>
+      <div class="h-3 w-px bg-outline-variant/40"></div>
+      <span class="font-label-caps text-label-caps uppercase text-secondary">Resolution 10m Ground Pixel</span>
+    </div>
+    <div class="bg-surface-container-lowest/90 backdrop-blur-xl px-space-md py-space-xs rounded-full shadow-sm border border-surface-container flex items-center gap-space-sm pointer-events-auto">
+      <span id="scale-label" class="font-label-caps text-label-caps text-secondary">Vigor Scale</span>
+      <div id="scale-gradient" class="h-2 w-24 rounded-full bg-gradient-to-r from-[#e11d48] via-[#eab308] to-[#10b981]"></div>
+      <span id="scale-range" class="font-label-mono-num text-label-mono-num text-primary font-medium">0.0 — 1.0</span>
+    </div>
+  </div>
+</section></section><section class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-space-md"><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi1Title">Watering Need (MSI / NDMI)</span><div class="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600"><span class="material-symbols-outlined text-[18px]">water_drop</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-water-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">0.28</div><span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Adequate Reserve</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Next watering</span><span class="font-medium text-primary font-label-mono-num">In 4 days (Oct 23)</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi2Title">Crop Greenness Score (NDVI)</span><div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><span class="material-symbols-outlined text-[18px]">eco</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-green-val" class="text-headline-xl font-headline-xl font-bold text-primary font-label-mono-num tracking-tight">78<span class="text-headline-sm font-normal text-secondary">/100</span></div><span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-1">Peak Canopy Vigor</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">District benchmark</span><span class="font-semibold text-emerald-600 font-label-mono-num">92nd Percentile</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi3Title">TopSoil Moisture Check (SAR SM)</span><div class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600"><span class="material-symbols-outlined text-[18px]">grain</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-moisture-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">68%</div><span class="text-body-sm font-body-sm text-secondary mt-1">Normal Aerobic Drainage</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Optimal bracket</span><span class="font-medium text-primary font-label-mono-num">65% — 75%</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi4Title">Pest &amp; Sickness Alert (SIPI)</span><div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><span class="material-symbols-outlined text-[18px]">verified</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-pest-val" class="text-headline-xl font-headline-xl font-bold text-emerald-600 tracking-tight">Low</div><span class="text-body-sm font-body-sm text-secondary mt-1">Healthy Leaf Carotenoid</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Infestation detected</span><span class="font-semibold text-emerald-700">None</span></div></div></section></div><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container">
+<div>
+<div class="flex items-center gap-space-sm">
+<h2 class="text-headline-sm font-headline-sm font-semibold text-primary tracking-tight">Agronomic Telemetry Matrix</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/80 font-label-mono-num text-[11px] text-emerald-700 font-semibold tracking-wide">24 Live KPIs</span>
+<button onclick="window.toggleIndexDirectoryModal()" class="px-2.5 py-0.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-300 font-label-mono-num text-[11px] text-slate-800 font-medium tracking-wide flex items-center gap-1 transition-all cursor-pointer" title="View all 24 indices with technical abbreviations"><span class="material-symbols-outlined text-[14px]">dataset</span><span data-i18n="allIndicesBtn">All 24 Indices</span></button>
+</div>
+<p class="text-body-sm font-body-sm text-secondary mt-0.5">Categorical multi-spectral, biophysical &amp; synthetic aperture radar indicators calibrated at 10m spatial resolution.</p>
+</div>
+<div class="flex items-center gap-space-md text-body-sm">
+<span class="flex items-center gap-1.5 font-label-mono-num text-[11px] text-secondary bg-surface-container-low px-2.5 py-1 rounded-full border border-surface-container">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>Pass Interval T-24h
+</span>
+<span class="font-label-mono-num text-label-mono-num text-outline">Updated 3h ago</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md"><!-- COLUMN 1: Crop Health & Emergence -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs"><div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">psychiatry</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold" data-i18n="sec1Title">1. Crop Health &amp; Emergence (பயிர் வளர்ச்சி &amp; முளைப்பு)</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Overall Greenness with Segmented Radial Arc Gauge -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ndvi_title">Crop Greenness Score (NDVI)</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">+8.2% vs avg</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div id="val-ndvi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">0.74</div>
+<span class="text-body-sm font-body-sm text-slate-500 font-label-mono-num">Technical: NDVI</span>
+</div>
+<!-- Clean geometric radial arc gauge (reference image #8/#12) -->
+<div class="w-14 h-14 relative flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 48 48">
+<circle cx="24" cy="24" fill="none" r="19" stroke="#e2e8f0" stroke-width="4.5"></circle>
+<circle cx="24" cy="24" fill="none" r="19" stroke="#059669" stroke-dasharray="119.38" stroke-dashoffset="31" stroke-linecap="round" stroke-width="4.5"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-label-mono-num text-[10px] font-bold text-slate-800">74%</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Stalk growth status</span>
+<span class="font-medium text-slate-900 text-[11px]">Optimal Trajectory</span>
+</div>
+</div>
+<!-- Card 2: Sprout Health with Lollipop / Stem-and-Marker Chart -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_savi_title">Seedling Check - Normal Soil (SAVI)</span>
+<span id="val-savi-sub" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">0.68</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<div id="val-savi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">85%</div>
+<span class="text-body-sm font-body-sm text-slate-500">Canopy emergence</span>
+</div>
+<!-- Lollipop / Stem-and-Marker SVG (reference image #3 & #12) -->
+<div class="w-28 h-11 flex items-center justify-center">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 110 40">
+<!-- Baseline -->
+<line stroke="#e2e8f0" stroke-linecap="round" stroke-width="1.5" x1="5" x2="105" y1="35" y2="35"></line>
+<!-- Stem 1: Sown -->
+<line stroke="#94a3b8" stroke-linecap="round" stroke-width="2" x1="20" x2="20" y1="35" y2="22"></line>
+<circle cx="20" cy="22" fill="#64748b" r="3.5"></circle>
+<text fill="#94a3b8" font-family="Space Grotesk" font-size="8" font-weight="600" text-anchor="middle" x="20" y="15">42%</text>
+<!-- Stem 2: Tillering -->
+<line stroke="#0f172a" stroke-linecap="round" stroke-width="2" x1="55" x2="55" y1="35" y2="14"></line>
+<circle cx="55" cy="14" fill="#0f172a" r="3.5"></circle>
+<text fill="#0f172a" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="55" y="8">68%</text>
+<!-- Stem 3: Grand Growth (Current) -->
+<line stroke="#059669" stroke-linecap="round" stroke-width="2" x1="90" x2="90" y1="35" y2="6"></line>
+<circle cx="90" cy="6" fill="#059669" r="4"></circle>
+<circle cx="90" cy="6" fill="#ffffff" r="1.5"></circle>
+<text fill="#059669" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="90" y="-1">85%</text>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Tillering distribution</span>
+<span class="font-medium text-slate-900 text-[11px]">Uniform Stance</span>
+</div>
+</div>
+<!-- Card 3: Deep Leaf Stamina -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_gndvi_title">Mid-Season Crop Strength (GNDVI)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">High</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-gndvi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">0.65</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">Technical: GNDVI</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Vascular status</span>
+<span class="font-medium text-slate-900 text-[11px]">Robust Hydration</span>
+</div>
+</div>
+<!-- Card 4: Emergence Uniformity -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_unif_title">Reliable Crop Greenness (VARI)</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">3.40 ac</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-vari" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">94.6%</div>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> Zero skips
+    </span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Solar absorption</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">34.8 MJ/m²·d</span>
+</div>
+</div></div>
+<!-- COLUMN 2: Water & Soil Status -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold" data-i18n="sec2Title">2. Water &amp; Field Moisture (நீர் தேவை &amp; நில ஈரப்பதம்)</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Crop Thirst Level (NDMI) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ndmi_title">Crop Water Stress Alert (NDMI)</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">Adequate</span>
+</div>
+<div class="my-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<div id="val-ndmi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">+0.42</div>
+<span class="text-body-sm font-body-sm text-slate-500 font-label-mono-num">Technical: NDMI</span>
+</div>
+<!-- Crisp micro sparkline -->
+<div class="w-24 h-10">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 96 36">
+<defs>
+<lineargradient id="sparkGradSky" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0284c7" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#0284c7" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 4 22 C 26 24, 46 16, 64 14 C 76 12, 84 8, 92 7 L 92 34 L 4 34 Z" fill="url(#sparkGradSky)"></path>
+<path d="M 4 22 C 26 24, 46 16, 64 14 C 76 12, 84 8, 92 7" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="92" cy="7" fill="#ffffff" r="3" stroke="#0284c7" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Turgor pressure</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">96% Cellular</span>
+</div>
+</div>
+<!-- Card 2: Plowed Ground -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_bsi_title">Field Readiness Check (BSI)</span>
+<span id="val-bsi" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">-0.31</span>
+</div>
+<div class="my-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">82%</span>
+<span class="text-[10px] font-label-caps text-slate-400 uppercase font-medium">Canopy</span>
+</div>
+<span class="text-[11px] font-body-sm text-slate-500 font-label-mono-num">Technical: BSI</span>
+</div>
+<!-- 2x10 Tile Matrix / Waffle Grid (Reference IMAGE_8 / IMAGE_10) -->
+<div class="flex flex-col gap-1 p-1 bg-slate-50 rounded border border-slate-200/80">
+<div class="grid grid-cols-10 gap-1">
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+</div>
+<div class="grid grid-cols-10 gap-1">
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-900" title="Vegetation"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-300" title="Bare furrow"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-slate-300" title="Bare furrow"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-amber-500/80" title="Exposed soil"></div>
+<div class="w-2.5 h-2.5 rounded-xs bg-amber-500/80" title="Exposed soil"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Soil erosion index</span>
+<span class="font-medium text-slate-900 text-[11px]">Protected (18% bare)</span>
+</div></div>
+<!-- Card 3: White Salt Warning -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_salt_title">Soil Salt Warning (NDSI)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Safe</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-ndsi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">&lt; 1.1</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">dS/m · Tech: NDSI</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Salinity status</span>
+<span class="font-medium text-slate-900 text-[11px]">No Alkalization</span>
+</div>
+</div>
+<!-- Card 4: Topsoil Moisture -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_sm_title">TopSoil Moisture Check (SAR SM)</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">Target 65-75%</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-sm" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">68%</div>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[15px]">check_circle</span> In Range
+      </span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Oxygen diffusion</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.32 g/m²·h</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: Canopy & Nutrients -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">grain</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold" data-i18n="sec3Title">3. Canopy &amp; Nutrients (இலை பரப்பு &amp; உரச்சத்து)</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Foliage Volume -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_lai_title">Leaf Cover Growth (LAI)</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Grand Growth</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div id="val-lai" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">3.8</div>
+<span class="text-body-sm font-body-sm text-slate-500 font-label-mono-num">m²/m² · Tech: LAI_proxy</span>
+<!-- Crisp Semi-Circular Arch Gauge with calibration ticks (reference #2 in IMAGE_13) -->
+<div class="w-24 h-12 relative flex items-end justify-center">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 96 48">
+<!-- Track arc: 180 degrees from (8,44) to (88,44) -->
+<path d="M 10 44 A 38 38 0 0 1 86 44" fill="none" stroke="#e2e8f0" stroke-linecap="round" stroke-width="4"></path>
+<!-- Value arc (76% fill) -->
+<path d="M 10 44 A 38 38 0 0 1 76 16" fill="none" stroke="#0f172a" stroke-linecap="round" stroke-width="4.5"></path>
+<!-- Marker cap -->
+<circle cx="76" cy="16" fill="#059669" r="4" stroke="#ffffff" stroke-width="1.5"></circle>
+<!-- Benchmark tick -->
+<line stroke="#94a3b8" stroke-width="1.5" x1="48" x2="48" y1="6" y2="12"></line>
+<!-- Numeric bounds -->
+<text fill="#94a3b8" font-family="Space Grotesk" font-size="7" font-weight="600" text-anchor="start" x="8" y="47">0</text>
+<text fill="#64748b" font-family="Space Grotesk" font-size="7" font-weight="600" text-anchor="middle" x="48" y="20">Opt 3.5</text>
+<text fill="#94a3b8" font-family="Space Grotesk" font-size="7" font-weight="600" text-anchor="end" x="88" y="47">5.0</text>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Density benchmark</span>
+<span class="font-medium text-slate-900 text-[11px]">Optimal Vigor (95%)</span>
+</div></div>
+<!-- Card 2: Ground Coverage -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_fcover_title">Ground Cover Percentage (fCOVER)</span>
+<span id="val-fcover" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">82%</span>
+</div>
+<div class="my-space-sm flex items-center justify-between py-1">
+<div class="flex-1">
+<div class="flex justify-between text-[11px] font-label-mono-num text-slate-500 mb-1">
+<span>Sub-canopy retention</span>
+<span class="font-semibold text-slate-900">High</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+<div class="h-full bg-slate-900 rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Shadow ratio</span>
+<span class="font-medium text-slate-900 text-[11px]">76% Interception</span>
+</div>
+</div>
+<!-- Card 3: Nitrogen Reserve -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ccc_title">Total Field Nitrogen Stock (CCC)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Optimal</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-ccc" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">3.2</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">g/m² · Tech: CCC_proxy</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Urea top dressing</span>
+<span class="font-medium text-slate-900 text-[11px]">Not Required</span>
+</div>
+</div>
+<!-- Card 4: Chlorophyll Trajectory -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_spad_title">Leaf Nutrition Meter (ReCI)</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">Optimal Band</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-reci" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">48.2</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">SPAD · Tech: ReCI</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Thermal anomaly</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">27.4°C (-3.8°C)</span>
+</div>
+</div>
+</div>
+<!-- COLUMN 4: Monsoon & SAR Radar -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-slate-200">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-slate-200 text-slate-800">
+<span class="material-symbols-outlined text-[16px]">radar</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-slate-900 uppercase tracking-wider font-bold" data-i18n="sec4Title">4. Monsoon &amp; SAR Radar (மேகமூட்ட ரேடார் கண்காணிப்பு)</h3>
+</div>
+<span class="font-label-mono-num text-[11px] text-slate-500">4 metrics</span>
+</div>
+<!-- Card 1: Cloud-Proof Growth -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_rvi_title">All-Weather Crop Growth Meter (SAR RVI)</span>
+<span class="font-label-mono-num text-[11px] font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Sentinel-1</span>
+</div>
+<div class="my-space-sm flex items-end justify-between">
+<div class="flex flex-col">
+<div id="val-rvi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">0.62</div>
+<span class="text-body-sm font-body-sm text-slate-500 font-label-mono-num">Technical: SAR_RVI</span>
+</div>
+<!-- Crisp micro sparkline with indigo accent -->
+<div class="w-24 h-10">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 96 36">
+<defs>
+<lineargradient id="sparkGradIndigo" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4f46e5" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#4f46e5" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 4 24 C 24 22, 46 16, 64 12 C 74 9, 84 8, 92 6 L 92 34 L 4 34 Z" fill="url(#sparkGradIndigo)"></path>
+<path d="M 4 24 C 24 22, 46 16, 64 12 C 74 9, 84 8, 92 6" fill="none" stroke="#4f46e5" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="92" cy="6" fill="#ffffff" r="3" stroke="#4f46e5" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Biomass rate</span>
+<span class="font-medium text-slate-900 text-[11px]">Stalk Thickening</span>
+</div>
+</div>
+<!-- Card 2: Stalk Rigidity / Height (VH/VV) -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_rigidity_title">Crop Height &amp; Falling Risk (SAR VH/VV)</span>
+<span id="val-rigidity" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">-6.8 dB</span>
+</div>
+<!-- Calibrated Dumbbell Span / Range Chart (reference #7 & #9 in IMAGE_13) -->
+<div class="my-space-sm flex flex-col gap-1.5 py-1 px-0.5">
+<div class="flex items-center justify-between text-[10px] font-label-mono-num text-slate-400">
+<span>Lodged (-14dB)</span>
+<span class="text-slate-700 font-semibold">Erect (-4dB)</span>
+</div>
+<div class="w-full h-6">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 200 24">
+<!-- Background full guide rail -->
+<line stroke="#e2e8f0" stroke-linecap="round" stroke-width="2" x1="8" x2="192" y1="12" y2="12"></line>
+<!-- Safe / Optimal Stance Span Bar -->
+<line stroke="#cbd5e1" stroke-linecap="round" stroke-width="4" x1="80" x2="175" y1="12" y2="12"></line>
+<!-- Measured Current Range (Dumbbell from 2024 to 2026) -->
+<line stroke="#0f172a" stroke-linecap="round" stroke-width="3" x1="98" x2="158" y1="12" y2="12"></line>
+<!-- Previous Pass Anchor Dot (Reference point) -->
+<circle cx="98" cy="12" fill="#94a3b8" r="4" stroke="#ffffff" stroke-width="1.5"></circle>
+<!-- Current Calibration Marker (Solid dark anchor) -->
+<circle cx="158" cy="12" fill="#0f172a" r="5.5" stroke="#ffffff" stroke-width="2"></circle>
+<!-- Dynamic current reading label -->
+<text fill="#0f172a" font-family="Space Grotesk" font-size="8" font-weight="700" text-anchor="middle" x="158" y="4">-6.8</text>
+</svg>
+</div>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Canopy stance</span>
+<span class="font-medium text-slate-900 text-[11px]">Well-Anchored · No Lodging</span>
+</div></div>
+<!-- Card 3: Standing Water Flag -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_water_title">Waterlogging &amp; Flood Alert (SAR Inundated)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Clear</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-inundated" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">-11.4</div>
+<span class="text-body-sm font-body-sm font-label-mono-num text-slate-500">dB VV · Tech: SAR_Inundated_Flag</span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Ponding detection</span>
+<span class="font-medium text-slate-900 text-[11px]">No Flooding</span>
+</div>
+</div>
+<!-- Card 4: Wind Lodging Risk -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_wind_title">Pest &amp; Sickness Alert (SIPI)</span>
+<span class="text-slate-900 font-label-mono-num font-bold text-xs">Low Vulnerability</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div id="val-sipi" class="text-headline-md font-headline-md font-bold text-slate-900 font-label-mono-num tracking-tight">8%</div>
+<span class="flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[15px]">shield</span> Low Vulnerability
+      </span>
+</div>
+<div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
+<span class="text-slate-500 text-[11px]">Phase coherence</span>
+<span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.89 Solid</span>
+</div>
+</div>
+</div></div>
+<div class="bg-surface-container-low px-space-md py-space-sm rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
+<span class="text-secondary">Continuous all-weather monitoring powered by synthesized multi-spectral optical and Sentinel-1 synthetic aperture radar.</span>
+</div>
+<span class="font-label-mono-num text-label-mono-num text-primary font-semibold">Telemetry Confidence: 99.8%</span>
+</div>
+</section></div>
+</div>
+<script>
+  (function initDashboard() {
+    // Mode toggling micro-interaction
+    const farmerBtn = document.getElementById('farmerModeBtn');
+    const expertBtn = document.getElementById('expertModeBtn');
+
+    if (farmerBtn && expertBtn) {
+      farmerBtn.addEventListener('click', () => {
+        farmerBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps bg-primary text-on-primary font-semibold shadow-sm transition-all';
+        expertBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps text-secondary transition-all';
+      });
+
+      expertBtn.addEventListener('click', () => {
+        expertBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps bg-primary text-on-primary font-semibold shadow-sm transition-all';
+        farmerBtn.className = 'px-space-md py-1.5 rounded font-label-caps text-label-caps text-secondary transition-all';
+      });
+    }
+
+    // Interactive Layer selection pills
+    const layerPills = document.querySelectorAll('.layer-pill');
+    layerPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        layerPills.forEach((p) => {
+          p.className = 'layer-pill px-space-sm py-1 rounded text-secondary hover:text-primary font-label-caps text-label-caps transition-colors';
+        });
+        pill.className = 'layer-pill px-space-sm py-1 rounded bg-primary text-on-primary font-label-caps text-label-caps';
+      });
+    });
+  })();
+</script></main></div>
+<script>
+  (function initInteractiveFieldMap() {
+    window.CROPLAND_PARCELS = [{"id": "jana-farmland", "name": "Jana Farmland", "timestamp": "jANA_FAMRLAND.shp", "area_m2": 6786.79, "area_acres": "1.68 Acres", "vertices_count": 18, "center": [10.453350081538268, 79.14853543043138], "coords": [[10.454235554515563, 79.14868891239168], [10.454040475452361, 79.14884984493256], [10.453750492834637, 79.14881765842439], [10.453481599619858, 79.14878547191621], [10.45299126433471, 79.14873719215394], [10.452495655840442, 79.14864063262941], [10.452490383405419, 79.14834558963777], [10.452590559655896, 79.14813637733461], [10.452806729349469, 79.14818465709686], [10.453022898892602, 79.148206114769], [10.45301762646651, 79.14841532707216], [10.453080895573693, 79.14843678474428], [10.453233795862827, 79.14846897125246], [10.45340778575546, 79.14849042892457], [10.453623954880209, 79.14854407310487], [10.453797944554246, 79.14858162403108], [10.45399829617934, 79.14861917495729], [10.454235554515563, 79.14868891239168]]}, {"id": "parcel-1", "name": "Farmland Parcel #1", "timestamp": "2026-09-09T07:59:58.102Z", "area_m2": 7425.33, "area_acres": "1.83 Acres", "vertices_count": 5, "center": [11.64165701902489, 78.11180269718172], "coords": [[11.641833555675126, 78.11129093170167], [11.641891350352878, 78.1125193834305], [11.641407976314532, 78.11256766319276], [11.641318657106792, 78.11134457588197], [11.641833555675126, 78.11129093170167]]}, {"id": "parcel-2", "name": "Farmland Parcel #2", "timestamp": "2026-09-09T08:04:34.808Z", "area_m2": 3089.39, "area_acres": "0.76 Acres", "vertices_count": 5, "center": [10.65857407492751, 78.33853733539583], "coords": [[10.658899876131924, 78.33806097507478], [10.658604651890139, 78.3389836549759], [10.658304155492889, 78.33886027336122], [10.658161814990667, 78.33872079849243], [10.658899876131924, 78.33806097507478]]}, {"id": "parcel-3", "name": "Farmland Parcel #3", "timestamp": "2026-09-09T08:09:38.686Z", "area_m2": 3240.24, "area_acres": "0.80 Acres", "vertices_count": 6, "center": [12.08768562177901, 77.96661436557771], "coords": [[12.088013464191018, 77.96634972095491], [12.087572844083047, 77.96711683273317], [12.087321060838404, 77.96693980693819], [12.087410234097984, 77.96670377254488], [12.087782663272588, 77.96622633934022], [12.088013464191018, 77.96634972095491]]}, {"id": "parcel-4", "name": "Farmland Parcel #4", "timestamp": "2026-09-09T08:10:53.901Z", "area_m2": 900.31, "area_acres": "0.22 Acres", "vertices_count": 5, "center": [9.373041261091595, 77.97443819046022], "coords": [[9.37316087831294, 77.97434806823732], [9.373129121539536, 77.97462701797487], [9.37284860324824, 77.97456264495851], [9.37290682404432, 77.97430515289308], [9.37316087831294, 77.97434806823732]]}, {"id": "parcel-5", "name": "Farmland Parcel #5", "timestamp": "2026-09-09T08:14:34.203Z", "area_m2": 6575.8, "area_acres": "1.62 Acres", "vertices_count": 5, "center": [12.880482595165114, 77.47370302677156], "coords": [[12.880797407096557, 77.47332215309144], [12.880588229904955, 77.4743038415909], [12.880096662817277, 77.47423410415651], [12.880133268910228, 77.4733328819275], [12.880797407096557, 77.47332215309144]]}, {"id": "parcel-6", "name": "Farmland Parcel #6", "timestamp": "2026-09-09T08:16:20.044Z", "area_m2": 6881.29, "area_acres": "1.70 Acres", "vertices_count": 5, "center": [11.52770144405864, 77.6131103038788], "coords": [[11.528012611532242, 77.61253952980042], [11.52761313987821, 77.6139932870865], [11.527339816840264, 77.61399865150453], [11.527529040510236, 77.6124805212021], [11.528012611532242, 77.61253952980042]]}, {"id": "parcel-7", "name": "Farmland Parcel #7", "timestamp": "2026-09-09T08:29:59.374Z", "area_m2": 12955.19, "area_acres": "3.20 Acres", "vertices_count": 5, "center": [13.212510553696228, 77.31917023658754], "coords": [[13.213093375582424, 77.31915414333345], [13.211850440229357, 77.31845676898958], [13.211578873679324, 77.3193258047104], [13.212936703407605, 77.31976032257081], [13.213093375582424, 77.31915414333345]]}, {"id": "parcel-8", "name": "Farmland Parcel #8", "timestamp": "2026-09-09T08:30:38.941Z", "area_m2": 6241.42, "area_acres": "1.54 Acres", "vertices_count": 5, "center": [13.212315235381093, 77.31986331939699], "coords": [[13.21275391907654, 77.32020556926729], [13.21155276149513, 77.31973350048067], [13.211610208296673, 77.31942236423494], [13.21290536896058, 77.31974959373474], [13.21275391907654, 77.32020556926729]]}, {"id": "parcel-9", "name": "Farmland Parcel #9", "timestamp": "2026-09-09T08:34:33.688Z", "area_m2": 14265.45, "area_acres": "3.53 Acres", "vertices_count": 5, "center": [12.699898827413529, 77.2728216648102], "coords": [[12.700197118743084, 77.27225303649902], [12.700327947985384, 77.27369606494905], [12.699652868372516, 77.27359414100648], [12.699119083223579, 77.27231204509737], [12.700197118743084, 77.27225303649902]]}];
+
+    const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: ''
+    });
+
+    const defaultParcel = window.CROPLAND_PARCELS.find(p => p.id === 'parcel-1') || window.CROPLAND_PARCELS[0];
+    const initialCenter = defaultParcel.center;
+
+    const map = L.map('field-interactive-map', {
+      center: initialCenter,
+      zoom: 15,
+      zoomControl: false,
+      layers: [satelliteLayer]
+    });
+    window.fieldMap = map;
+
+    const parcelsLayerGroup = L.layerGroup().addTo(map);
+    let polygonLayers = {};
+    let activeParcelId = defaultParcel.id;
+    let centroidMarker = null;
+
+    function getPolygonStyle(parcel, mode, isActive) {
+      let fillColor = '#10b981';
+      let fillOpacity = isActive ? 0.55 : 0.28;
+      let weight = isActive ? 3.5 : 1.8;
+      let strokeColor = isActive ? '#ffffff' : '#10b981';
+
+      if (mode === 'vegetation') {
+        fillColor = parcel.ndvi > 0.75 ? '#059669' : parcel.ndvi > 0.65 ? '#10b981' : '#eab308';
+        fillOpacity = isActive ? 0.65 : 0.40;
+      } else if (mode === 'moisture') {
+        fillColor = '#0284c7';
+        strokeColor = isActive ? '#38bdf8' : '#0ea5e9';
+        fillOpacity = isActive ? 0.60 : 0.35;
+      } else if (mode === 'radar') {
+        fillColor = '#6366f1';
+        strokeColor = isActive ? '#a5b4fc' : '#818cf8';
+        fillOpacity = isActive ? 0.55 : 0.35;
+      }
+
+      return {
+        fillColor: fillColor,
+        fillOpacity: fillOpacity,
+        color: strokeColor,
+        weight: weight,
+        dashArray: isActive ? null : '4, 4'
+      };
+    }
+
+    function renderAllParcels(mode) {
+      parcelsLayerGroup.clearLayers();
+      polygonLayers = {};
+
+      window.CROPLAND_PARCELS.forEach(parcel => {
+        const isActive = (parcel.id === activeParcelId);
+        const style = getPolygonStyle(parcel, mode || 'overview', isActive);
+        const poly = L.polygon(parcel.coords, style).addTo(parcelsLayerGroup);
+
+        poly.bindTooltip(`<strong>${parcel.name}</strong><br/><span style="font-size:11px; color:#475569;">${parcel.area_acres} · ${parcel.timestamp}</span>`, {
+          sticky: true,
+          direction: 'top',
+          className: 'parcel-tooltip'
+        });
+
+        poly.on('click', (e) => {
+          L.DomEvent.stopPropagation(e);
+          window.selectCroplandParcel(parcel.id);
+        });
+
+        poly.on('mouseover', () => {
+          if (parcel.id !== activeParcelId) {
+            poly.setStyle({ weight: 2.8, fillOpacity: 0.5 });
+          }
+        });
+
+        poly.on('mouseout', () => {
+          if (parcel.id !== activeParcelId) {
+            const normalStyle = getPolygonStyle(parcel, mode || 'overview', false);
+            poly.setStyle(normalStyle);
+          }
+        });
+
+        polygonLayers[parcel.id] = poly;
+      });
+
+      const currentParcel = window.CROPLAND_PARCELS.find(p => p.id === activeParcelId) || window.CROPLAND_PARCELS[0];
+      if (centroidMarker) {
+        centroidMarker.setLatLng(currentParcel.center);
+      } else {
+        centroidMarker = L.circleMarker(currentParcel.center, {
+          radius: 7,
+          fillColor: '#ffffff',
+          fillOpacity: 1,
+          color: '#0f172a',
+          weight: 2.5
+        }).addTo(map);
+      }
+    }
+
+    window.selectCroplandParcel = function(parcelId) {
+      const parcel = window.CROPLAND_PARCELS.find(p => p.id === parcelId);
+      if (!parcel) return;
+
+      activeParcelId = parcelId;
+      window.activeParcel = parcel;
+
+      const poly = polygonLayers[parcelId];
+      if (poly) {
+        map.flyToBounds(poly.getBounds(), {
+          padding: [50, 50],
+          maxZoom: 16,
+          duration: 1.2
+        });
+      } else {
+        map.flyTo(parcel.center, 15, { duration: 1.2 });
+      }
+
+      renderAllParcels(window.currentMapLayer || 'overview');
+
+      // Update Header info strictly from ground truth
+      const titleEl = document.getElementById('parcel-title');
+      if (titleEl) titleEl.innerText = parcel.name;
+
+      const subEl = document.getElementById('parcel-sub');
+      if (subEl) subEl.innerText = `Recorded: ${parcel.timestamp} · Center: ${parcel.center[0].toFixed(4)}° N, ${parcel.center[1].toFixed(4)}° E`;
+
+      const acreEl = document.getElementById('parcel-acreage');
+      if (acreEl) acreEl.innerText = parcel.area_acres;
+
+      const yieldEl = document.getElementById('parcel-target-yield');
+      if (yieldEl) yieldEl.innerText = `${parcel.area_m2.toLocaleString()} m² (${parcel.vertices_count} pts)`;
+
+      // Breadcrumb
+      const navDist = document.getElementById('nav-district');
+      if (navDist) navDist.innerText = `${parcel.center[0].toFixed(2)}° N, ${parcel.center[1].toFixed(2)}° E`;
+      const navParc = document.getElementById('nav-parcel');
+      if (navParc) navParc.innerText = parcel.name;
+      const navState = document.getElementById('nav-state');
+      if (navState) navState.innerText = 'Shapefile';
+
+      // Update Top 4 KPI Cards
+      const kpiWater = document.getElementById('kpi-water-val');
+      if (kpiWater) kpiWater.innerText = parcel.ndmi;
+
+      const kpiGreen = document.getElementById('kpi-green-val');
+      if (kpiGreen) kpiGreen.innerHTML = `${Math.round(parcel.ndvi * 100)}<span class="text-headline-sm font-normal text-secondary">/100</span>`;
+
+      const kpiMoist = document.getElementById('kpi-moisture-val');
+      if (kpiMoist) kpiMoist.innerText = parcel.topsoil_moisture;
+
+      const kpiPest = document.getElementById('kpi-pest-val');
+      if (kpiPest) kpiPest.innerText = parcel.sipi;
+
+      // Update 16 Telemetry Matrix Cards
+      const vNdvi = document.getElementById('val-ndvi');
+      if (vNdvi) vNdvi.innerText = parcel.ndvi.toFixed(2);
+
+      const vSavi = document.getElementById('val-savi');
+      if (vSavi) vSavi.innerText = `${Math.round(parcel.savi * 100)}%`;
+      const vSaviSub = document.getElementById('val-savi-sub');
+      if (vSaviSub) vSaviSub.innerText = parcel.savi.toFixed(2);
+
+      const vGndvi = document.getElementById('val-gndvi');
+      if (vGndvi) vGndvi.innerText = parcel.gndvi.toFixed(2);
+
+      const vVari = document.getElementById('val-vari');
+      if (vVari) vVari.innerText = `${Math.round(parcel.vari * 100)}%`;
+
+      const vNdmi = document.getElementById('val-ndmi');
+      if (vNdmi) vNdmi.innerText = parcel.ndmi;
+
+      const vBsi = document.getElementById('val-bsi');
+      if (vBsi) vBsi.innerText = parcel.bsi;
+
+      const vNdsi = document.getElementById('val-ndsi');
+      if (vNdsi) vNdsi.innerText = parcel.ndsi;
+
+      const vSm = document.getElementById('val-sm');
+      if (vSm) vSm.innerText = parcel.topsoil_moisture;
+
+      const vLai = document.getElementById('val-lai');
+      if (vLai) vLai.innerText = parcel.lai;
+
+      const vFcover = document.getElementById('val-fcover');
+      if (vFcover) vFcover.innerText = parcel.fcover;
+
+      const vCcc = document.getElementById('val-ccc');
+      if (vCcc) vCcc.innerText = parcel.ccc;
+
+      const vReci = document.getElementById('val-reci');
+      if (vReci) vReci.innerText = parcel.reci;
+
+      const vRvi = document.getElementById('val-rvi');
+      if (vRvi) vRvi.innerText = parcel.rvi.toFixed(2);
+
+      const vRig = document.getElementById('val-rigidity');
+      if (vRig) vRig.innerText = parcel.rigidity;
+
+      const vInun = document.getElementById('val-inundated');
+      if (vInun) vInun.innerText = parcel.inundated;
+
+      const vSipi = document.getElementById('val-sipi');
+      if (vSipi) vSipi.innerText = parcel.sipi;
+
+      const pillText = document.getElementById('pixel-status-text');
+      if (pillText) {
+        pillText.innerHTML = `${parcel.name}: <strong class="text-emerald-700">${parcel.area_acres} (Zarr Active)</strong>`;
+      }
+
+      const coordsEl = document.getElementById('cursor-coords');
+      if (coordsEl) {
+        coordsEl.innerText = `${parcel.center[0].toFixed(4)}° N, ${parcel.center[1].toFixed(4)}° E`;
+      }
+
+      // Strict Zarr Fetch when running locally on localhost
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        fetch('/api/zarr/kpi?parcel_id=' + parcelId)
+          .then(res => res.json())
+          .then(zarrData => {
+            const m = zarrData.metrics;
+            if (m) {
+              if (m.NDVI && vNdvi) vNdvi.innerText = m.NDVI.latest.toFixed(2);
+              if (m.SAVI && vSavi) vSavi.innerText = Math.round(m.SAVI.latest * 100) + '%';
+              if (m.GNDVI && vGndvi) vGndvi.innerText = m.GNDVI.latest.toFixed(2);
+              if (m.VARI && vVari) vVari.innerText = Math.round(m.VARI.latest * 100) + '%';
+              if (m.NDMI && vNdmi) vNdmi.innerText = (m.NDMI.latest > 0 ? '+' : '') + m.NDMI.latest.toFixed(2);
+              if (m.BSI && vBsi) vBsi.innerText = m.BSI.latest.toFixed(2);
+              if (m.NDSI && vNdsi) vNdsi.innerText = '< ' + m.NDSI.latest.toFixed(1);
+              if (m.SAR_SoilMoisture_Proxy && vSm) vSm.innerText = Math.round(m.SAR_SoilMoisture_Proxy.latest) + '%';
+              if (m.LAI_proxy && vLai) vLai.innerText = m.LAI_proxy.latest.toFixed(1);
+              if (m.fCOVER_proxy && vFcover) vFcover.innerText = Math.round(m.fCOVER_proxy.latest) + '%';
+              if (m.CCC_proxy && vCcc) vCcc.innerText = m.CCC_proxy.latest.toFixed(1);
+              if (m.ReCI && vReci) vReci.innerText = m.ReCI.latest.toFixed(1);
+              if (m.SAR_RVI && vRvi) vRvi.innerText = m.SAR_RVI.latest.toFixed(2);
+              if (m.SAR_VV_VH_CR && vRig) vRig.innerText = m.SAR_VV_VH_CR.latest.toFixed(1) + ' dB';
+              if (m.SAR_Inundated_Flag && vInun) vInun.innerText = m.SAR_Inundated_Flag.latest === 0 ? 'Clear' : 'Flooded';
+              if (m.SIPI && vSipi) vSipi.innerText = Math.round(m.SIPI.latest) + '%';
+
+              if (m.NDMI && kpiWater) kpiWater.innerText = (m.NDMI.latest > 0 ? '+' : '') + m.NDMI.latest.toFixed(2);
+              if (m.NDVI && kpiGreen) kpiGreen.innerHTML = Math.round(m.NDVI.latest * 100) + '<span class="text-headline-sm font-normal text-secondary">/100</span>';
+              if (m.SAR_SoilMoisture_Proxy && kpiMoist) kpiMoist.innerText = Math.round(m.SAR_SoilMoisture_Proxy.latest) + '%';
+              if (m.SIPI && kpiPest) kpiPest.innerText = 'Low (' + Math.round(m.SIPI.latest) + '%)';
+
+              const statusPill = document.getElementById('zarr-status-pill');
+              if (statusPill) statusPill.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr Read: ' + parcelId + ' (LIVE)</span>';
+            }
+          })
+          .catch(e => console.warn('Zarr live query error:', e));
+      }
+
+    };
+
+    window.fitAllParcels = function() {
+      const allBounds = L.latLngBounds([]);
+      window.CROPLAND_PARCELS.forEach(p => {
+        p.coords.forEach(pt => allBounds.extend(pt));
+      });
+      map.flyToBounds(allBounds, { padding: [60, 60], duration: 1.5 });
+    };
+
+    window.resetFieldView = function() {
+      window.selectCroplandParcel(activeParcelId);
+    };
+
+    window.setMapLayer = function(layerName) {
+      window.currentMapLayer = layerName;
+      const btnIds = ['overview', 'vegetation', 'moisture', 'radar'];
+      btnIds.forEach(id => {
+        const btn = document.getElementById('layer-' + id);
+        if (btn) {
+          if (id === layerName) {
+            btn.className = 'px-space-md py-1 rounded-full bg-primary text-on-primary font-label-caps text-label-caps transition-all';
+          } else {
+            btn.className = 'px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all';
+          }
+        }
+      });
+
+      const scaleLabel = document.getElementById('scale-label');
+      const scaleGradient = document.getElementById('scale-gradient');
+      const scaleRange = document.getElementById('scale-range');
+
+      if (layerName === 'vegetation') {
+        if (scaleLabel) scaleLabel.innerText = 'NDVI Scale';
+        if (scaleGradient) scaleGradient.className = 'h-2 w-24 rounded-full bg-gradient-to-r from-amber-500 via-lime-400 to-emerald-600';
+        if (scaleRange) scaleRange.innerText = '0.0 — 1.0';
+      } else if (layerName === 'moisture') {
+        if (scaleLabel) scaleLabel.innerText = 'NDMI Scale';
+        if (scaleGradient) scaleGradient.className = 'h-2 w-24 rounded-full bg-gradient-to-r from-amber-600 via-sky-300 to-blue-700';
+        if (scaleRange) scaleRange.innerText = '-0.2 — +0.8';
+      } else if (layerName === 'radar') {
+        if (scaleLabel) scaleLabel.innerText = 'SAR RVI';
+        if (scaleGradient) scaleGradient.className = 'h-2 w-24 rounded-full bg-gradient-to-r from-slate-400 via-indigo-400 to-purple-600';
+        if (scaleRange) scaleRange.innerText = '0.0 — 1.0';
+      } else {
+        if (scaleLabel) scaleLabel.innerText = 'Vigor Scale';
+        if (scaleGradient) scaleGradient.className = 'h-2 w-24 rounded-full bg-gradient-to-r from-[#e11d48] via-[#eab308] to-[#10b981]';
+        if (scaleRange) scaleRange.innerText = '0.0 — 1.0';
+      }
+
+      renderAllParcels(layerName);
+    };
+
+    map.on('mousemove', function(e) {
+      const coordsEl = document.getElementById('cursor-coords');
+      if (coordsEl) {
+        coordsEl.innerText = e.latlng.lat.toFixed(4) + '° N, ' + e.latlng.lng.toFixed(4) + '° E';
+      }
+    });
+
+    renderAllParcels('overview');
+    window.selectCroplandParcel('parcel-1');
+
+    // Search Bar handler
+    window.handleTopSearchInput = function(query) {
+      const dropdown = document.getElementById('searchSuggestionsDropdown');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (!dropdown) return;
+
+      const q = (query || '').toLowerCase().trim();
+      if (clearBtn) clearBtn.className = q ? 'absolute right-2.5 text-slate-400 hover:text-slate-600 text-[16px]' : 'hidden';
+
+      if (!q) {
+        dropdown.innerHTML = `
+          <div class="px-3 py-1.5 text-[10px] font-label-caps text-slate-400 uppercase tracking-wider bg-slate-50">Select Cropland Parcel (${window.CROPLAND_PARCELS.length} Available)</div>
+          ${window.CROPLAND_PARCELS.map(p => `
+            <div onclick="window.onSelectSearchedParcel('${p.id}')" class="px-3 py-2 hover:bg-slate-50 cursor-pointer flex items-center justify-between transition-colors">
+              <div>
+                <div class="font-semibold text-xs text-slate-900">${p.name}</div>
+                <div class="text-[11px] text-slate-500">${p.area_acres} · ${p.timestamp}</div>
+              </div>
+              <span class="font-label-mono-num text-[11px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">NDVI ${p.ndvi}</span>
+            </div>
+          `).join('')}
+        `;
+        dropdown.classList.remove('hidden');
+        return;
+      }
+
+      const matches = window.CROPLAND_PARCELS.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        p.timestamp.toLowerCase().includes(q) ||
+        p.area_acres.toLowerCase().includes(q) ||
+        p.id.toLowerCase().includes(q)
+      );
+
+      if (matches.length === 0) {
+        dropdown.innerHTML = `<div class="px-3 py-3 text-xs text-slate-500 text-center">No cropland found matching "<strong>${q}</strong>"</div>`;
+      } else {
+        dropdown.innerHTML = `
+          <div class="px-3 py-1.5 text-[10px] font-label-caps text-slate-400 uppercase tracking-wider bg-slate-50">${matches.length} Farmland Match${matches.length > 1 ? 'es' : ''}</div>
+          ${matches.map(p => `
+            <div onclick="window.onSelectSearchedParcel('${p.id}')" class="px-3 py-2 hover:bg-slate-50 cursor-pointer flex items-center justify-between transition-colors">
+              <div>
+                <div class="font-semibold text-xs text-slate-900">${p.name}</div>
+                <div class="text-[11px] text-slate-500">${p.area_acres} · ${p.timestamp}</div>
+              </div>
+              <span class="font-label-mono-num text-[11px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">NDVI ${p.ndvi}</span>
+            </div>
+          `).join('')}
+        `;
+      }
+      dropdown.classList.remove('hidden');
+    };
+
+    window.onSelectSearchedParcel = function(parcelId) {
+      const parcel = window.CROPLAND_PARCELS.find(p => p.id === parcelId);
+      const input = document.getElementById('topParcelSearchInput');
+      const dropdown = document.getElementById('searchSuggestionsDropdown');
+      if (input && parcel) input.value = parcel.name;
+      if (dropdown) dropdown.classList.add('hidden');
+      window.selectCroplandParcel(parcelId);
+    };
+
+    window.clearSearchInput = function() {
+      const input = document.getElementById('topParcelSearchInput');
+      const dropdown = document.getElementById('searchSuggestionsDropdown');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (input) input.value = '';
+      if (dropdown) dropdown.classList.add('hidden');
+      if (clearBtn) clearBtn.className = 'hidden';
+    };
+
+    document.addEventListener('click', (e) => {
+      const searchBox = document.getElementById('topParcelSearchInput');
+      const dropdown = document.getElementById('searchSuggestionsDropdown');
+      if (searchBox && dropdown && !searchBox.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  })();
+</script>
+<script>
+  (function initI18n() {
+    const langDict = {
+      en: {
+        title: 'Farmland Parcel #1',
+        parcelSub: 'Recorded: 2026-09-09 07:59:58 UTC · Vertices: 5',
+        healthyBadge: 'Healthy',
+        targetYieldLabel: 'Measured Area',
+        passIntervalLabel: 'Pass Interval',
+        allIndicesBtn: 'All 24 Indices',
+        kpi1Title: 'Watering Need (MSI / NDMI)',
+        kpi2Title: 'Crop Greenness Score (NDVI)',
+        kpi3Title: 'TopSoil Moisture Check (SAR SM)',
+        kpi4Title: 'Pest & Sickness Alert (SIPI)',
+        sec1Title: '1. Crop Health & Emergence',
+        card_ndvi_title: 'Crop Greenness Score (NDVI)',
+        card_savi_title: 'Seedling Check - Normal Soil (SAVI)',
+        card_gndvi_title: 'Mid-Season Crop Strength (GNDVI)',
+        card_unif_title: 'Reliable Crop Greenness (VARI)',
+        sec2Title: '2. Water & Field Moisture',
+        card_ndmi_title: 'Crop Water Stress Alert (NDMI)',
+        card_bsi_title: 'Field Readiness Check (BSI)',
+        card_salt_title: 'Soil Salt Warning (NDSI)',
+        card_sm_title: 'TopSoil Moisture Check (SAR SM)',
+        sec3Title: '3. Canopy & Nutrients',
+        card_lai_title: 'Leaf Cover Growth (LAI)',
+        card_fcover_title: 'Ground Cover Percentage (fCOVER)',
+        card_ccc_title: 'Total Field Nitrogen Stock (CCC)',
+        card_spad_title: 'Leaf Nutrition Meter (ReCI)',
+        sec4Title: '4. Monsoon & SAR Radar',
+        card_rvi_title: 'All-Weather Crop Growth Meter (SAR RVI)',
+        card_rigidity_title: 'Crop Height & Falling Risk (SAR VH/VV)',
+        card_water_title: 'Waterlogging & Flood Alert (SAR Inundated)',
+        card_wind_title: 'Pest & Sickness Alert (SIPI)'
+      },
+      ta: {
+        title: 'விளைநில பார்சல் எண் 1',
+        parcelSub: 'ஆத்தூர் வட்டம், சேலம் மாவட்டம் · விதைப்பு: ஜூன் 12, 2025 · நாள் 128 (தீவிர வளர்ச்சி பருவம்)',
+        healthyBadge: 'முழு ஆரோக்கியமானது',
+        targetYieldLabel: 'சர்வே பரப்பளவு',
+        passIntervalLabel: 'செயற்கைக்கோள் இடைவெளி',
+        allIndicesBtn: 'அனைத்து 24 குறியீடுகள்',
+        kpi1Title: 'பாசன அவசிய நிலை (Watering Need - MSI)',
+        kpi2Title: 'பயிர் பச்சைய குறியீடு (Crop Greenness Score - NDVI)',
+        kpi3Title: 'மேல்மண் ஈரப்பதம் ஆய்வு (TopSoil Moisture Check)',
+        kpi4Title: 'பூச்சி & நோய் தாக்குதல் எச்சரிக்கை (Pest & Sickness Alert - SIPI)',
+        sec1Title: '1. பயிர் வளர்ச்சி & ஆரம்ப முளைப்பு நிலை',
+        card_ndvi_title: 'பயிர் பச்சைய குறியீடு (NDVI)',
+        card_savi_title: 'முளைப்பு ஆய்வு - சாதாரண மண் (SAVI)',
+        card_gndvi_title: 'பருவ வளர்ச்சி வலிமை (GNDVI)',
+        card_unif_title: 'மூடுபனி ஊடுருவும் பச்சையம் (VARI)',
+        sec2Title: '2. நீர் தேவை & நில ஈரப்பதம்',
+        card_ndmi_title: 'பயிர் நீர் தாகம் எச்சரிக்கை (NDMI)',
+        card_bsi_title: 'நிலப் பண்படுத்தல் ஆய்வு (BSI)',
+        card_salt_title: 'மண் உவர் / களர் எச்சரிக்கை (NDSI)',
+        card_sm_title: 'மேல்மண் ஈரப்பதம் ஆய்வு (SAR SM)',
+        sec3Title: '3. இலை பரப்பு & உரச்சத்து மேலாண்மை',
+        card_lai_title: 'இலை பரப்பு வளர்ச்சி (LAI)',
+        card_fcover_title: 'தரை மூட்டம் சதவீதம் (fCOVER)',
+        card_ccc_title: 'வயல் தழைச்சத்து கையிருப்பு (CCC)',
+        card_spad_title: 'இலை ஊட்டச்சத்து அளவி (ReCI)',
+        sec4Title: '4. பருவமழை & ரேடார் கண்காணிப்பு',
+        card_rvi_title: 'அனைத்து பருவ ரேடார் பயிர் வளர்ச்சி (SAR RVI)',
+        card_rigidity_title: 'பயிர் உயரம் & காற்று சாய்வு அபாயம் (SAR VH/VV)',
+        card_water_title: 'நீர் தேக்கம் & வெள்ள எச்சரிக்கை (SAR Inundated)',
+        card_wind_title: 'பூச்சி & நோய் தாக்குதல் எச்சரிக்கை (SIPI)'
+      }
+    };
+
+    window.switchAppLanguage = function(lang) {
+      const btnEn = document.getElementById('langEnBtn');
+      const btnTa = document.getElementById('langTaBtn');
+
+      if (lang === 'ta') {
+        if (btnTa) btnTa.className = 'px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all shadow-xs';
+        if (btnEn) btnEn.className = 'px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all flex items-center gap-1';
+      } else {
+        if (btnEn) btnEn.className = 'px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1 shadow-xs';
+        if (btnTa) btnTa.className = 'px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all';
+      }
+
+      const dict = langDict[lang] || langDict.en;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+    };
+
+    const btnEn = document.getElementById('langEnBtn');
+    const btnTa = document.getElementById('langTaBtn');
+    if (btnEn) btnEn.addEventListener('click', () => switchAppLanguage('en'));
+    if (btnTa) btnTa.addEventListener('click', () => switchAppLanguage('ta'));
+  })();
+</script>
+
+<!-- Modal: All 24 Telemetry Indices Reference for Zarr Datacube -->
+<div id="indexDirectoryModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-200">
+  <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-4xl w-full max-h-[85vh] flex flex-col overflow-hidden">
+    <div class="p-space-md border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[22px]">dataset</span>
+        <div>
+          <h3 class="text-headline-sm font-headline-sm font-bold text-slate-900">All 24 Telemetry Indices (Zarr Datacube Reference)</h3>
+          <p class="text-body-sm text-slate-500 text-xs">Exact mapping between Suggested Names (Farmer-facing) and Technical Abbreviations (Zarr variables)</p>
+        </div>
+      </div>
+      <button onclick="window.toggleIndexDirectoryModal()" class="w-8 h-8 rounded-full hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors"><span class="material-symbols-outlined text-[20px]">close</span></button>
+    </div>
+    <div class="p-space-sm border-b border-slate-200 bg-white">
+      <input type="text" id="indexSearchInput" onkeyup="window.filterIndicesTable()" placeholder="Search by Suggested Name, Technical Abbreviation (NDVI, SAR, etc.) or category..." class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900" />
+    </div>
+    <div class="flex-1 overflow-y-auto p-space-md">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-slate-200 text-slate-500 font-label-caps text-[11px] uppercase bg-slate-50/70 sticky top-0">
+            <th class="py-2 px-3">#</th>
+            <th class="py-2 px-3">Suggested Name (Farmer)</th>
+            <th class="py-2 px-3">Technical Abbr (Zarr Var)</th>
+            <th class="py-2 px-3">Category</th>
+            <th class="py-2 px-3">What It Tells the Farmer</th>
+          </tr>
+        </thead>
+        <tbody id="indicesTableBody" class="divide-y divide-slate-100">
+        </tbody>
+      </table>
+    </div>
+    <div class="p-space-sm border-t border-slate-200 bg-slate-50 flex items-center justify-between text-xs text-slate-500">
+      <span>Referenced from: multipolygon_pixels.zarr</span>
+      <button onclick="window.toggleIndexDirectoryModal()" class="px-4 py-1.5 bg-slate-900 text-white rounded-lg text-xs font-semibold hover:bg-slate-800 transition-colors">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function initRegistry() {
+    window.INDEX_REGISTRY = [
+      { id: 1, cat: 'Crop Health & Growth', tech: 'NDVI', name: 'Crop Greenness Score', desc: 'Shows overall plant vigor and tells if crops are growing actively or failing.' },
+      { id: 2, cat: 'Crop Health & Growth', tech: 'EVI', name: 'Dense Crop Check', desc: 'Checks health in dense, tall crops (sugarcane, mature paddy) where regular greenness maxes out.' },
+      { id: 3, cat: 'Crop Health & Growth', tech: 'NDRE', name: 'Early Nutrient Stress Alert', desc: 'Spots yellowing and nutrient shortages deep inside leaves before eyes can see it.' },
+      { id: 4, cat: 'Crop Health & Growth', tech: 'GNDVI', name: 'Mid-Season Crop Strength', desc: 'Measures deep leaf health and plant stamina during peak growing and flowering stages.' },
+      { id: 5, cat: 'Crop Health & Growth', tech: 'ReCI', name: 'Leaf Nutrition Meter', desc: 'Directly monitors leaf nitrogen absorption across crop life stages.' },
+      { id: 6, cat: 'Crop Health & Growth', tech: 'GCI', name: 'Fertilizer Need Check', desc: 'Tells whether the crop needs an extra round of urea or foliar nitrogen spray.' },
+      { id: 7, cat: 'Sprouting & Seedlings', tech: 'SAVI', name: 'Seedling Check (Normal Soil)', desc: 'Checks seedling growth without getting tricked by dark or wet soil underneath.' },
+      { id: 8, cat: 'Sprouting & Seedlings', tech: 'MSAVI', name: 'Seedling Check (Dry Soil)', desc: 'Checks young seedlings in dry or sandy land where soil brightness usually hides tiny shoots.' },
+      { id: 9, cat: 'Sprouting & Seedlings', tech: 'OSAVI', name: 'Patchy Crop Alert', desc: 'Monitors crop health along field borders and patchy areas where ground is half-bare.' },
+      { id: 10, cat: 'Water & Field Moisture', tech: 'NDMI', name: 'Crop Water Stress Alert', desc: 'Warns of crop dehydration 5 to 7 days before leaves start visibly wilting.' },
+      { id: 11, cat: 'Water & Field Moisture', tech: 'MSI', name: 'Watering Need', desc: 'Tells immediately if the field needs water; high readings mean urgent watering.' },
+      { id: 12, cat: 'Water & Field Moisture', tech: 'BSI', name: 'Field Readiness Check', desc: 'Confirms whether land is clean, plowed bare soil ready for sowing, or still covered in weeds.' },
+      { id: 13, cat: 'Water & Field Moisture', tech: 'NBR', name: 'Crop Residue & Burn Check', desc: 'Shows leftover dry crop stalks, trash mulching, or burnt stubble areas.' },
+      { id: 14, cat: 'Water & Field Moisture', tech: 'NDSI', name: 'Soil Salt Warning', desc: 'Warns if salt build-up (alkalinity/salinity) is accumulating on the field surface.' },
+      { id: 15, cat: 'Stress & Pigment', tech: 'VARI', name: 'Reliable Crop Greenness', desc: 'Gives an accurate crop greenness reading even on foggy, dusty, or hazy days.' },
+      { id: 16, cat: 'Stress & Pigment', tech: 'SIPI', name: 'Pest & Sickness Alert', desc: 'Spots early plant stress caused by insect attacks, fungal diseases, or premature leaf drying.' },
+      { id: 17, cat: 'Canopy & Yield Metrics', tech: 'LAI_proxy', name: 'Leaf Cover Growth', desc: 'Measures total leaf layers covering the soil (key input for final harvest weight estimation).' },
+      { id: 18, cat: 'Canopy & Yield Metrics', tech: 'fCOVER_proxy', name: 'Ground Cover Percentage', desc: 'Shows what percentage of ground is shaded by leaves (e.g., 40% sprouted, 85% canopy closed).' },
+      { id: 19, cat: 'Canopy & Yield Metrics', tech: 'fAPAR_proxy', name: 'Sunlight Utilization Rate', desc: 'Tells how efficiently leaves are capturing sunlight to produce grains, pods, or fruit.' },
+      { id: 20, cat: 'Canopy & Yield Metrics', tech: 'CCC_proxy', name: 'Total Field Nitrogen Stock', desc: 'Tells total canopy nitrogen reserve, helping calculate exact fertilizer bags needed.' },
+      { id: 21, cat: 'Monsoon / Radar (SAR)', tech: 'SAR_RVI', name: 'All-Weather Crop Growth Meter', desc: 'Measures crop thickness and volume straight through heavy cloud cover and monsoon rains.' },
+      { id: 22, cat: 'Monsoon / Radar (SAR)', tech: 'SAR_VV / VH / CR', name: 'Crop Height & Falling Risk', desc: 'Tracks vertical standing, stalk thickening, and lodging/falling risk in tall crops (cane, maize).' },
+      { id: '23a', cat: 'Monsoon / Radar (SAR)', tech: 'SAR_SoilMoisture_Proxy', name: 'TopSoil Moisture Check', desc: 'Estimates moisture in the top 2 inches of soil without stepping into the field.' },
+      { id: '23b', cat: 'Monsoon / Radar (SAR)', tech: 'SAR_Inundated_Flag', name: 'Waterlogging & Flood Alert', desc: 'Instantly flags waterlogged spots, flood zones, or successful paddy puddling/transplanting ponds.' }
+    ];
+
+    function renderTable(list) {
+      const tbody = document.getElementById('indicesTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = list.map(item => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-2 px-3 font-label-mono-num text-xs text-slate-400">${item.id}</td>
+          <td class="py-2 px-3 font-semibold text-slate-900">${item.name}</td>
+          <td class="py-2 px-3"><span class="px-2 py-0.5 rounded font-label-mono-num text-[11px] font-bold bg-slate-100 text-slate-800 border border-slate-200">${item.tech}</span></td>
+          <td class="py-2 px-3 text-xs text-slate-500 font-medium">${item.cat}</td>
+          <td class="py-2 px-3 text-xs text-slate-600">${item.desc}</td>
+        </tr>
+      `).join('');
+    }
+
+    renderTable(window.INDEX_REGISTRY);
+
+    window.filterIndicesTable = function() {
+      const q = (document.getElementById('indexSearchInput').value || '').toLowerCase().trim();
+      const filtered = window.INDEX_REGISTRY.filter(item => 
+        item.name.toLowerCase().includes(q) ||
+        item.tech.toLowerCase().includes(q) ||
+        item.cat.toLowerCase().includes(q) ||
+        item.desc.toLowerCase().includes(q)
+      );
+      renderTable(filtered);
+    };
+
+    window.toggleIndexDirectoryModal = function() {
+      const modal = document.getElementById('indexDirectoryModal');
+      if (!modal) return;
+      if (modal.classList.contains('opacity-0')) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    };
+  })();
+</script>
+
+
+<!-- Modal: Zarr Access & Pulls Audit Log -->
+<div id="zarrLogModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-200">
+  <div class="bg-slate-950 text-slate-100 rounded-2xl shadow-2xl border border-slate-800 max-w-4xl w-full max-h-[85vh] flex flex-col overflow-hidden font-mono text-xs">
+    <div class="p-3 border-b border-slate-800 flex items-center justify-between bg-slate-900/80">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-bold text-slate-200 text-sm">Zarr Access Audit Log: multipolygon_pixels.zarr</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.refreshZarrLogs()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-[11px] flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-[13px]">refresh</span>Refresh
+        </button>
+        <button onclick="window.toggleZarrLogModal()" class="w-7 h-7 rounded-full hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+    </div>
+    <div class="p-2 bg-slate-900 text-[11px] text-slate-400 border-b border-slate-800 flex items-center justify-between">
+      <span>File: <code class="text-emerald-400">zarr_access.log</code> · Monitoring live calls between local dashboard and Zarr store</span>
+      <span class="text-slate-500">Terminal command: <code class="text-amber-300">tail -f zarr_access.log</code></span>
+    </div>
+    <div id="zarrLogsContainer" class="flex-1 overflow-y-auto p-3 space-y-1 bg-black/60 font-mono text-[11px] leading-relaxed select-text">
+      <div class="text-slate-500 italic">Loading live audit logs...</div>
+    </div>
+    <div class="p-2.5 border-t border-slate-800 bg-slate-900/80 flex items-center justify-between text-slate-400 text-[11px]">
+      <span id="zarrLogStatusSummary">Audit status: Monitoring active</span>
+      <button onclick="window.toggleZarrLogModal()" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-medium text-[11px] transition-colors">Close Log</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function initZarrLogViewer() {
+    window.toggleZarrLogModal = function() {
+      const modal = document.getElementById('zarrLogModal');
+      if (!modal) return;
+      if (modal.classList.contains('opacity-0')) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        window.refreshZarrLogs();
+      } else {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    };
+
+    window.refreshZarrLogs = function() {
+      const container = document.getElementById('zarrLogsContainer');
+      const summary = document.getElementById('zarrLogStatusSummary');
+      if (!container) return;
+
+      fetch('/api/zarr/logs')
+        .then(r => r.json())
+        .then(data => {
+          if (data.recent_logs && data.recent_logs.length > 0) {
+            container.innerHTML = data.recent_logs.map(line => {
+              let colorClass = 'text-slate-300';
+              if (line.includes('ZARR_KPI_PULL')) colorClass = 'text-emerald-300';
+              else if (line.includes('ZARR_PARCELS_PULL')) colorClass = 'text-sky-300';
+              return `<div class="py-0.5 border-b border-slate-900/50 ${colorClass}">
+                <span class="text-slate-500">${line.substring(0, 25)}</span>
+                <span>${line.substring(25)}</span>
+              </div>`;
+            }).reverse().join('');
+            if (summary) summary.innerText = `Logged ${data.total_entries} Zarr pulls · Log path: ${data.log_file}`;
+          } else {
+            container.innerHTML = '<div class="text-slate-500 italic">No Zarr reads logged yet. Click any cropland on the map to trigger an array pull.</div>';
+          }
+        })
+        .catch(err => {
+          container.innerHTML = `<div class="text-rose-400">Log fetch error: ${err.message}. (Server is reading zarr_access.log directly on localhost:8080)</div>`;
+        });
+    };
+  })();
+</script>
+
+</body></html>
