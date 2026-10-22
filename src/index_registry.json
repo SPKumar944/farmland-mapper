@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "category": "Crop Health & Growth",
+    "techAbbr": "NDVI",
+    "farmerName": "Crop Greenness Score",
+    "suggestedName": "Crop Greenness Score",
+    "whatItTells": "Shows overall plant vigor and tells if crops are growing actively or failing."
+  },
+  {
+    "id": 2,
+    "category": "Crop Health & Growth",
+    "techAbbr": "EVI",
+    "farmerName": "Thick Crop Growth Meter",
+    "suggestedName": "Dense Crop Check",
+    "whatItTells": "Checks health in dense, tall crops (sugarcane, mature paddy) where regular greenness maxes out."
+  },
+  {
+    "id": 3,
+    "category": "Crop Health & Growth",
+    "techAbbr": "NDRE",
+    "farmerName": "Early Nitrogen & Chlorophyll Health",
+    "suggestedName": "Early Nutrient Stress Alert",
+    "whatItTells": "Spots yellowing and nutrient shortages deep inside leaves before eyes can see it."
+  },
+  {
+    "id": 4,
+    "category": "Crop Health & Growth",
+    "techAbbr": "GNDVI",
+    "farmerName": "Mid-Season Crop Vigor",
+    "suggestedName": "Mid-Season Crop Strength",
+    "whatItTells": "Measures deep leaf health and plant stamina during peak growing and flowering stages."
+  },
+  {
+    "id": 5,
+    "category": "Crop Health & Growth",
+    "techAbbr": "ReCI",
+    "farmerName": "Leaf Chlorophyll / Nitrogen Gauge",
+    "suggestedName": "Leaf Nutrition Meter",
+    "whatItTells": "Directly monitors leaf nitrogen absorption across crop life stages."
+  },
+  {
+    "id": 6,
+    "category": "Crop Health & Growth",
+    "techAbbr": "GCI",
+    "farmerName": "Fertilizer Top-Dress Indicator",
+    "suggestedName": "Fertilizer Need Check",
+    "whatItTells": "Tells whether the crop needs an extra round of urea or foliar nitrogen spray."
+  },
+  {
+    "id": 7,
+    "category": "Sprouting & Seedlings",
+    "techAbbr": "SAVI",
+    "farmerName": "Early Sprout Health (Wet/Normal Soil)",
+    "suggestedName": "Seedling Check (Normal Soil)",
+    "whatItTells": "Checks seedling growth without getting tricked by dark or wet soil underneath."
+  },
+  {
+    "id": 8,
+    "category": "Sprouting & Seedlings",
+    "techAbbr": "MSAVI",
+    "farmerName": "Early Sprout Health (Dry/Bright Soil)",
+    "suggestedName": "Seedling Check (Dry Soil)",
+    "whatItTells": "Checks young seedlings in dry or sandy land where soil brightness usually hides tiny shoots."
+  },
+  {
+    "id": 9,
+    "category": "Sprouting & Seedlings",
+    "techAbbr": "OSAVI",
+    "farmerName": "Field Edge & Sparse Crop Health",
+    "suggestedName": "Patchy Crop Alert",
+    "whatItTells": "Monitors crop health along field borders and patchy areas where ground is half-bare."
+  },
+  {
+    "id": 10,
+    "category": "Water & Field Moisture",
+    "techAbbr": "NDMI",
+    "farmerName": "Crop Thirst / Water Stress Gauge",
+    "suggestedName": "Crop Water Stress Alert",
+    "whatItTells": "Warns of crop dehydration 5 to 7 days before leaves start visibly wilting."
+  },
+  {
+    "id": 11,
+    "category": "Water & Field Moisture",
+    "techAbbr": "MSI",
+    "farmerName": "Irrigation Urgency Meter",
+    "suggestedName": "Watering Need",
+    "whatItTells": "Tells immediately if the field needs water; high readings mean urgent watering."
+  },
+  {
+    "id": 12,
+    "category": "Water & Field Moisture",
+    "techAbbr": "BSI",
+    "farmerName": "Plowed Land / Seedbed Checker",
+    "suggestedName": "Field Readiness Check",
+    "whatItTells": "Confirms whether land is clean, plowed bare soil ready for sowing, or still covered in weeds."
+  },
+  {
+    "id": 13,
+    "category": "Water & Field Moisture",
+    "techAbbr": "NBR",
+    "farmerName": "Crop Stubble & Burn Tracker",
+    "suggestedName": "Crop Residue & Burn Check",
+    "whatItTells": "Shows leftover dry crop stalks, trash mulching, or burnt stubble areas."
+  },
+  {
+    "id": 14,
+    "category": "Water & Field Moisture",
+    "techAbbr": "NDSI",
+    "farmerName": "Soil Salt / White Crust Alert",
+    "suggestedName": "Soil Salt Warning",
+    "whatItTells": "Warns if salt build-up (alkalinity/salinity) is accumulating on the field surface."
+  },
+  {
+    "id": 15,
+    "category": "Stress & Pigment",
+    "techAbbr": "VARI",
+    "farmerName": "Haze-Proof Greenness Check",
+    "suggestedName": "Reliable Crop Greenness",
+    "whatItTells": "Gives an accurate crop greenness reading even on foggy, dusty, or hazy days."
+  },
+  {
+    "id": 16,
+    "category": "Stress & Pigment",
+    "techAbbr": "SIPI",
+    "farmerName": "Pest, Disease & Early Aging Warning",
+    "suggestedName": "Pest & Sickness Alert",
+    "whatItTells": "Spots early plant stress caused by insect attacks, fungal diseases, or premature leaf drying."
+  },
+  {
+    "id": 17,
+    "category": "Canopy & Yield Metrics",
+    "techAbbr": "LAI_proxy",
+    "farmerName": "Leaf Spread / Foliage Volume",
+    "suggestedName": "Leaf Cover Growth",
+    "whatItTells": "Measures total leaf layers covering the soil (key input for final harvest weight estimation)."
+  },
+  {
+    "id": 18,
+    "category": "Canopy & Yield Metrics",
+    "techAbbr": "fCOVER_proxy",
+    "farmerName": "Ground Cover Percentage",
+    "suggestedName": "Ground Cover Percentage",
+    "whatItTells": "Shows what percentage of ground is shaded by leaves (e.g., 40% sprouted, 85% canopy closed)."
+  },
+  {
+    "id": 19,
+    "category": "Canopy & Yield Metrics",
+    "techAbbr": "fAPAR_proxy",
+    "farmerName": "Sunlight Utilization Rate",
+    "suggestedName": "Sunlight Utilization Rate",
+    "whatItTells": "Tells how efficiently leaves are capturing sunlight to produce grains, pods, or fruit."
+  },
+  {
+    "id": 20,
+    "category": "Canopy & Yield Metrics",
+    "techAbbr": "CCC_proxy",
+    "farmerName": "Total Field Nitrogen Stock",
+    "suggestedName": "Total Field Nitrogen Stock",
+    "whatItTells": "Tells total canopy nitrogen reserve, helping calculate exact fertilizer bags needed."
+  },
+  {
+    "id": 21,
+    "category": "Monsoon / Radar (SAR)",
+    "techAbbr": "SAR_RVI",
+    "farmerName": "All-Weather Crop Growth Meter",
+    "suggestedName": "All-Weather Crop Growth Meter",
+    "whatItTells": "Measures crop thickness and volume straight through heavy cloud cover and monsoon rains."
+  },
+  {
+    "id": 22,
+    "category": "Monsoon / Radar (SAR)",
+    "techAbbr": "SAR_VV / VH / CR",
+    "farmerName": "Plant Height & Stalk Rigidity Tracker",
+    "suggestedName": "Crop Height & Falling Risk",
+    "whatItTells": "Tracks vertical standing, stalk thickening, and lodging/falling risk in tall crops (cane, maize)."
+  },
+  {
+    "id": "23a",
+    "category": "Monsoon / Radar (SAR)",
+    "techAbbr": "SAR_SoilMoisture_Proxy",
+    "farmerName": "Topsoil Wetness Indicator",
+    "suggestedName": "TopSoil Moisture Check",
+    "whatItTells": "Estimates moisture in the top 2 inches of soil without stepping into the field."
+  },
+  {
+    "id": "23b",
+    "category": "Monsoon / Radar (SAR)",
+    "techAbbr": "SAR_Inundated_Flag",
+    "farmerName": "Flooding / Standing Water Alert",
+    "suggestedName": "Waterlogging & Flood Alert",
+    "whatItTells": "Instantly flags waterlogged spots, flood zones, or successful paddy puddling/transplanting ponds."
+  }
+]
