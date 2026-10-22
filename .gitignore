@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+*.zarr
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
