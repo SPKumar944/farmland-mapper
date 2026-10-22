@@ -10,7 +10,7 @@
   </div>
   <div id="searchSuggestionsDropdown" class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden z-50 divide-y divide-slate-100 max-h-72 overflow-y-auto">
   </div>
-</div><div class="flex items-center gap-space-md"><div id="zarr-status-pill" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+</div><div class="flex items-center gap-space-md"><div id="zarr-status-pill" onclick="window.toggleZarrLogModal()" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors" title="Click to view live Zarr query audit log"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
 <div class="px-space-md py-space-md flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><h1 id="parcel-title" class="text-headline-md font-headline-md font-semibold text-primary tracking-tight" data-i18n="title">Sugarcane Parcel Co 86032</h1><span id="parcel-acreage" class="px-space-sm py-0.5 rounded-full bg-surface-container font-label-mono-num text-label-mono-num text-primary font-medium">3.40 Acres</span><span class="px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-caps text-label-caps uppercase tracking-wider font-semibold" data-i18n="healthyBadge">Healthy / ஆரோக்கியம்</span></div><p class="text-body-sm font-body-sm text-secondary" id="parcel-sub" data-i18n="parcelSub">Attur Taluk, Salem District · Sown June 12, 2025 · Day 128 (Grand Growth Phase)</p></div><div class="flex items-center gap-space-lg"><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="targetYieldLabel">Target Yield / எதிர்பார்க்கப்படும் மகசூல்</span><span id="parcel-target-yield" class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">134 MT / Ha</span></div><div class="h-8 w-px bg-outline-variant/40"></div><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="passIntervalLabel">Pass Interval / செயற்கைக்கோள் இடைவெளி</span><span class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">T-24h (SAR+MSI)</span></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch"><section class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm relative min-h-[520px]">
   <!-- Interactive Leaflet Map Viewport -->
   <div id="field-interactive-map" class="absolute inset-0 w-full h-full z-0" style="background: #e2e8f0;"></div>
@@ -1131,6 +1131,81 @@
       } else {
         modal.classList.add('opacity-0', 'pointer-events-none');
       }
+    };
+  })();
+</script>
+
+
+<!-- Modal: Zarr Access & Pulls Audit Log -->
+<div id="zarrLogModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-200">
+  <div class="bg-slate-950 text-slate-100 rounded-2xl shadow-2xl border border-slate-800 max-w-4xl w-full max-h-[85vh] flex flex-col overflow-hidden font-mono text-xs">
+    <div class="p-3 border-b border-slate-800 flex items-center justify-between bg-slate-900/80">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-bold text-slate-200 text-sm">Zarr Access Audit Log: multipolygon_pixels.zarr</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="window.refreshZarrLogs()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded text-[11px] flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-[13px]">refresh</span>Refresh
+        </button>
+        <button onclick="window.toggleZarrLogModal()" class="w-7 h-7 rounded-full hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+    </div>
+    <div class="p-2 bg-slate-900 text-[11px] text-slate-400 border-b border-slate-800 flex items-center justify-between">
+      <span>File: <code class="text-emerald-400">zarr_access.log</code> · Monitoring live calls between local dashboard and Zarr store</span>
+      <span class="text-slate-500">Terminal command: <code class="text-amber-300">tail -f zarr_access.log</code></span>
+    </div>
+    <div id="zarrLogsContainer" class="flex-1 overflow-y-auto p-3 space-y-1 bg-black/60 font-mono text-[11px] leading-relaxed select-text">
+      <div class="text-slate-500 italic">Loading live audit logs...</div>
+    </div>
+    <div class="p-2.5 border-t border-slate-800 bg-slate-900/80 flex items-center justify-between text-slate-400 text-[11px]">
+      <span id="zarrLogStatusSummary">Audit status: Monitoring active</span>
+      <button onclick="window.toggleZarrLogModal()" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-medium text-[11px] transition-colors">Close Log</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function initZarrLogViewer() {
+    window.toggleZarrLogModal = function() {
+      const modal = document.getElementById('zarrLogModal');
+      if (!modal) return;
+      if (modal.classList.contains('opacity-0')) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        window.refreshZarrLogs();
+      } else {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    };
+
+    window.refreshZarrLogs = function() {
+      const container = document.getElementById('zarrLogsContainer');
+      const summary = document.getElementById('zarrLogStatusSummary');
+      if (!container) return;
+
+      fetch('/api/zarr/logs')
+        .then(r => r.json())
+        .then(data => {
+          if (data.recent_logs && data.recent_logs.length > 0) {
+            container.innerHTML = data.recent_logs.map(line => {
+              let colorClass = 'text-slate-300';
+              if (line.includes('ZARR_KPI_PULL')) colorClass = 'text-emerald-300';
+              else if (line.includes('ZARR_PARCELS_PULL')) colorClass = 'text-sky-300';
+              return `<div class="py-0.5 border-b border-slate-900/50 ${colorClass}">
+                <span class="text-slate-500">${line.substring(0, 25)}</span>
+                <span>${line.substring(25)}</span>
+              </div>`;
+            }).reverse().join('');
+            if (summary) summary.innerText = `Logged ${data.total_entries} Zarr pulls · Log path: ${data.log_file}`;
+          } else {
+            container.innerHTML = '<div class="text-slate-500 italic">No Zarr reads logged yet. Click any cropland on the map to trigger an array pull.</div>';
+          }
+        })
+        .catch(err => {
+          container.innerHTML = `<div class="text-rose-400">Log fetch error: ${err.message}. (Server is reading zarr_access.log directly on localhost:8080)</div>`;
+        });
     };
   })();
 </script>
