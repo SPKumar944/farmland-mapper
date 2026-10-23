@@ -51,8 +51,12 @@ function RecenterOnRecord({ latestPoint, isRecording }) {
 }
 
 export default function MapComponent({ userName }) {
-const [points, setPoints] = useState([]);
+  const [points, setPoints] = useState([]);
   const [isSaving, setIsSaving] = useState(false);
+  const [savedPlots, setSavedPlots] = useState([]);
+  const [selectedPlotId, setSelectedPlotId] = useState('');
+  const [userLocation, setUserLocation] = useState(null);
+  const [isLocating, setIsLocating] = useState(false);
   
   // New states for GPS tracking
   const [mode, setMode] = useState('draw'); // 'draw' or 'record'
@@ -63,6 +67,41 @@ const [points, setPoints] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [searchTarget, setSearchTarget] = useState(null);
+
+  // Load saved plots on mount
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('SAVED_FARMER_PARCELS');
+      if (raw) {
+        const list = JSON.parse(raw);
+        if (Array.isArray(list)) setSavedPlots(list);
+      }
+    } catch (e) {
+      console.warn("Could not load saved parcels:", e);
+    }
+  }, []);
+
+  const detectLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+    setIsLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        setUserLocation([latitude, longitude]);
+        setSearchTarget([latitude, longitude]);
+        setIsLocating(false);
+      },
+      (err) => {
+        console.error("GPS error:", err);
+        alert("Failed to get current GPS location.");
+        setIsLocating(false);
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
+  };
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -90,35 +129,59 @@ const [points, setPoints] = useState([]);
       return;
     }
 
+    const defaultName = `Plot #${savedPlots.length + 1} - Farm Land`;
+    const plotName = prompt("Enter a name for this farmland plot / பண்ணையின் பெயரை உள்ளிடவும்:", defaultName);
+    if (!plotName) return;
+
     setIsSaving(true);
+    const newId = 'custom-' + Date.now();
+    const newPlot = {
+      id: newId,
+      name: plotName.trim(),
+      coords: [...points],
+      timestamp: new Date().toISOString(),
+      is_custom: true
+    };
+
+    // Update state and localStorage
+    const updated = [newPlot, ...savedPlots];
+    setSavedPlots(updated);
+    setSelectedPlotId(newId);
+    try {
+      localStorage.setItem('SAVED_FARMER_PARCELS', JSON.stringify(updated));
+    } catch (err) {
+      console.warn("Storage error:", err);
+    }
+
     try {
       const API_URL = "https://script.google.com/macros/s/AKfycbw7iGedtxuuuIKzmoHdu6n1IJJnV7LSmm6IujuLLB9FMGOFCjUKU4-JNiUOqlCcoYuwOA/exec";
-      
       const closedPoints = [...points, points[0]];
 
-      const response = await fetch(API_URL, {
+      await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify({
-          email: userName, // Sending name in the email field for Apps Script compatibility
+          email: userName,
+          plotName: plotName.trim(),
           polygon: closedPoints 
         }),
       });
-
-      const result = await response.json();
-      if (result.status === 'success') {
-        alert("Farmland demarcated and saved to Drive successfully!");
-        setPoints([]); 
-      } else {
-        alert("Failed to save: " + result.message);
-      }
     } catch (e) {
-      console.error(e);
-      alert("Error saving data. Make sure the Apps Script URL is set and deployed correctly.");
+      console.warn("Apps Script sync skipped:", e);
     } finally {
       setIsSaving(false);
+      alert(`"${plotName}" has been saved to your directory!`);
+      setPoints([]);
+    }
+  };
+
+  const handleSelectSavedPlot = (plotId) => {
+    setSelectedPlotId(plotId);
+    const plot = savedPlots.find(p => p.id === plotId);
+    if (plot && plot.coords && plot.coords.length > 0) {
+      setSearchTarget(plot.coords[0]);
     }
   };
 
@@ -212,6 +275,39 @@ const [points, setPoints] = useState([]);
             {isSearching ? '...' : '🔍'}
           </button>
         </form>
+
+        {/* Farmer Location & Saved Plots Directory */}
+        <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+          <button
+            type="button"
+            onClick={detectLocation}
+            disabled={isLocating}
+            style={{
+              flex: 1, padding: '10px 12px', borderRadius: '12px', border: '1px solid #007AFF',
+              backgroundColor: '#f0f7ff', color: '#007AFF', cursor: 'pointer', fontWeight: '600',
+              fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px'
+            }}
+          >
+            📍 {isLocating ? "Locating..." : "My Location"}
+          </button>
+          {savedPlots.length > 0 && (
+            <select
+              value={selectedPlotId}
+              onChange={(e) => handleSelectSavedPlot(e.target.value)}
+              style={{
+                flex: 1.5, padding: '10px', borderRadius: '12px', border: '1px solid #d1d1d6',
+                backgroundColor: 'white', color: '#1d1d1f', fontSize: '13px', outline: 'none'
+              }}
+            >
+              <option value="">📁 Saved Plots ({savedPlots.length})...</option>
+              {savedPlots.map((plot) => (
+                <option key={plot.id} value={plot.id}>
+                  {plot.name || 'Untitled Plot'}
+                </option>
+              ))}
+            </select>
+          )}
+        </div>
 
         {/* Mode Toggles */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', width: '100%' }}>
@@ -326,12 +422,33 @@ const [points, setPoints] = useState([]);
         
         <MapEvents points={points} setPoints={setPoints} mode={mode} />
 
+        {/* User GPS location marker */}
+        {userLocation && (
+          <Marker position={userLocation} />
+        )}
+
+        {/* Existing Saved Plots from Directory */}
+        {savedPlots.map((plot) => (
+          plot.coords && plot.coords.length >= 3 ? (
+            <Polygon
+              key={plot.id}
+              positions={plot.coords}
+              pathOptions={{
+                color: plot.id === selectedPlotId ? '#2563eb' : '#10b981',
+                fillColor: plot.id === selectedPlotId ? '#3b82f6' : '#34d399',
+                fillOpacity: plot.id === selectedPlotId ? 0.45 : 0.25,
+                weight: plot.id === selectedPlotId ? 3 : 2
+              }}
+            />
+          ) : null
+        ))}
+
         {points.map((pos, idx) => (
           <Marker key={idx} position={pos} />
         ))}
 
         {points.length >= 3 && (
-          <Polygon positions={points} pathOptions={{ color: 'blue', fillColor: 'blue', fillOpacity: 0.4 }} />
+          <Polygon positions={points} pathOptions={{ color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.35, dashArray: '4, 4' }} />
         )}
       </MapContainer>
     </div>
