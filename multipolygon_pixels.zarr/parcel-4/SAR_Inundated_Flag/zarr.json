@@ -1,13 +1,13 @@
 {
   "shape": [
-    10
+    56
   ],
   "data_type": "float32",
   "chunk_grid": {
     "name": "regular",
     "configuration": {
       "chunk_shape": [
-        10
+        56
       ]
     }
   },
@@ -41,6 +41,52 @@
     "category": "Monsoon / Radar (SAR)",
     "what_it_tells": "Instantly flags waterlogged spots, flood zones, or successful paddy puddling/transplanting ponds.",
     "timeseries": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
       0.0,
       0.0,
       0.0,

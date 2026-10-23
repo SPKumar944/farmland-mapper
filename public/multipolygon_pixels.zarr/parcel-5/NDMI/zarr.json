@@ -1,13 +1,13 @@
 {
   "shape": [
-    10
+    56
   ],
   "data_type": "float32",
   "chunk_grid": {
     "name": "regular",
     "configuration": {
       "chunk_shape": [
-        10
+        56
       ]
     }
   },
@@ -34,23 +34,69 @@
     }
   ],
   "attributes": {
-    "latest_value": 0.47,
+    "latest_value": 0.48,
     "technical_abbreviation": "NDMI",
     "suggested_name": "Crop Water Stress Alert",
     "farmer_friendly_name": "Crop Thirst / Water Stress Gauge",
     "category": "Water & Field Moisture",
     "what_it_tells": "Warns of crop dehydration 5 to 7 days before leaves start visibly wilting.",
     "timeseries": [
-      0.235,
-      0.261,
-      0.287,
-      0.313,
-      0.339,
-      0.366,
-      0.392,
-      0.418,
-      0.444,
-      0.47
+      0.34,
+      0.35,
+      0.36,
+      0.37,
+      0.38,
+      0.39,
+      0.4,
+      0.41,
+      0.41,
+      0.42,
+      0.43,
+      0.44,
+      0.45,
+      0.46,
+      0.47,
+      0.48,
+      0.47,
+      0.47,
+      0.46,
+      0.46,
+      0.45,
+      0.45,
+      0.44,
+      0.44,
+      0.43,
+      0.43,
+      0.42,
+      0.41,
+      0.4,
+      0.39,
+      0.38,
+      0.36,
+      0.35,
+      0.34,
+      0.33,
+      0.34,
+      0.35,
+      0.36,
+      0.37,
+      0.38,
+      0.39,
+      0.4,
+      0.41,
+      0.42,
+      0.43,
+      0.44,
+      0.45,
+      0.46,
+      0.47,
+      0.47,
+      0.47,
+      0.47,
+      0.47,
+      0.48,
+      0.48,
+      0.48
     ]
   },
   "zarr_format": 3,

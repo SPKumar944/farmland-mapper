@@ -2,6 +2,7 @@
   "attributes": {
     "id": "parcel-4",
     "name": "Farmland Parcel #4",
+    "survey_no": "80438",
     "timestamp": "2026-09-09T08:10:53.901Z",
     "area_acres": "0.22 Acres",
     "area_m2": 900.31,

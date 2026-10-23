@@ -1,13 +1,13 @@
 {
   "shape": [
-    10
+    56
   ],
   "data_type": "float32",
   "chunk_grid": {
     "name": "regular",
     "configuration": {
       "chunk_shape": [
-        10
+        56
       ]
     }
   },
@@ -34,23 +34,69 @@
     }
   ],
   "attributes": {
-    "latest_value": 9.5,
+    "latest_value": 6.0,
     "technical_abbreviation": "SIPI",
     "suggested_name": "Pest & Sickness Alert",
     "farmer_friendly_name": "Pest, Disease & Early Aging Warning",
     "category": "Stress & Pigment",
     "what_it_tells": "Spots early plant stress caused by insect attacks, fungal diseases, or premature leaf drying.",
     "timeseries": [
-      4.75,
-      5.278,
-      5.806,
-      6.333,
-      6.861,
-      7.389,
-      7.917,
-      8.444,
-      8.972,
-      9.5
+      10.0,
+      9.7,
+      9.5,
+      9.2,
+      8.9,
+      8.7,
+      8.4,
+      8.1,
+      7.9,
+      7.6,
+      7.3,
+      7.1,
+      6.8,
+      6.5,
+      6.3,
+      6.0,
+      6.1,
+      6.3,
+      6.4,
+      6.6,
+      6.7,
+      6.9,
+      7.0,
+      7.2,
+      7.3,
+      7.5,
+      7.6,
+      8.0,
+      8.3,
+      8.6,
+      9.0,
+      9.4,
+      9.7,
+      10.0,
+      10.4,
+      10.1,
+      9.8,
+      9.5,
+      9.3,
+      9.0,
+      8.7,
+      8.4,
+      8.1,
+      7.8,
+      7.5,
+      7.3,
+      7.0,
+      6.7,
+      6.4,
+      6.3,
+      6.3,
+      6.2,
+      6.2,
+      6.1,
+      6.1,
+      6.0
     ]
   },
   "zarr_format": 3,

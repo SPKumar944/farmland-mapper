@@ -1,7 +1,10 @@
 {
   "attributes": {
     "title": "Multipolygon Farmland Pixel Agro-Telemetry Datacube",
-    "source": "farmland_polygons.shp, jANA_FAMRLAND.shp, input.csv"
+    "source": "farmland_polygons.shp, jANA_FAMRLAND.shp, neivelivadapathy_optical_pixels.csv",
+    "start_date": "2025-10-31",
+    "latest_date": "2026-10-11",
+    "total_passes": 56
   },
   "zarr_format": 3,
   "node_type": "group"

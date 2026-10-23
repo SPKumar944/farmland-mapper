@@ -1,13 +1,13 @@
 {
   "shape": [
-    10
+    56
   ],
   "data_type": "float32",
   "chunk_grid": {
     "name": "regular",
     "configuration": {
       "chunk_shape": [
-        10
+        56
       ]
     }
   },
@@ -34,23 +34,69 @@
     }
   ],
   "attributes": {
-    "latest_value": -6.3,
+    "latest_value": -5.5,
     "technical_abbreviation": "SAR_VV / VH / CR",
     "suggested_name": "Crop Height & Falling Risk",
     "farmer_friendly_name": "Plant Height & Stalk Rigidity Tracker",
     "category": "Monsoon / Radar (SAR)",
     "what_it_tells": "Tracks vertical standing, stalk thickening, and lodging/falling risk in tall crops (cane, maize).",
     "timeseries": [
-      -3.15,
-      -3.5,
-      -3.85,
-      -4.2,
-      -4.55,
-      -4.9,
-      -5.25,
+      -9.8,
+      -9.5,
+      -9.2,
+      -8.9,
+      -8.6,
+      -8.3,
+      -8.0,
+      -7.8,
+      -7.5,
+      -7.2,
+      -6.9,
+      -6.6,
+      -6.4,
+      -6.1,
+      -5.8,
+      -5.5,
+      -5.7,
+      -5.8,
+      -6.0,
+      -6.1,
+      -6.3,
+      -6.4,
+      -6.6,
+      -6.7,
+      -6.9,
+      -7.0,
+      -7.2,
+      -7.6,
+      -7.9,
+      -8.3,
+      -8.7,
+      -9.1,
+      -9.4,
+      -9.8,
+      -10.2,
+      -9.9,
+      -9.6,
+      -9.3,
+      -9.0,
+      -8.7,
+      -8.4,
+      -8.0,
+      -7.7,
+      -7.4,
+      -7.1,
+      -6.8,
+      -6.5,
+      -6.2,
+      -5.9,
+      -5.9,
+      -5.8,
+      -5.7,
+      -5.7,
       -5.6,
-      -5.95,
-      -6.3
+      -5.6,
+      -5.5
     ]
   },
   "zarr_format": 3,

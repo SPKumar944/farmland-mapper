@@ -99,8 +99,8 @@
     ],
     "ndvi": 0.82,
     "ndmi": "+0.48",
-    "sipi": "Low (9%)",
-    "soil_moisture": "70%",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -152,9 +152,9 @@
       "salem"
     ],
     "ndvi": 0.7,
-    "ndmi": "+0.47",
-    "sipi": "Low (10%)",
-    "soil_moisture": "68%",
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -207,8 +207,8 @@
     ],
     "ndvi": 0.84,
     "ndmi": "+0.48",
-    "sipi": "Low (9%)",
-    "soil_moisture": "70%",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -264,9 +264,9 @@
       "salem"
     ],
     "ndvi": 0.85,
-    "ndmi": "+0.49",
-    "sipi": "Low (8%)",
-    "soil_moisture": "70%",
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -318,9 +318,9 @@
       "salem"
     ],
     "ndvi": 0.7,
-    "ndmi": "+0.47",
-    "sipi": "Low (10%)",
-    "soil_moisture": "68%",
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -372,9 +372,9 @@
       "salem"
     ],
     "ndvi": 0.71,
-    "ndmi": "+0.47",
-    "sipi": "Low (10%)",
-    "soil_moisture": "68%",
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -427,8 +427,8 @@
     ],
     "ndvi": 0.76,
     "ndmi": "+0.48",
-    "sipi": "Low (9%)",
-    "soil_moisture": "69%",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -481,8 +481,8 @@
     ],
     "ndvi": 0.75,
     "ndmi": "+0.48",
-    "sipi": "Low (10%)",
-    "soil_moisture": "69%",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -534,9 +534,9 @@
       "salem"
     ],
     "ndvi": 0.86,
-    "ndmi": "+0.49",
-    "sipi": "Low (8%)",
-    "soil_moisture": "70%",
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   },
   {
@@ -588,9 +588,9 @@
       "salem"
     ],
     "ndvi": 0.85,
-    "ndmi": "+0.49",
-    "sipi": "Low (8%)",
-    "soil_moisture": "70%",
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
     "inundated": "Clear"
   }
 ]
