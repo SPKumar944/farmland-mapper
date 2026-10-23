@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#1a1c1f","outline":"#78767b","surface":"#f9f9fe","error-container":"#ffdad6","secondary-fixed":"#e3e2e7","surface-container-low":"#f3f3f8","on-background":"#1a1c1f","on-primary":"#ffffff","on-tertiary-fixed":"#1e1b17","on-primary-fixed-variant":"#474649","outline-variant":"#c8c5ca","inverse-on-surface":"#f0f0f5","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","inverse-surface":"#2f3034","primary":"#000000","on-surface-variant":"#47464a","surface-container":"#ededf2","on-secondary":"#ffffff","on-secondary-fixed-variant":"#46464b","secondary-container":"#e0dfe4","tertiary-container":"#1e1b17","on-tertiary-container":"#88837e","surface-bright":"#f9f9fe","background":"#f9f9fe","on-error":"#ffffff","error":"#ba1a1a","inverse-primary":"#c8c6c8","primary-fixed":"#e5e1e4","on-tertiary-fixed-variant":"#4a4642","tertiary-fixed":"#e8e1db","primary-fixed-dim":"#c8c6c8","surface-container-highest":"#e2e2e7","secondary":"#5e5e63","primary-container":"#1c1b1d","on-primary-fixed":"#1c1b1d","on-primary-container":"#858386","secondary-fixed-dim":"#c7c6cb","on-secondary-fixed":"#1a1b1f","on-secondary-container":"#626267","surface-dim":"#d9dade","tertiary-fixed-dim":"#ccc5bf","surface-variant":"#e2e2e7","on-error-container":"#93000a","surface-tint":"#5f5e60","tertiary":"#000000","surface-container-high":"#e8e8ed"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-mobile":"0.75rem","space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","margin":"3rem","space-xl":"2.5rem"},fontFamily:{"body-md":["Hanken Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"label-caps":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-mono-num":["Space Grotesk"],"headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"headline-md":["Space Grotesk"],"display-hero":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"]},fontSize:{"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"600"}],"display-hero-mobile":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"label-mono-num":["0.8125rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"headline-lg":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"500"}],"display-hero":["5rem",{"lineHeight":"5rem","letterSpacing":"-0.04em","fontWeight":"500"}],"headline-xl-mobile":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}]}}}}</script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-16 px-space-lg flex items-center justify-between border-b border-surface-container"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-on-primary text-[16px]">satellite_alt</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold">TerraCrop</span></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-secondary"><span id="nav-state" class="hover:text-primary transition-colors cursor-pointer">Tamil Nadu</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-district" class="hover:text-primary transition-colors cursor-pointer">Salem</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-parcel" class="text-primary font-medium">Parcel #86032</span></nav></div>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+.cursor-crosshair, .cursor-crosshair .leaflet-interactive, .cursor-crosshair .leaflet-grab, .cursor-crosshair .leaflet-container, .cursor-crosshair .leaflet-pane { cursor: crosshair !important; }
+.cursor-target, .cursor-target .leaflet-interactive, .cursor-target .leaflet-grab, .cursor-target .leaflet-container, .cursor-target .leaflet-pane { cursor: crosshair !important; }
+.demarcation-map-glow { box-shadow: inset 0 0 0 2.5px #10b981; }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#1a1c1f","outline":"#78767b","surface":"#f9f9fe","error-container":"#ffdad6","secondary-fixed":"#e3e2e7","surface-container-low":"#f3f3f8","on-background":"#1a1c1f","on-primary":"#ffffff","on-tertiary-fixed":"#1e1b17","on-primary-fixed-variant":"#474649","outline-variant":"#c8c5ca","inverse-on-surface":"#f0f0f5","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","inverse-surface":"#2f3034","primary":"#000000","on-surface-variant":"#47464a","surface-container":"#ededf2","on-secondary":"#ffffff","on-secondary-fixed-variant":"#46464b","secondary-container":"#e0dfe4","tertiary-container":"#1e1b17","on-tertiary-container":"#88837e","surface-bright":"#f9f9fe","background":"#f9f9fe","on-error":"#ffffff","error":"#ba1a1a","inverse-primary":"#c8c6c8","primary-fixed":"#e5e1e4","on-tertiary-fixed-variant":"#4a4642","tertiary-fixed":"#e8e1db","primary-fixed-dim":"#c8c6c8","surface-container-highest":"#e2e2e7","secondary":"#5e5e63","primary-container":"#1c1b1d","on-primary-fixed":"#1c1b1d","on-primary-container":"#858386","secondary-fixed-dim":"#c7c6cb","on-secondary-fixed":"#1a1b1f","on-secondary-container":"#626267","surface-dim":"#d9dade","tertiary-fixed-dim":"#ccc5bf","surface-variant":"#e2e2e7","on-error-container":"#93000a","surface-tint":"#5f5e60","tertiary":"#000000","surface-container-high":"#e8e8ed"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-mobile":"0.75rem","space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","margin":"3rem","space-xl":"2.5rem"},fontFamily:{"body-md":["Hanken Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"label-caps":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-mono-num":["Space Grotesk"],"headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"headline-md":["Space Grotesk"],"display-hero":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"]},fontSize:{"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"600"}],"display-hero-mobile":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"label-mono-num":["0.8125rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"headline-lg":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"500"}],"display-hero":["5rem",{"lineHeight":"5rem","letterSpacing":"-0.04em","fontWeight":"500"}],"headline-xl-mobile":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}]}}}}</script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-16 px-space-lg flex items-center justify-between border-b border-surface-container"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-on-primary text-[16px]">satellite_alt</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold">TerraCrop</span></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-secondary"><span id="nav-state" class="hover:text-primary transition-colors cursor-pointer">Tamil Nadu</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-district" class="hover:text-primary transition-colors cursor-pointer">Salem</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-parcel" class="text-primary font-medium">Parcel #86032</span></nav></div>
 
     <!-- Farmer Action Buttons In Top Header Empty Space -->
     <div class="flex items-center gap-2 mx-3 shrink-0">
@@ -10,9 +14,9 @@
         <span id="topDetectLocationLabel">My Location</span>
       </button>
 
-      <button id="topDemarcateBtn" onclick="window.toggleDemarcationMode()" class="h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap active:scale-95" title="Demarcate new farmland boundary (Tap corners or Walk perimeter)">
-        <span class="material-symbols-outlined text-[16px] text-emerald-400">edit_location_alt</span>
-        <span id="topDemarcateBtnLabel">Demarcate Farm</span>
+      <button id="topDemarcateBtn" onclick="window.toggleDemarcationMode()" class="h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap active:scale-95" title="Enable Draw Pen to draw farmland boundary">
+        <span class="material-symbols-outlined text-[16px] text-emerald-400">edit</span>
+        <span id="topDemarcateBtnLabel">Draw Pen</span>
       </button>
 
       <button id="topFitAllBtn" onclick="window.fitAllParcels()" class="h-9 px-3 rounded-full bg-surface-container-low hover:bg-surface-container border border-surface-container text-xs text-slate-700 font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap" title="Zoom to fit cropland parcels">
@@ -100,18 +104,59 @@
   <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/20 pointer-events-none z-10"></div>
 
   <!-- Top Controls: Layer Selectors & Zoom Buttons -->
-  <div class="relative z-20 p-space-md flex items-center justify-between pointer-events-none">
-    <div class="flex items-center gap-1 p-1 bg-surface-container-lowest/90 backdrop-blur-xl rounded-full shadow-sm border border-surface-container pointer-events-auto">
+  <div class="relative z-20 p-space-md flex flex-wrap items-center justify-between gap-2 pointer-events-none">
+    <div class="flex flex-wrap items-center gap-1.5 p-1 bg-surface-container-lowest/95 backdrop-blur-xl rounded-full shadow-md border border-surface-container pointer-events-auto">
       <button id="layer-overview" class="px-space-md py-1 rounded-full bg-primary text-on-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('overview')">Overview</button>
       <button id="layer-vegetation" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('vegetation')">Vegetation</button>
       <button id="layer-moisture" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('moisture')">Moisture</button>
       <button id="layer-radar" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('radar')">Radar</button>
+      <div class="h-4 w-px bg-slate-200"></div>
+      <button id="mapDetectLocationBtn" onclick="window.detectFarmerLocation()" class="px-3 py-1 rounded-full text-blue-700 bg-blue-50 hover:bg-blue-100 font-label-caps text-label-caps transition-all flex items-center gap-1 font-semibold cursor-pointer shadow-xs active:scale-95" title="Detect your live GPS position">
+        <span class="material-symbols-outlined text-[15px] text-blue-600">my_location</span>
+        <span id="mapDetectLocationLabel">My Location</span>
+      </button>
+      <div class="h-4 w-px bg-slate-200"></div>
+      <button id="mapDrawPenBtn" onclick="window.toggleDemarcationMode()" class="px-3.5 py-1 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-label-caps text-label-caps transition-all flex items-center gap-1.5 font-semibold cursor-pointer shadow-xs active:scale-95" title="Enable Draw Pen to draw farmland boundary">
+        <span class="material-symbols-outlined text-[15px]">edit</span>
+        <span id="mapDrawPenLabel">Draw Pen</span>
+      </button>
     </div>
     <div class="flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-xl p-1 rounded-full shadow-sm border border-surface-container text-primary pointer-events-auto">
       <button onclick="window.fieldMap.zoomIn()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom in"><span class="material-symbols-outlined text-[16px]">add</span></button>
       <button onclick="window.fieldMap.zoomOut()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom out"><span class="material-symbols-outlined text-[16px]">remove</span></button>
       <button onclick="resetFieldView()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-secondary hover:text-primary" title="Recenter active parcel"><span class="material-symbols-outlined text-[15px]">center_focus_strong</span></button>
     </div>
+  </div>
+
+  <!-- Floating Draw Pen Active Banner on Map -->
+  <div id="mapDrawPenBanner" class="hidden absolute top-16 left-1/2 -translate-x-1/2 z-30 bg-slate-900/95 backdrop-blur-md text-white px-4 py-2 rounded-full shadow-2xl border border-slate-700 flex items-center gap-3 text-xs select-none pointer-events-auto">
+    <div class="flex items-center gap-1.5 font-bold text-emerald-400">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span class="material-symbols-outlined text-[15px]">edit</span>
+      <span>Draw Pen Active</span>
+    </div>
+    <span class="text-slate-500">|</span>
+    <span id="mapDrawPenInstruction" class="text-slate-200 text-[11px]">Click on satellite map to add farm boundary corners</span>
+    <span class="text-slate-500">|</span>
+    <div class="font-mono text-emerald-300 font-bold" id="mapDrawPenStats">0 corners (0.00 Ac)</div>
+    <div class="flex items-center gap-1 ml-1">
+      <button onclick="window.undoLastBoundaryPoint()" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[11px] text-slate-300 cursor-pointer">Undo</button>
+      <button onclick="window.clearBoundaryPoints()" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-red-900 text-[11px] text-red-300 cursor-pointer">Clear</button>
+      <button id="mapSaveParcelBtn" onclick="window.openSaveParcelModal()" disabled class="px-2.5 py-0.5 rounded bg-emerald-600 disabled:bg-slate-800 text-white disabled:text-slate-500 text-[11px] font-bold cursor-pointer disabled:cursor-not-allowed">Save</button>
+      <button onclick="window.cancelDemarcation()" class="w-5 h-5 rounded-full hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer ml-1 text-xs">✕</button>
+    </div>
+  </div>
+
+  <!-- Floating Tap Farm Location Banner on Map -->
+  <div id="tapLocationBanner" class="hidden absolute top-16 left-1/2 -translate-x-1/2 z-30 bg-blue-950/95 backdrop-blur-md text-white px-4 py-2 rounded-full shadow-2xl border border-blue-500 flex items-center gap-3 text-xs select-none pointer-events-auto">
+    <div class="flex items-center gap-1.5 font-bold text-blue-300">
+      <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+      <span class="material-symbols-outlined text-[16px]">touch_app</span>
+      <span>Pin Farm Location</span>
+    </div>
+    <span class="text-blue-500">|</span>
+    <span class="text-blue-100 text-[11px]">Click anywhere on the satellite map to mark your farm position</span>
+    <button onclick="window.cancelTapLocationMode()" class="px-2.5 py-0.5 rounded-full bg-blue-800 hover:bg-blue-700 text-[11px] text-white cursor-pointer ml-1 font-semibold">✕ Cancel</button>
   </div>
 
   <!-- Floating Demarcation Panel -->
@@ -1370,9 +1415,13 @@
     });
     window.fieldMap = map;
 
-    // Handle map click during demarcation
+    // Handle map click during demarcation and tap location
     map.on('click', function(e) {
-      if (window.isDemarcating && window.currentDemarcateSubmode === 'tap') {
+      if (window.isTapLocationMode) {
+        window.handleTapLocation(e.latlng.lat, e.latlng.lng);
+        return;
+      }
+      if (window.isDemarcating) {
         window.addDemarcationPoint(e.latlng.lat, e.latlng.lng);
       }
     });
@@ -1436,7 +1485,11 @@
         });
 
         poly.on('click', (e) => {
-          if (window.isDemarcating && window.currentDemarcateSubmode === 'tap') {
+          if (window.isTapLocationMode) {
+            window.handleTapLocation(e.latlng.lat, e.latlng.lng);
+            return;
+          }
+          if (window.isDemarcating) {
             window.addDemarcationPoint(e.latlng.lat, e.latlng.lng);
             return;
           }
@@ -1469,7 +1522,8 @@
           fillColor: '#ffffff',
           fillOpacity: 1,
           color: '#0f172a',
-          weight: 2.5
+          weight: 2.5,
+          interactive: false
         }).addTo(map);
       }
     }
@@ -1847,89 +1901,182 @@
 
     // ==========================================
     // ==========================================
-    // 1. FARMER CURRENT LOCATION DETECTION (GPS + IP FALLBACK)
+    // 1. LIVE FARMER LOCATION DETECTION & TAP-TO-LOCATE
     // ==========================================
     window.userLocationMarker = null;
+    window.isTapLocationMode = false;
 
     window.detectFarmerLocation = function() {
       const topBtn = document.getElementById('topDetectLocationBtn');
       const topLabel = document.getElementById('topDetectLocationLabel');
-      if (topBtn) topBtn.classList.add('animate-pulse');
-      if (topLabel) topLabel.innerText = 'Locating...';
+      const mapBtn = document.getElementById('mapDetectLocationBtn');
+      const mapLabel = document.getElementById('mapDetectLocationLabel');
 
-      function applyLocationResult(lat, lng, accuracy, source) {
+      // Visual loading state on both buttons
+      if (topBtn) topBtn.classList.add('animate-pulse');
+      if (topLabel) topLabel.innerText = 'Locating GPS...';
+      if (mapBtn) mapBtn.classList.add('animate-pulse');
+      if (mapLabel) mapLabel.innerText = 'Locating...';
+
+      function resetLocateButtons() {
+        if (topBtn) topBtn.classList.remove('animate-pulse');
+        if (topLabel) topLabel.innerText = 'My Location';
+        if (mapBtn) mapBtn.classList.remove('animate-pulse');
+        if (mapLabel) mapLabel.innerText = 'My Location';
+      }
+
+      function onLocationSuccess(lat, lng, accuracy, source) {
         if (topBtn) topBtn.classList.remove('animate-pulse');
         if (topLabel) {
-          topLabel.innerText = 'Found!';
-          setTimeout(() => { topLabel.innerText = 'My Location'; }, 3000);
+          topLabel.innerText = '📍 Found!';
+          setTimeout(() => { topLabel.innerText = 'My Location'; }, 3500);
+        }
+        if (mapBtn) mapBtn.classList.remove('animate-pulse');
+        if (mapLabel) {
+          mapLabel.innerText = '📍 Found!';
+          setTimeout(() => { mapLabel.innerText = 'My Location'; }, 3500);
         }
 
-        if (window.userLocationMarker) {
-          window.userLocationMarker.setLatLng([lat, lng]);
-        } else {
-          const userIcon = L.divIcon({
-            className: 'farmer-location-pulse',
-            html: `
-              <div class="relative flex items-center justify-center">
-                <div class="w-6 h-6 bg-blue-600 rounded-full border-2 border-white shadow-xl ring-4 ring-blue-400/40 animate-ping"></div>
-                <div class="absolute w-3.5 h-3.5 bg-blue-600 rounded-full border-2 border-white"></div>
-                <div class="absolute -top-7 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg whitespace-nowrap">📍 You are here</div>
-              </div>`,
-            iconSize: [28, 28],
-            iconAnchor: [14, 14]
-          });
-          window.userLocationMarker = L.marker([lat, lng], { icon: userIcon, zIndexOffset: 1000 }).addTo(window.fieldMap);
-        }
-
-        window.userLocationMarker.bindPopup(`
-          <div style="font-family: inherit; font-size: 12px; padding: 4px; min-width: 170px;">
-            <strong style="color: #0f172a; font-size: 13px;">📍 Your Detected Farm Position</strong><br/>
-            <span style="color: #64748b; font-size: 11px;">${lat.toFixed(5)}° N, ${lng.toFixed(5)}° E</span><br/>
-            <span style="font-size: 10px; color: #10b981; font-weight: 600;">Accuracy: ±${Math.round(accuracy)}m (${source})</span>
-            <div style="margin-top: 8px;">
-              <button onclick="window.startDemarcationAtLocation(${lat}, ${lng})" style="width: 100%; padding: 6px 10px; background: #0f172a; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 11px; cursor: pointer;">
-                ✏️ Demarcate Here
-              </button>
-            </div>
-          </div>
-        `).openPopup();
-
-        // Zoom in close to the farm field (zoom 18)
-        window.fieldMap.flyTo([lat, lng], 18, { animate: true, duration: 1.2 });
+        window.applyFarmerLocationMarker(lat, lng, accuracy, source);
       }
 
-      function fallbackToIpLocation() {
-        fetch('https://get.geojs.io/v1/ip/geo.json')
-          .then(res => res.json())
-          .then(data => {
-            const lat = parseFloat(data.latitude);
-            const lng = parseFloat(data.longitude);
-            if (!isNaN(lat) && !isNaN(lng)) {
-              applyLocationResult(lat, lng, 1000, `Network / ${data.city || 'Local'}`);
-            } else {
-              applyLocationResult(11.6417, 78.1118, 50, 'Salem Farmlands');
-            }
-          })
-          .catch(() => {
-            applyLocationResult(11.6417, 78.1118, 50, 'Salem Farmlands');
-          });
+      if (!navigator.geolocation) {
+        resetLocateButtons();
+        window.openLocationHelpModal("Geolocation is not supported by your browser.");
+        return;
       }
 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            const { latitude, longitude, accuracy } = pos.coords;
-            applyLocationResult(latitude, longitude, accuracy, 'Live GPS');
-          },
-          (err) => {
-            console.warn("Browser GPS unavailable, falling back to IP/Network:", err);
-            fallbackToIpLocation();
-          },
-          { enableHighAccuracy: true, timeout: 5000, maximumAge: 30000 }
-        );
+      // 1st Attempt: High-accuracy GPS (10s timeout)
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude, accuracy } = pos.coords;
+          onLocationSuccess(latitude, longitude, accuracy, 'Live GPS');
+        },
+        (err) => {
+          console.warn("High-accuracy GPS failed, trying network/WiFi fallback:", err);
+          // 2nd Attempt: Low-accuracy WiFi/network triangulation (8s timeout)
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const { latitude, longitude, accuracy } = pos.coords;
+              onLocationSuccess(latitude, longitude, accuracy, 'Network Triangulation');
+            },
+            (err2) => {
+              console.warn("Network geolocation failed:", err2);
+              resetLocateButtons();
+              window.openLocationHelpModal(err2);
+            },
+            { enableHighAccuracy: false, timeout: 8000, maximumAge: 60000 }
+          );
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    };
+
+    window.applyFarmerLocationMarker = function(lat, lng, accuracy, source) {
+      if (window.userLocationMarker) {
+        window.userLocationMarker.setLatLng([lat, lng]);
       } else {
-        fallbackToIpLocation();
+        const userIcon = L.divIcon({
+          className: 'farmer-location-pin',
+          html: `
+            <div class="relative flex items-center justify-center">
+              <div class="w-8 h-8 bg-blue-500 rounded-full border-2 border-white shadow-xl ring-4 ring-blue-400/40 animate-ping"></div>
+              <div class="absolute w-4 h-4 bg-blue-600 rounded-full border-2 border-white shadow"></div>
+              <div class="absolute -top-7 bg-slate-900 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-lg whitespace-nowrap border border-slate-700">📍 You are here</div>
+            </div>`,
+          iconSize: [32, 32],
+          iconAnchor: [16, 16]
+        });
+        window.userLocationMarker = L.marker([lat, lng], { icon: userIcon, zIndexOffset: 1000 }).addTo(window.fieldMap);
       }
+
+      window.userLocationMarker.bindPopup(`
+        <div style="font-family: inherit; font-size: 12px; padding: 4px; min-width: 180px;">
+          <strong style="color: #0f172a; font-size: 13px;">📍 Detected Farm Position</strong><br/>
+          <span style="color: #64748b; font-size: 11px;">${lat.toFixed(5)}° N, ${lng.toFixed(5)}° E</span><br/>
+          <span style="font-size: 10px; color: #10b981; font-weight: 600;">Accuracy: ±${Math.round(accuracy)}m (${source})</span>
+          <div style="margin-top: 8px;">
+            <button onclick="window.startDemarcationAtLocation(${lat}, ${lng})" style="width: 100%; padding: 6px 10px; background: #059669; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 11px; cursor: pointer;">
+              ✏️ Start Draw Pen Here
+            </button>
+          </div>
+        </div>
+      `).openPopup();
+
+      window.fieldMap.flyTo([lat, lng], 18, { animate: true, duration: 1.2 });
+    };
+
+    window.openLocationHelpModal = function(err) {
+      const modal = document.getElementById('locationHelpModal');
+      if (modal) modal.classList.remove('hidden');
+    };
+
+    window.closeLocationHelpModal = function() {
+      const modal = document.getElementById('locationHelpModal');
+      if (modal) modal.classList.add('hidden');
+    };
+
+    window.enableTapLocationMode = function() {
+      window.closeLocationHelpModal();
+      window.isTapLocationMode = true;
+      const banner = document.getElementById('tapLocationBanner');
+      if (banner) banner.classList.remove('hidden');
+      const mapEl = document.getElementById('field-interactive-map');
+      if (mapEl) mapEl.classList.add('cursor-target');
+    };
+
+    window.cancelTapLocationMode = function() {
+      window.isTapLocationMode = false;
+      const banner = document.getElementById('tapLocationBanner');
+      if (banner) banner.classList.add('hidden');
+      const mapEl = document.getElementById('field-interactive-map');
+      if (mapEl) mapEl.classList.remove('cursor-target');
+    };
+
+    window.handleTapLocation = function(lat, lng) {
+      window.cancelTapLocationMode();
+      window.applyFarmerLocationMarker(lat, lng, 10, 'Pin on Map');
+    };
+
+    window.searchVillageLocation = function() {
+      const input = document.getElementById('manualLocationSearchInput');
+      const query = (input?.value || '').trim();
+      if (!query) {
+        alert("Please enter a village, town or pin code (e.g. Omalur, Salem, Edappadi, Namakkal).");
+        return;
+      }
+
+      const encoded = encodeURIComponent(query + ', Tamil Nadu, India');
+      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encoded}&countrycodes=in&limit=1`)
+        .then(res => res.json())
+        .then(results => {
+          if (results && results.length > 0) {
+            const r = results[0];
+            const lat = parseFloat(r.lat);
+            const lng = parseFloat(r.lon);
+            window.closeLocationHelpModal();
+            window.applyFarmerLocationMarker(lat, lng, 50, `Village: ${query}`);
+          } else {
+            // Try general search without Tamil Nadu suffix
+            return fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`)
+              .then(res2 => res2.json())
+              .then(res2Data => {
+                if (res2Data && res2Data.length > 0) {
+                  const r = res2Data[0];
+                  const lat = parseFloat(r.lat);
+                  const lng = parseFloat(r.lon);
+                  window.closeLocationHelpModal();
+                  window.applyFarmerLocationMarker(lat, lng, 50, `Town: ${query}`);
+                } else {
+                  alert(`Could not find "${query}". Please check the spelling or tap directly on the map.`);
+                }
+              });
+          }
+        })
+        .catch(err => {
+          console.error("Nominatim geocoding error:", err);
+          alert("Could not reach location search service. Please tap your farm directly on the map.");
+        });
     };
 
     window.startDemarcationAtLocation = function(lat, lng) {
@@ -1938,10 +2085,10 @@
     };
 
     // ==========================================
-    // 2. FARM LAND BOUNDARY DEMARCATION ENGINE
+    // 2. FARM LAND BOUNDARY DEMARCATION (DRAW PEN)
     // ==========================================
     window.isDemarcating = false;
-    window.currentDemarcateSubmode = 'tap'; // 'tap' or 'walk'
+    window.currentDemarcateSubmode = 'tap';
     let demarcationPoints = [];
     let demarcationMarkers = [];
     let demarcationPolygon = null;
@@ -1982,20 +2129,31 @@
 
       const countEls = [document.getElementById('demarcatePointCount'), document.getElementById('topDemarcatePointCount')];
       const areaEls = [document.getElementById('demarcateAreaDisplay'), document.getElementById('topDemarcateAreaDisplay')];
-      const saveBtns = [document.getElementById('saveBoundaryBtn'), document.getElementById('topSaveBoundaryBtn')];
+      const saveBtns = [
+        document.getElementById('saveBoundaryBtn'),
+        document.getElementById('topSaveBoundaryBtn'),
+        document.getElementById('mapSaveParcelBtn')
+      ];
+      const mapStats = document.getElementById('mapDrawPenStats');
 
       countEls.forEach(el => { if (el) el.innerText = `${count}`; });
 
       let areaText = '0.00 Acres (0 m²)';
+      let shortStats = `${count} corners (0.00 Ac)`;
+
       if (count >= 3) {
         const m2 = calculatePolygonAreaM2(demarcationPoints);
         const acres = (m2 * 0.000247105).toFixed(2);
         areaText = `${acres} Acres (${Math.round(m2).toLocaleString()} m²)`;
+        shortStats = `${count} corners (${acres} Ac)`;
         saveBtns.forEach(btn => { if (btn) btn.removeAttribute('disabled'); });
       } else {
+        shortStats = `${count} corners`;
         saveBtns.forEach(btn => { if (btn) btn.setAttribute('disabled', 'true'); });
       }
+
       areaEls.forEach(el => { if (el) el.innerText = areaText; });
+      if (mapStats) mapStats.innerText = shortStats;
 
       // Clean up previous drawing overlays
       if (demarcationPolygon) {
@@ -2010,18 +2168,18 @@
       // Render fresh vector preview with interactive: false (prevents swallowing clicks)
       if (count >= 3) {
         demarcationPolygon = L.polygon(demarcationPoints, {
-          color: '#2563eb',
-          weight: 3,
-          fillColor: '#3b82f6',
-          fillOpacity: 0.35,
-          dashArray: '4, 4',
+          color: '#10b981',
+          weight: 3.5,
+          fillColor: '#059669',
+          fillOpacity: 0.40,
+          dashArray: '5, 5',
           interactive: false
         }).addTo(window.fieldMap);
       } else if (count === 2) {
         demarcationPolyline = L.polyline(demarcationPoints, {
-          color: '#2563eb',
-          weight: 3,
-          dashArray: '4, 4',
+          color: '#10b981',
+          weight: 3.5,
+          dashArray: '5, 5',
           interactive: false
         }).addTo(window.fieldMap);
       }
@@ -2029,19 +2187,41 @@
 
     window.toggleDemarcationMode = function() {
       window.isDemarcating = !window.isDemarcating;
+
       const topBar = document.getElementById('topDemarcationBar');
       const topBtn = document.getElementById('topDemarcateBtn');
       const topLabel = document.getElementById('topDemarcateBtnLabel');
-      const legacyToolbar = document.getElementById('demarcationToolbar');
+      const mapBtn = document.getElementById('mapDrawPenBtn');
+      const mapLabel = document.getElementById('mapDrawPenLabel');
+      const mapBanner = document.getElementById('mapDrawPenBanner');
+      const mapEl = document.getElementById('field-interactive-map');
 
       if (window.isDemarcating) {
+        // Cancel any tap location mode
+        if (window.isTapLocationMode) window.cancelTapLocationMode();
+
+        // 1. Show floating banner on map & top action bar
+        if (mapBanner) mapBanner.classList.remove('hidden');
         if (topBar) topBar.classList.remove('hidden');
-        if (legacyToolbar) legacyToolbar.classList.add('hidden'); // Prioritize top bar
+
+        // 2. Active green styling for top button
         if (topBtn) {
           topBtn.className = 'h-9 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-md ring-2 ring-emerald-300 whitespace-nowrap active:scale-95';
         }
-        if (topLabel) topLabel.innerText = 'Exit Demarcation';
-        window.fieldMap.getContainer().style.cursor = 'crosshair';
+        if (topLabel) topLabel.innerText = 'Exit Pen';
+
+        // 3. Active green styling for map pill button
+        if (mapBtn) {
+          mapBtn.className = 'px-3.5 py-1 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-label-caps text-label-caps transition-all flex items-center gap-1.5 font-semibold cursor-pointer shadow-md ring-2 ring-emerald-300 active:scale-95';
+        }
+        if (mapLabel) mapLabel.innerText = 'Exit Pen';
+
+        // 4. Set map container crosshair cursor & glow
+        if (mapEl) {
+          mapEl.classList.add('cursor-crosshair');
+          mapEl.classList.add('demarcation-map-glow');
+        }
+
         window.clearBoundaryPoints();
       } else {
         window.cancelDemarcation();
@@ -2054,19 +2234,22 @@
       const topWalkBtn = document.getElementById('topDrawModeWalkBtn');
       const topWalkControl = document.getElementById('topWalkGpsControl');
       const topHelp = document.getElementById('topDemarcateHelpText');
+      const mapInstruction = document.getElementById('mapDrawPenInstruction');
 
       if (mode === 'tap') {
         if (topTapBtn) topTapBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md bg-blue-600 text-white shadow-xs cursor-pointer flex items-center gap-1';
         if (topWalkBtn) topWalkBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center gap-1';
         if (topWalkControl) topWalkControl.classList.add('hidden');
         if (topHelp) topHelp.innerText = 'Click corners of your farmland directly on the satellite map to draw boundary.';
-        window.fieldMap.getContainer().style.cursor = 'crosshair';
+        if (mapInstruction) mapInstruction.innerText = 'Click on satellite map to add farm boundary corners';
+        document.getElementById('field-interactive-map')?.classList.add('cursor-crosshair');
       } else {
         if (topWalkBtn) topWalkBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md bg-blue-600 text-white shadow-xs cursor-pointer flex items-center gap-1';
         if (topTapBtn) topTapBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center gap-1';
         if (topWalkControl) topWalkControl.classList.remove('hidden');
         if (topHelp) topHelp.innerText = 'Click Start Walk and walk along the outer perimeter of your farm boundary.';
-        window.fieldMap.getContainer().style.cursor = 'default';
+        if (mapInstruction) mapInstruction.innerText = 'Click Start Walk & walk along your farmland perimeter';
+        document.getElementById('field-interactive-map')?.classList.remove('cursor-crosshair');
       }
     };
 
@@ -2075,9 +2258,13 @@
 
       const cornerIcon = L.divIcon({
         className: 'corner-marker',
-        html: `<div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-[11px] font-bold border-2 border-white shadow-lg pointer-events-none">${demarcationPoints.length}</div>`,
-        iconSize: [24, 24],
-        iconAnchor: [12, 12]
+        html: `
+          <div class="relative flex items-center justify-center">
+            <div class="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-[11px] font-bold border-2 border-white shadow-xl pointer-events-none">${demarcationPoints.length}</div>
+            <div class="absolute w-8 h-8 rounded-full border-2 border-emerald-400 animate-ping pointer-events-none"></div>
+          </div>`,
+        iconSize: [26, 26],
+        iconAnchor: [13, 13]
       });
 
       const m = L.marker([lat, lng], { icon: cornerIcon, interactive: false }).addTo(window.fieldMap);
@@ -2122,18 +2309,32 @@
     window.cancelDemarcation = function() {
       window.isDemarcating = false;
       window.clearBoundaryPoints();
+
       const topBar = document.getElementById('topDemarcationBar');
       const topBtn = document.getElementById('topDemarcateBtn');
       const topLabel = document.getElementById('topDemarcateBtnLabel');
-      const legacyToolbar = document.getElementById('demarcationToolbar');
+      const mapBtn = document.getElementById('mapDrawPenBtn');
+      const mapLabel = document.getElementById('mapDrawPenLabel');
+      const mapBanner = document.getElementById('mapDrawPenBanner');
+      const mapEl = document.getElementById('field-interactive-map');
 
       if (topBar) topBar.classList.add('hidden');
-      if (legacyToolbar) legacyToolbar.classList.add('hidden');
+      if (mapBanner) mapBanner.classList.add('hidden');
+
       if (topBtn) {
         topBtn.className = 'h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap active:scale-95';
       }
-      if (topLabel) topLabel.innerText = 'Demarcate Farm';
-      window.fieldMap.getContainer().style.cursor = '';
+      if (topLabel) topLabel.innerText = 'Draw Pen';
+
+      if (mapBtn) {
+        mapBtn.className = 'px-3.5 py-1 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-label-caps text-label-caps transition-all flex items-center gap-1.5 font-semibold cursor-pointer shadow-xs active:scale-95';
+      }
+      if (mapLabel) mapLabel.innerText = 'Draw Pen';
+
+      if (mapEl) {
+        mapEl.classList.remove('cursor-crosshair');
+        mapEl.classList.remove('demarcation-map-glow');
+      }
     };
 
     window.toggleWalkRecording = function() {
@@ -3069,6 +3270,54 @@
 
   renderCalendarDays(calYear, calMonth);
 })();
-</script>
+<!-- Location Helper Modal -->
+<div id="locationHelpModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+  <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-5 select-none pointer-events-auto">
+    <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center">
+          <span class="material-symbols-outlined text-[18px]">my_location</span>
+        </div>
+        <div>
+          <h3 class="font-bold text-sm text-slate-900">Locate Your Farmland</h3>
+          <p class="text-[11px] text-slate-500">Live GPS or Pin on Map</p>
+        </div>
+      </div>
+      <button onclick="window.closeLocationHelpModal()" class="w-6 h-6 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 text-xs font-bold cursor-pointer">✕</button>
+    </div>
+
+    <div class="mt-4 flex flex-col gap-3">
+      <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900">
+        <p class="font-semibold mb-1 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px] text-amber-600">info</span> Browser Location Permission Needed
+        </p>
+        <p class="text-[11px] text-amber-800 leading-relaxed">
+          Your browser didn't return GPS coordinates. Click the 🔒 lock icon in your browser URL bar and toggle <strong>Location</strong> to <strong>Allow</strong>.
+        </p>
+      </div>
+
+      <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center my-0.5">Quick Location Options</div>
+
+      <!-- Option 1: Retry GPS -->
+      <button onclick="window.closeLocationHelpModal(); window.detectFarmerLocation();" class="w-full py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-colors cursor-pointer shadow-xs flex items-center justify-center gap-2 active:scale-95">
+        <span class="material-symbols-outlined text-[16px] text-blue-400">refresh</span> Retry Live GPS Detection
+      </button>
+
+      <!-- Option 2: Tap Directly on Map -->
+      <button onclick="window.enableTapLocationMode()" class="w-full py-2.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors cursor-pointer shadow-xs flex items-center justify-center gap-2 active:scale-95">
+        <span class="material-symbols-outlined text-[16px]">touch_app</span> Tap My Farm Location on Map
+      </button>
+
+      <!-- Option 2: Search Village / Town -->
+      <div class="border-t border-slate-100 pt-3">
+        <label class="block text-xs font-semibold text-slate-700 mb-1.5">Or Search Your Village, Town or Pin Code:</label>
+        <div class="flex items-center gap-1.5">
+          <input type="text" id="manualLocationSearchInput" placeholder="e.g. Omalur, Salem, Namakkal, Erode..." class="flex-1 px-3 py-2 border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-blue-500 shadow-xs" onkeydown="if(event.key==='Enter') window.searchVillageLocation()" />
+          <button onclick="window.searchVillageLocation()" class="px-3.5 py-2 bg-slate-900 text-white rounded-xl text-xs font-semibold hover:bg-slate-800 cursor-pointer">Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body></html>
