@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 1.02,
+    "technical_abbreviation": "VARI",
+    "suggested_name": "Reliable Crop Greenness",
+    "farmer_friendly_name": "Haze-Proof Greenness Check",
+    "category": "Stress & Pigment",
+    "what_it_tells": "Gives an accurate crop greenness reading even on foggy, dusty, or hazy days.",
+    "timeseries": [
+      0.51,
+      0.55,
+      0.58,
+      0.61,
+      0.65,
+      0.68,
+      0.72,
+      0.75,
+      0.78,
+      0.82,
+      0.85,
+      0.89,
+      0.92,
+      0.95,
+      0.99,
+      1.02,
+      1.0,
+      0.99,
+      0.97,
+      0.95,
+      0.93,
+      0.91,
+      0.89,
+      0.87,
+      0.86,
+      0.84,
+      0.82,
+      0.77,
+      0.73,
+      0.68,
+      0.64,
+      0.59,
+      0.55,
+      0.5,
+      0.46,
+      0.5,
+      0.53,
+      0.57,
+      0.61,
+      0.64,
+      0.68,
+      0.72,
+      0.75,
+      0.79,
+      0.83,
+      0.86,
+      0.9,
+      0.93,
+      0.97,
+      0.98,
+      0.99,
+      0.99,
+      1.0,
+      1.01,
+      1.02,
+      1.02
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

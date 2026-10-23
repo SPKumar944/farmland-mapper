@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 53.6,
+    "technical_abbreviation": "ReCI",
+    "suggested_name": "Leaf Nutrition Meter",
+    "farmer_friendly_name": "Leaf Chlorophyll / Nitrogen Gauge",
+    "category": "Crop Health & Growth",
+    "what_it_tells": "Directly monitors leaf nitrogen absorption across crop life stages.",
+    "timeseries": [
+      26.8,
+      28.6,
+      30.4,
+      32.1,
+      33.9,
+      35.7,
+      37.5,
+      39.3,
+      41.1,
+      42.9,
+      44.7,
+      46.4,
+      48.2,
+      50.0,
+      51.8,
+      53.6,
+      52.6,
+      51.6,
+      50.7,
+      49.7,
+      48.7,
+      47.7,
+      46.8,
+      45.8,
+      44.8,
+      43.8,
+      42.9,
+      40.5,
+      38.2,
+      35.8,
+      33.5,
+      31.1,
+      28.8,
+      26.5,
+      24.1,
+      26.0,
+      27.9,
+      29.9,
+      31.8,
+      33.7,
+      35.6,
+      37.5,
+      39.4,
+      41.3,
+      43.2,
+      45.2,
+      47.1,
+      49.0,
+      50.9,
+      51.3,
+      51.7,
+      52.0,
+      52.4,
+      52.8,
+      53.2,
+      53.6
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 0.77,
+    "technical_abbreviation": "EVI",
+    "suggested_name": "Dense Crop Check",
+    "farmer_friendly_name": "Thick Crop Growth Meter",
+    "category": "Crop Health & Growth",
+    "what_it_tells": "Checks health in dense, tall crops (sugarcane, mature paddy) where regular greenness maxes out.",
+    "timeseries": [
+      0.38,
+      0.41,
+      0.44,
+      0.46,
+      0.49,
+      0.51,
+      0.54,
+      0.56,
+      0.59,
+      0.62,
+      0.64,
+      0.67,
+      0.69,
+      0.72,
+      0.74,
+      0.77,
+      0.75,
+      0.74,
+      0.73,
+      0.71,
+      0.7,
+      0.68,
+      0.67,
+      0.66,
+      0.64,
+      0.63,
+      0.62,
+      0.58,
+      0.55,
+      0.51,
+      0.48,
+      0.45,
+      0.41,
+      0.38,
+      0.35,
+      0.37,
+      0.4,
+      0.43,
+      0.46,
+      0.48,
+      0.51,
+      0.54,
+      0.57,
+      0.59,
+      0.62,
+      0.65,
+      0.68,
+      0.7,
+      0.73,
+      0.74,
+      0.74,
+      0.75,
+      0.75,
+      0.76,
+      0.76,
+      0.77
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

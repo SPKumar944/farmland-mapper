@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 76.0,
+    "technical_abbreviation": "fCOVER_proxy",
+    "suggested_name": "Ground Cover Percentage",
+    "farmer_friendly_name": "Ground Cover Percentage",
+    "category": "Canopy & Yield Metrics",
+    "what_it_tells": "Shows what percentage of ground is shaded by leaves (e.g., 40% sprouted, 85% canopy closed).",
+    "timeseries": [
+      38.0,
+      40.5,
+      43.0,
+      45.6,
+      48.1,
+      50.6,
+      53.2,
+      55.7,
+      58.2,
+      60.8,
+      63.3,
+      65.8,
+      68.4,
+      70.9,
+      73.4,
+      76.0,
+      74.6,
+      73.2,
+      71.8,
+      70.4,
+      69.1,
+      67.7,
+      66.3,
+      64.9,
+      63.5,
+      62.1,
+      60.8,
+      57.4,
+      54.1,
+      50.8,
+      47.5,
+      44.1,
+      40.8,
+      37.5,
+      34.2,
+      36.9,
+      39.6,
+      42.3,
+      45.0,
+      47.7,
+      50.5,
+      53.2,
+      55.9,
+      58.6,
+      61.3,
+      64.0,
+      66.7,
+      69.4,
+      72.2,
+      72.7,
+      73.2,
+      73.8,
+      74.3,
+      74.9,
+      75.4,
+      76.0
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

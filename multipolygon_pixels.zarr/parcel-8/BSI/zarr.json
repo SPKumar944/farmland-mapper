@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": -0.3,
+    "technical_abbreviation": "BSI",
+    "suggested_name": "Field Readiness Check",
+    "farmer_friendly_name": "Plowed Land / Seedbed Checker",
+    "category": "Water & Field Moisture",
+    "what_it_tells": "Confirms whether land is clean, plowed bare soil ready for sowing, or still covered in weeds.",
+    "timeseries": [
+      -0.08,
+      -0.09,
+      -0.11,
+      -0.12,
+      -0.13,
+      -0.15,
+      -0.16,
+      -0.18,
+      -0.19,
+      -0.21,
+      -0.22,
+      -0.24,
+      -0.26,
+      -0.27,
+      -0.29,
+      -0.3,
+      -0.29,
+      -0.28,
+      -0.28,
+      -0.27,
+      -0.26,
+      -0.25,
+      -0.24,
+      -0.23,
+      -0.23,
+      -0.22,
+      -0.21,
+      -0.19,
+      -0.17,
+      -0.15,
+      -0.13,
+      -0.11,
+      -0.09,
+      -0.07,
+      -0.05,
+      -0.07,
+      -0.08,
+      -0.1,
+      -0.12,
+      -0.13,
+      -0.15,
+      -0.16,
+      -0.18,
+      -0.2,
+      -0.21,
+      -0.23,
+      -0.25,
+      -0.26,
+      -0.28,
+      -0.28,
+      -0.28,
+      -0.29,
+      -0.29,
+      -0.29,
+      -0.3,
+      -0.3
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 0.65,
+    "technical_abbreviation": "MSAVI",
+    "suggested_name": "Seedling Check (Dry Soil)",
+    "farmer_friendly_name": "Early Sprout Health (Dry/Bright Soil)",
+    "category": "Sprouting & Seedlings",
+    "what_it_tells": "Checks young seedlings in dry or sandy land where soil brightness usually hides tiny shoots.",
+    "timeseries": [
+      0.33,
+      0.35,
+      0.37,
+      0.39,
+      0.41,
+      0.43,
+      0.46,
+      0.48,
+      0.5,
+      0.52,
+      0.54,
+      0.56,
+      0.59,
+      0.61,
+      0.63,
+      0.65,
+      0.64,
+      0.63,
+      0.62,
+      0.6,
+      0.59,
+      0.58,
+      0.57,
+      0.56,
+      0.54,
+      0.53,
+      0.52,
+      0.49,
+      0.46,
+      0.44,
+      0.41,
+      0.38,
+      0.35,
+      0.32,
+      0.29,
+      0.32,
+      0.34,
+      0.36,
+      0.39,
+      0.41,
+      0.43,
+      0.46,
+      0.48,
+      0.5,
+      0.53,
+      0.55,
+      0.57,
+      0.6,
+      0.62,
+      0.62,
+      0.63,
+      0.63,
+      0.64,
+      0.64,
+      0.65,
+      0.65
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

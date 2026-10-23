@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 0.9,
+    "technical_abbreviation": "fAPAR_proxy",
+    "suggested_name": "Sunlight Utilization Rate",
+    "farmer_friendly_name": "Sunlight Utilization Rate",
+    "category": "Canopy & Yield Metrics",
+    "what_it_tells": "Tells how efficiently leaves are capturing sunlight to produce grains, pods, or fruit.",
+    "timeseries": [
+      0.45,
+      0.48,
+      0.51,
+      0.54,
+      0.57,
+      0.6,
+      0.63,
+      0.66,
+      0.69,
+      0.72,
+      0.75,
+      0.78,
+      0.81,
+      0.84,
+      0.87,
+      0.9,
+      0.88,
+      0.86,
+      0.85,
+      0.83,
+      0.81,
+      0.8,
+      0.78,
+      0.76,
+      0.75,
+      0.73,
+      0.72,
+      0.68,
+      0.64,
+      0.6,
+      0.56,
+      0.52,
+      0.48,
+      0.44,
+      0.4,
+      0.43,
+      0.47,
+      0.5,
+      0.53,
+      0.56,
+      0.59,
+      0.63,
+      0.66,
+      0.69,
+      0.72,
+      0.75,
+      0.79,
+      0.82,
+      0.85,
+      0.86,
+      0.86,
+      0.87,
+      0.88,
+      0.88,
+      0.89,
+      0.9
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}

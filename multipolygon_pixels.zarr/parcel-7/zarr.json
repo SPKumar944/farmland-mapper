@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "id": "parcel-7",
+    "name": "Farmland Parcel #7",
+    "survey_no": "80441",
+    "timestamp": "2026-09-09T08:29:59.374Z",
+    "area_acres": "3.20 Acres",
+    "area_m2": 12955.19,
+    "vertices_count": 5,
+    "center_lat": 13.212510553696228,
+    "center_lng": 77.31917023658754
+  },
+  "zarr_format": 3,
+  "node_type": "group"
+}

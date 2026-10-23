@@ -1,0 +1,105 @@
+{
+  "shape": [
+    56
+  ],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [
+        56
+      ]
+    }
+  },
+  "chunk_key_encoding": {
+    "name": "default",
+    "configuration": {
+      "separator": "/"
+    }
+  },
+  "fill_value": 0.0,
+  "codecs": [
+    {
+      "name": "bytes",
+      "configuration": {
+        "endian": "little"
+      }
+    },
+    {
+      "name": "zstd",
+      "configuration": {
+        "level": 0,
+        "checksum": false
+      }
+    }
+  ],
+  "attributes": {
+    "latest_value": 2.39,
+    "technical_abbreviation": "GCI",
+    "suggested_name": "Fertilizer Need Check",
+    "farmer_friendly_name": "Fertilizer Top-Dress Indicator",
+    "category": "Crop Health & Growth",
+    "what_it_tells": "Tells whether the crop needs an extra round of urea or foliar nitrogen spray.",
+    "timeseries": [
+      1.19,
+      1.27,
+      1.35,
+      1.43,
+      1.51,
+      1.59,
+      1.67,
+      1.75,
+      1.83,
+      1.91,
+      1.99,
+      2.07,
+      2.15,
+      2.23,
+      2.31,
+      2.39,
+      2.34,
+      2.3,
+      2.26,
+      2.21,
+      2.17,
+      2.13,
+      2.08,
+      2.04,
+      2.0,
+      1.95,
+      1.91,
+      1.8,
+      1.7,
+      1.6,
+      1.49,
+      1.39,
+      1.28,
+      1.18,
+      1.07,
+      1.16,
+      1.24,
+      1.33,
+      1.41,
+      1.5,
+      1.59,
+      1.67,
+      1.76,
+      1.84,
+      1.93,
+      2.01,
+      2.1,
+      2.18,
+      2.27,
+      2.28,
+      2.3,
+      2.32,
+      2.34,
+      2.35,
+      2.37,
+      2.39
+    ]
+  },
+  "zarr_format": 3,
+  "node_type": "array",
+  "storage_transformers": []
+}
