@@ -1,0 +1,596 @@
+[
+  {
+    "id": "jana-farmland",
+    "name": "Jana Farmland",
+    "survey_no": "80434",
+    "timestamp": "jANA_FAMRLAND.shp",
+    "area_m2": 6786.79,
+    "area_acres": "1.68 Acres",
+    "vertices_count": 18,
+    "center": [
+      11.6438,
+      78.1142
+    ],
+    "coords": [
+      [
+        11.644685,
+        78.114353
+      ],
+      [
+        11.64449,
+        78.114514
+      ],
+      [
+        11.6442,
+        78.114482
+      ],
+      [
+        11.643932,
+        78.11445
+      ],
+      [
+        11.643441,
+        78.114402
+      ],
+      [
+        11.642946,
+        78.114305
+      ],
+      [
+        11.64294,
+        78.11401
+      ],
+      [
+        11.64304,
+        78.113801
+      ],
+      [
+        11.643257,
+        78.113849
+      ],
+      [
+        11.643473,
+        78.113871
+      ],
+      [
+        11.643468,
+        78.11408
+      ],
+      [
+        11.643531,
+        78.114101
+      ],
+      [
+        11.643684,
+        78.114134
+      ],
+      [
+        11.643858,
+        78.114155
+      ],
+      [
+        11.644074,
+        78.114209
+      ],
+      [
+        11.644248,
+        78.114246
+      ],
+      [
+        11.644448,
+        78.114284
+      ],
+      [
+        11.644685,
+        78.114353
+      ]
+    ],
+    "aliases": [
+      "jana",
+      "jana farmland",
+      "80434",
+      "parcel 0",
+      "p0",
+      "p-0",
+      "1.68",
+      "1.68 acres",
+      "manapparai",
+      "\u0b9c\u0ba9\u0bbe \u0baa\u0ba3\u0bcd\u0ba3\u0bc8"
+    ],
+    "ndvi": 0.82,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-1",
+    "name": "Farmland Parcel #1",
+    "survey_no": "80435",
+    "timestamp": "2026-09-09T07:59:58.102Z",
+    "area_m2": 7425.33,
+    "area_acres": "1.83 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.641657,
+      78.111802
+    ],
+    "coords": [
+      [
+        11.641834,
+        78.11129
+      ],
+      [
+        11.641891,
+        78.112519
+      ],
+      [
+        11.641408,
+        78.112567
+      ],
+      [
+        11.641319,
+        78.111344
+      ],
+      [
+        11.641834,
+        78.11129
+      ]
+    ],
+    "aliases": [
+      "parcel 1",
+      "parcel1",
+      "parcel-1",
+      "parcel #1",
+      "p1",
+      "p-1",
+      "1",
+      "80435",
+      "1.83",
+      "1.83 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #1",
+      "salem"
+    ],
+    "ndvi": 0.7,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-2",
+    "name": "Farmland Parcel #2",
+    "survey_no": "80436",
+    "timestamp": "2026-09-09T08:04:34.808Z",
+    "area_m2": 3089.39,
+    "area_acres": "0.76 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6392,
+      78.1125
+    ],
+    "coords": [
+      [
+        11.639526,
+        78.112024
+      ],
+      [
+        11.639231,
+        78.112946
+      ],
+      [
+        11.63893,
+        78.112823
+      ],
+      [
+        11.638788,
+        78.112683
+      ],
+      [
+        11.639526,
+        78.112024
+      ]
+    ],
+    "aliases": [
+      "parcel 2",
+      "parcel2",
+      "parcel-2",
+      "parcel #2",
+      "p2",
+      "p-2",
+      "2",
+      "80436",
+      "0.76",
+      "0.76 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #2",
+      "salem"
+    ],
+    "ndvi": 0.84,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-3",
+    "name": "Farmland Parcel #3",
+    "survey_no": "80437",
+    "timestamp": "2026-09-09T08:09:38.686Z",
+    "area_m2": 3240.24,
+    "area_acres": "0.80 Acres",
+    "vertices_count": 6,
+    "center": [
+      11.6422,
+      78.1088
+    ],
+    "coords": [
+      [
+        11.642528,
+        78.108535
+      ],
+      [
+        11.642087,
+        78.109302
+      ],
+      [
+        11.641835,
+        78.109125
+      ],
+      [
+        11.641925,
+        78.108889
+      ],
+      [
+        11.642297,
+        78.108412
+      ],
+      [
+        11.642528,
+        78.108535
+      ]
+    ],
+    "aliases": [
+      "parcel 3",
+      "parcel3",
+      "parcel-3",
+      "parcel #3",
+      "p3",
+      "p-3",
+      "3",
+      "80437",
+      "0.80",
+      "0.80 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #3",
+      "salem"
+    ],
+    "ndvi": 0.85,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-4",
+    "name": "Farmland Parcel #4",
+    "survey_no": "80438",
+    "timestamp": "2026-09-09T08:10:53.901Z",
+    "area_m2": 900.31,
+    "area_acres": "0.22 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6446,
+      78.1102
+    ],
+    "coords": [
+      [
+        11.64472,
+        78.11011
+      ],
+      [
+        11.644688,
+        78.110389
+      ],
+      [
+        11.644407,
+        78.110324
+      ],
+      [
+        11.644466,
+        78.110067
+      ],
+      [
+        11.64472,
+        78.11011
+      ]
+    ],
+    "aliases": [
+      "parcel 4",
+      "parcel4",
+      "parcel-4",
+      "parcel #4",
+      "p4",
+      "p-4",
+      "4",
+      "80438",
+      "0.22",
+      "0.22 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #4",
+      "salem"
+    ],
+    "ndvi": 0.7,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-5",
+    "name": "Farmland Parcel #5",
+    "survey_no": "80439",
+    "timestamp": "2026-09-09T08:14:34.203Z",
+    "area_m2": 6575.8,
+    "area_acres": "1.62 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6401,
+      78.1152
+    ],
+    "coords": [
+      [
+        11.640415,
+        78.114819
+      ],
+      [
+        11.640206,
+        78.115801
+      ],
+      [
+        11.639714,
+        78.115731
+      ],
+      [
+        11.639751,
+        78.11483
+      ],
+      [
+        11.640415,
+        78.114819
+      ]
+    ],
+    "aliases": [
+      "parcel 5",
+      "parcel5",
+      "parcel-5",
+      "parcel #5",
+      "p5",
+      "p-5",
+      "5",
+      "80439",
+      "1.62",
+      "1.62 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #5",
+      "salem"
+    ],
+    "ndvi": 0.71,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-6",
+    "name": "Farmland Parcel #6",
+    "survey_no": "80440",
+    "timestamp": "2026-09-09T08:16:20.044Z",
+    "area_m2": 6881.29,
+    "area_acres": "1.70 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6431,
+      78.107
+    ],
+    "coords": [
+      [
+        11.643411,
+        78.106429
+      ],
+      [
+        11.643012,
+        78.107883
+      ],
+      [
+        11.642738,
+        78.107888
+      ],
+      [
+        11.642928,
+        78.10637
+      ],
+      [
+        11.643411,
+        78.106429
+      ]
+    ],
+    "aliases": [
+      "parcel 6",
+      "parcel6",
+      "parcel-6",
+      "parcel #6",
+      "p6",
+      "p-6",
+      "6",
+      "80440",
+      "1.70",
+      "1.70 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #6",
+      "salem"
+    ],
+    "ndvi": 0.76,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-7",
+    "name": "Farmland Parcel #7",
+    "survey_no": "80441",
+    "timestamp": "2026-09-09T08:29:59.374Z",
+    "area_m2": 12955.19,
+    "area_acres": "3.20 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6378,
+      78.1098
+    ],
+    "coords": [
+      [
+        11.638383,
+        78.109784
+      ],
+      [
+        11.63714,
+        78.109087
+      ],
+      [
+        11.636868,
+        78.109956
+      ],
+      [
+        11.638226,
+        78.11039
+      ],
+      [
+        11.638383,
+        78.109784
+      ]
+    ],
+    "aliases": [
+      "parcel 7",
+      "parcel7",
+      "parcel-7",
+      "parcel #7",
+      "p7",
+      "p-7",
+      "7",
+      "80441",
+      "3.20",
+      "3.20 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #7",
+      "salem"
+    ],
+    "ndvi": 0.75,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-8",
+    "name": "Farmland Parcel #8",
+    "survey_no": "80442",
+    "timestamp": "2026-09-09T08:30:38.941Z",
+    "area_m2": 6241.42,
+    "area_acres": "1.54 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6372,
+      78.1136
+    ],
+    "coords": [
+      [
+        11.637639,
+        78.113942
+      ],
+      [
+        11.636438,
+        78.11347
+      ],
+      [
+        11.636495,
+        78.113159
+      ],
+      [
+        11.63779,
+        78.113486
+      ],
+      [
+        11.637639,
+        78.113942
+      ]
+    ],
+    "aliases": [
+      "parcel 8",
+      "parcel8",
+      "parcel-8",
+      "parcel #8",
+      "p8",
+      "p-8",
+      "8",
+      "80442",
+      "1.54",
+      "1.54 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #8",
+      "salem"
+    ],
+    "ndvi": 0.86,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  },
+  {
+    "id": "parcel-9",
+    "name": "Farmland Parcel #9",
+    "survey_no": "80443",
+    "timestamp": "2026-09-09T08:34:33.688Z",
+    "area_m2": 14265.45,
+    "area_acres": "3.53 Acres",
+    "vertices_count": 5,
+    "center": [
+      11.6458,
+      78.113
+    ],
+    "coords": [
+      [
+        11.646098,
+        78.112431
+      ],
+      [
+        11.646229,
+        78.113874
+      ],
+      [
+        11.645554,
+        78.113772
+      ],
+      [
+        11.64502,
+        78.11249
+      ],
+      [
+        11.646098,
+        78.112431
+      ]
+    ],
+    "aliases": [
+      "parcel 9",
+      "parcel9",
+      "parcel-9",
+      "parcel #9",
+      "p9",
+      "p-9",
+      "9",
+      "80443",
+      "3.53",
+      "3.53 acres",
+      "\u0baa\u0ba3\u0bcd\u0ba3\u0bc8 \u0ba8\u0bbf\u0bb2\u0bae\u0bcd #9",
+      "salem"
+    ],
+    "ndvi": 0.85,
+    "ndmi": "+0.48",
+    "sipi": "Low (6%)",
+    "soil_moisture": "73%",
+    "inundated": "Clear"
+  }
+]
