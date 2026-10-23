@@ -315,7 +315,12 @@
   <!-- KPI 1: Watering Need -->
   <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
     <div class="flex items-center justify-between">
-      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi1Title">Watering Need (MSI / NDMI)</span>
+      <div class="flex items-center gap-1.5">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi1Title">Watering Need (MSI / NDMI)</span>
+        <button type="button" onclick="window.toggleKpiInfo(event, 'kpi1')" class="kpi-info-btn w-5 h-5 rounded-full flex items-center justify-center text-slate-400 hover:text-sky-600 hover:bg-sky-50 cursor-pointer transition-colors" title="View details / விளக்கம்">
+          <span class="material-symbols-outlined text-[15px]">info</span>
+        </button>
+      </div>
       <div class="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600">
         <span class="material-symbols-outlined text-[18px]">water_drop</span>
       </div>
@@ -325,9 +330,6 @@
       <span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-0.5 flex items-center gap-1" data-i18n="kpi1Status">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Adequate Reserve
       </span>
-      <p class="text-[11px] text-slate-600 bg-sky-50/70 p-2 rounded-lg border border-sky-100 mt-2 text-left leading-snug" data-i18n="kpi1Desc">
-        Shows if crops have sufficient water. Positive (+0.48) means healthy moisture; negative means thirsty crops that need urgent watering.
-      </p>
     </div>
     <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
       <span class="text-secondary" data-i18n="kpiWateringSub">Next watering</span>
@@ -338,7 +340,12 @@
   <!-- KPI 2: Crop Greenness Score -->
   <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
     <div class="flex items-center justify-between">
-      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi2Title">Crop Greenness Score (NDVI)</span>
+      <div class="flex items-center gap-1.5">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi2Title">Crop Greenness Score (NDVI)</span>
+        <button type="button" onclick="window.toggleKpiInfo(event, 'kpi2')" class="kpi-info-btn w-5 h-5 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 cursor-pointer transition-colors" title="View details / விளக்கம்">
+          <span class="material-symbols-outlined text-[15px]">info</span>
+        </button>
+      </div>
       <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
         <span class="material-symbols-outlined text-[18px]">eco</span>
       </div>
@@ -346,9 +353,6 @@
     <div class="my-space-sm flex flex-col items-center justify-center text-center">
       <div id="kpi-green-val" class="text-headline-xl font-headline-xl font-bold text-primary font-label-mono-num tracking-tight">70<span class="text-headline-sm font-normal text-secondary">/100</span></div>
       <span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-0.5" data-i18n="kpi2Status">Peak Canopy Vigor</span>
-      <p class="text-[11px] text-slate-600 bg-emerald-50/70 p-2 rounded-lg border border-emerald-100 mt-2 text-left leading-snug" data-i18n="kpi2Desc">
-        Scores leaf greenness from 0 to 100. Above 65 means crops are dense, green, and growing vigorously.
-      </p>
     </div>
     <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
       <span class="text-secondary" data-i18n="kpiDistrictSub">District benchmark</span>
@@ -359,7 +363,12 @@
   <!-- KPI 3: TopSoil Moisture Check -->
   <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
     <div class="flex items-center justify-between">
-      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi3Title">TopSoil Moisture Check (SAR SM)</span>
+      <div class="flex items-center gap-1.5">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi3Title">TopSoil Moisture Check (SAR SM)</span>
+        <button type="button" onclick="window.toggleKpiInfo(event, 'kpi3')" class="kpi-info-btn w-5 h-5 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-600 hover:bg-blue-50 cursor-pointer transition-colors" title="View details / விளக்கம்">
+          <span class="material-symbols-outlined text-[15px]">info</span>
+        </button>
+      </div>
       <div class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
         <span class="material-symbols-outlined text-[18px]">grain</span>
       </div>
@@ -367,9 +376,6 @@
     <div class="my-space-sm flex flex-col items-center justify-center text-center">
       <div id="kpi-moisture-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">73%</div>
       <span class="text-body-sm font-body-sm text-secondary mt-0.5" data-i18n="kpi3Status">Normal Aerobic Drainage</span>
-      <p class="text-[11px] text-slate-600 bg-blue-50/70 p-2 rounded-lg border border-blue-100 mt-2 text-left leading-snug" data-i18n="kpi3Desc">
-        Measures moisture in the top root layer using radar. 65%–75% is optimal for root breathing and growth without waterlogging.
-      </p>
     </div>
     <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
       <span class="text-secondary" data-i18n="kpiOptimalSub">Optimal bracket</span>
@@ -380,7 +386,12 @@
   <!-- KPI 4: Pest & Sickness Alert -->
   <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
     <div class="flex items-center justify-between">
-      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi4Title">Pest &amp; Sickness Alert (SIPI)</span>
+      <div class="flex items-center gap-1.5">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi4Title">Pest &amp; Sickness Alert (SIPI)</span>
+        <button type="button" onclick="window.toggleKpiInfo(event, 'kpi4')" class="kpi-info-btn w-5 h-5 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 cursor-pointer transition-colors" title="View details / விளக்கம்">
+          <span class="material-symbols-outlined text-[15px]">info</span>
+        </button>
+      </div>
       <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
         <span class="material-symbols-outlined text-[18px]">verified</span>
       </div>
@@ -388,9 +399,6 @@
     <div class="my-space-sm flex flex-col items-center justify-center text-center">
       <div id="kpi-pest-val" class="text-headline-xl font-headline-xl font-bold text-emerald-600 tracking-tight">Low (6%)</div>
       <span class="text-body-sm font-body-sm text-secondary mt-0.5" data-i18n="kpi4Status">Healthy Leaf Carotenoid</span>
-      <p class="text-[11px] text-slate-600 bg-emerald-50/70 p-2 rounded-lg border border-emerald-100 mt-2 text-left leading-snug" data-i18n="kpi4Desc">
-        Early warning scanner for bugs, blight, or fungal disease. "Low" means healthy leaves with zero disease threat.
-      </p>
     </div>
     <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
       <span class="text-secondary" data-i18n="kpiPestSub">Infestation detected</span>
@@ -427,7 +435,12 @@
 <!-- Card 1: Overall Greenness with Segmented Radial Arc Gauge -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ndvi_title">Crop Greenness Score (NDVI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ndvi_title">Crop Greenness Score (NDVI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'ndvi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="font-label-mono-num text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">+8.2% vs avg</span>
 </div>
 <div class="my-space-sm flex items-center justify-between">
@@ -448,12 +461,16 @@
 <span class="text-slate-500 text-[11px]">Stalk growth status</span>
 <span class="font-medium text-slate-900 text-[11px]">Optimal Trajectory</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_ndvi_desc">Measures overall leaf greenness and crop growth vigor. Higher means healthier plants.</p>
 </div>
 <!-- Card 2: Sprout Health with Lollipop / Stem-and-Marker Chart -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_savi_title">Seedling Check - Normal Soil (SAVI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_savi_title">Seedling Check - Normal Soil (SAVI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'savi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span id="val-savi-sub" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">0.68</span>
 </div>
 <div class="my-space-sm flex items-center justify-between">
@@ -486,12 +503,16 @@
 <span class="text-slate-500 text-[11px]">Tillering distribution</span>
 <span class="font-medium text-slate-900 text-[11px]">Uniform Stance</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_savi_desc">Checks young sprout emergence by removing bare soil reflection glare.</p>
 </div>
 <!-- Card 3: Deep Leaf Stamina -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_gndvi_title">Mid-Season Crop Strength (GNDVI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_gndvi_title">Mid-Season Crop Strength (GNDVI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'gndvi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">High</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -502,12 +523,16 @@
 <span class="text-slate-500 text-[11px]">Vascular status</span>
 <span class="font-medium text-slate-900 text-[11px]">Robust Hydration</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_gndvi_desc">Checks chlorophyll deep inside mature crops to verify thick canopy stamina.</p>
 </div>
 <!-- Card 4: Emergence Uniformity -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_unif_title">Reliable Crop Greenness (VARI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_unif_title">Reliable Crop Greenness (VARI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'vari')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="text-slate-900 font-label-mono-num font-bold text-xs">3.40 ac</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -520,7 +545,6 @@
 <span class="text-slate-500 text-[11px]">Solar absorption</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">34.8 MJ/m²·d</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_unif_desc">Scans true leaf greenness through atmospheric morning mist and clouds.</p>
 </div></div>
 <!-- COLUMN 2: Water & Soil Status -->
 <div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
@@ -536,7 +560,12 @@
 <!-- Card 1: Crop Thirst Level (NDMI) -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ndmi_title">Crop Water Stress Alert (NDMI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ndmi_title">Crop Water Stress Alert (NDMI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'ndmi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-sky-600 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="font-label-mono-num text-[11px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">Adequate</span>
 </div>
 <div class="my-space-sm flex items-end justify-between">
@@ -563,11 +592,15 @@
 <span class="text-slate-500 text-[11px]">Turgor pressure</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">96% Cellular</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_ndmi_desc">Measures leaf water content to detect thirst and drought stress before crops wilt.</p>
 </div>
 <!-- Card 2: Plowed Ground -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_bsi_title">Field Readiness Check (BSI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_bsi_title">Field Readiness Check (BSI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'bsi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-amber-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span id="val-bsi" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">-0.31</span>
 </div>
 <div class="my-space-sm flex items-center justify-between gap-space-sm">
@@ -610,12 +643,16 @@
 <span class="text-slate-500 text-[11px]">Soil erosion index</span>
 <span class="font-medium text-slate-900 text-[11px]">Protected (18% bare)</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_bsi_desc">Shows exposed bare soil vs covered ground to verify plowing or canopy spread.</p>
 </div>
 <!-- Card 3: White Salt Warning -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_salt_title">Soil Salt Warning (NDSI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_salt_title">Soil Salt Warning (NDSI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'ndsi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-amber-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Safe</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -626,12 +663,16 @@
 <span class="text-slate-500 text-[11px]">Salinity status</span>
 <span class="font-medium text-slate-900 text-[11px]">No Alkalization</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_salt_desc">Warns if white salt or alkaline patches are building up in your soil.</p>
 </div>
 <!-- Card 4: Topsoil Moisture -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_sm_title">TopSoil Moisture Check (SAR SM)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_sm_title">TopSoil Moisture Check (SAR SM)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'sm')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="text-slate-900 font-label-mono-num font-bold text-xs">Target 65-75%</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -644,7 +685,6 @@
 <span class="text-slate-500 text-[11px]">Oxygen diffusion</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.32 g/m²·h</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_sm_desc">All-weather radar scan of wetness in the top 5cm root zone.</p>
 </div>
 </div>
 <!-- COLUMN 3: Canopy & Nutrients -->
@@ -660,7 +700,12 @@
 </div>
 <!-- Card 1: Foliage Volume -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_lai_title">Leaf Cover Growth (LAI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_lai_title">Leaf Cover Growth (LAI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'lai')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="font-label-mono-num text-[11px] font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Grand Growth</span>
 </div>
 <div class="my-space-sm flex items-center justify-between">
@@ -688,12 +733,16 @@
 <span class="text-slate-500 text-[11px]">Density benchmark</span>
 <span class="font-medium text-slate-900 text-[11px]">Optimal Vigor (95%)</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_lai_desc">Measures leaf layers per square meter to track canopy density and crop size.</p>
 </div>
 <!-- Card 2: Ground Coverage -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_fcover_title">Ground Cover Percentage (fCOVER)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_fcover_title">Ground Cover Percentage (fCOVER)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'fcover')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span id="val-fcover" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">82%</span>
 </div>
 <div class="my-space-sm flex items-center justify-between py-1">
@@ -711,12 +760,16 @@
 <span class="text-slate-500 text-[11px]">Shadow ratio</span>
 <span class="font-medium text-slate-900 text-[11px]">76% Interception</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_fcover_desc">Percentage of soil covered by leaves; prevents soil drying and suppresses weeds.</p>
 </div>
 <!-- Card 3: Nitrogen Reserve -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ccc_title">Total Field Nitrogen Stock (CCC)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_ccc_title">Total Field Nitrogen Stock (CCC)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'ccc')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Optimal</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -727,12 +780,16 @@
 <span class="text-slate-500 text-[11px]">Urea top dressing</span>
 <span class="font-medium text-slate-900 text-[11px]">Not Required</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_ccc_desc">Total nitrogen fertilizer absorbed and stored across field foliage.</p>
 </div>
 <!-- Card 4: Chlorophyll Trajectory -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_spad_title">Leaf Nutrition Meter (ReCI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_spad_title">Leaf Nutrition Meter (ReCI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'reci')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="text-slate-900 font-label-mono-num font-bold text-xs">Optimal Band</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -743,7 +800,6 @@
 <span class="text-slate-500 text-[11px]">Thermal anomaly</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">27.4°C (-3.8°C)</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_spad_desc">Digital chlorophyll meter showing if nitrogen fertilizer top-dressing is needed.</p>
 </div>
 </div>
 <!-- COLUMN 4: Monsoon & SAR Radar -->
@@ -760,7 +816,12 @@
 <!-- Card 1: Cloud-Proof Growth -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_rvi_title">All-Weather Crop Growth Meter (SAR RVI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_rvi_title">All-Weather Crop Growth Meter (SAR RVI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'rvi')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-indigo-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="font-label-mono-num text-[11px] font-semibold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Sentinel-1</span>
 </div>
 <div class="my-space-sm flex items-end justify-between">
@@ -787,11 +848,15 @@
 <span class="text-slate-500 text-[11px]">Biomass rate</span>
 <span class="font-medium text-slate-900 text-[11px]">Stalk Thickening</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_rvi_desc">Radar measuring total crop biomass through rain, clouds, and darkness.</p>
 </div>
 <!-- Card 2: Stalk Rigidity / Height (VH/VV) -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_rigidity_title">Crop Height &amp; Falling Risk (SAR VH/VV)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_rigidity_title">Crop Height &amp; Falling Risk (SAR VH/VV)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'rigidity')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-800 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span id="val-rigidity" class="font-label-mono-num text-xs font-semibold text-slate-900 bg-slate-100 px-2 py-0.5 rounded">-6.8 dB</span>
 </div>
 <!-- Calibrated Dumbbell Span / Range Chart (reference #7 & #9 in IMAGE_13) -->
@@ -821,12 +886,16 @@
 <span class="text-slate-500 text-[11px]">Canopy stance</span>
 <span class="font-medium text-slate-900 text-[11px]">Well-Anchored · No Lodging</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_rigidity_desc">Monitors stem stiffness and crop height to warn against lodging/flattening from high winds.</p>
 </div>
 <!-- Card 3: Standing Water Flag -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_water_title">Waterlogging &amp; Flood Alert (SAR Inundated)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_water_title">Waterlogging &amp; Flood Alert (SAR Inundated)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'water')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-sky-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="px-2 py-0.5 rounded text-[11px] font-label-caps uppercase font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">Clear</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -837,12 +906,16 @@
 <span class="text-slate-500 text-[11px]">Ponding detection</span>
 <span class="font-medium text-slate-900 text-[11px]">No Flooding</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_water_desc">Detects standing water pools after heavy rainfall to prevent root rot.</p>
 </div>
 <!-- Card 4: Wind Lodging Risk -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
-<span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_wind_title">Pest &amp; Sickness Alert (SIPI)</span>
+<div class="flex items-center gap-1">
+  <span class="text-[11px] font-label-caps text-slate-500 uppercase tracking-wider font-medium" data-i18n="card_wind_title">Pest &amp; Sickness Alert (SIPI)</span>
+  <button type="button" onclick="window.toggleKpiInfo(event, 'wind')" class="kpi-info-btn w-4 h-4 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-700 hover:bg-slate-100 cursor-pointer transition-colors" title="View details / விளக்கம்">
+    <span class="material-symbols-outlined text-[13px]">info</span>
+  </button>
+</div>
 <span class="text-slate-900 font-label-mono-num font-bold text-xs">Low Vulnerability</span>
 </div>
 <div class="my-space-sm flex items-baseline justify-between">
@@ -855,7 +928,6 @@
 <span class="text-slate-500 text-[11px]">Phase coherence</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.89 Solid</span>
 </div>
-<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_wind_desc">Scans leaf stress pigments for early fungal blight, rust, or insect damage.</p>
 </div>
 </div></div>
 <div class="bg-surface-container-low px-space-md py-space-sm rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm text-body-sm">
@@ -3097,12 +3169,181 @@
       if (window.activeParcelMetrics && typeof window.applyZarrMetrics === 'function') {
         window.applyZarrMetrics(window.activeParcelMetrics, 'ZARR CLOUD');
       }
+
+      // If a KPI info popover is currently open, refresh its content in the new language
+      if (window.currentActiveKpiKey && typeof window.showKpiInfo === 'function') {
+        const pop = document.getElementById('kpiInfoPopover');
+        if (pop && pop.style.display !== 'none') {
+          window.showKpiInfo(null, window.currentActiveKpiKey);
+        }
+      }
     };
 
     const btnEn = document.getElementById('langEnBtn');
     const btnTa = document.getElementById('langTaBtn');
     if (btnEn) btnEn.addEventListener('click', () => switchAppLanguage('en'));
     if (btnTa) btnTa.addEventListener('click', () => switchAppLanguage('ta'));
+  })();
+</script>
+
+<!-- Popover: KPI Detailed Layman Explanation (triggered by 'i' click) -->
+<div id="kpiInfoPopover" style="display: none;" class="fixed z-[9999] bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-4 max-w-sm w-[320px] sm:w-[350px] text-slate-800 transition-all ring-1 ring-black/10">
+  <div class="flex items-start justify-between gap-2 pb-2.5 mb-2.5 border-b border-slate-100">
+    <div class="flex items-center gap-2.5">
+      <div id="kpiPopoverIconWrap" class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-100">
+        <span id="kpiPopoverIcon" class="material-symbols-outlined text-[19px]">info</span>
+      </div>
+      <div>
+        <h4 id="kpiPopoverTitle" class="text-xs sm:text-[13px] font-bold text-slate-900 leading-tight">Crop Greenness Score (NDVI)</h4>
+        <span id="kpiPopoverTag" class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider font-label-mono-num">Sentinel-2 MSI</span>
+      </div>
+    </div>
+    <button type="button" onclick="window.closeKpiInfoPopover()" class="w-6 h-6 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 flex items-center justify-center cursor-pointer transition-colors" title="Close">
+      <span class="material-symbols-outlined text-[16px]">close</span>
+    </button>
+  </div>
+  <div class="py-1">
+    <p id="kpiPopoverDesc" class="text-xs text-slate-600 leading-relaxed font-normal"></p>
+  </div>
+  <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
+    <span class="flex items-center gap-1 text-emerald-700 font-medium">
+      <span class="material-symbols-outlined text-[13px]">verified</span>
+      <span id="kpiPopoverGuideLabel">Farmer Guide / எளிய விளக்கம்</span>
+    </span>
+    <span class="text-slate-400 text-[9px]">Click outside to dismiss</span>
+  </div>
+</div>
+
+<script>
+  (function initKpiInfoEngine() {
+    const kpiCatalog = {
+      kpi1: { titleKey: 'kpi1Title', descKey: 'kpi1Desc', icon: 'water_drop', tag: 'Sentinel-2 MSI · NDMI', colorClass: 'bg-sky-50 text-sky-700 border-sky-100' },
+      kpi2: { titleKey: 'kpi2Title', descKey: 'kpi2Desc', icon: 'eco', tag: 'Sentinel-2 MSI · NDVI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      kpi3: { titleKey: 'kpi3Title', descKey: 'kpi3Desc', icon: 'grain', tag: 'Sentinel-1 SAR C-Band · SM', colorClass: 'bg-blue-50 text-blue-700 border-blue-100' },
+      kpi4: { titleKey: 'kpi4Title', descKey: 'kpi4Desc', icon: 'verified', tag: 'Sentinel-2 MSI · SIPI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      ndvi: { titleKey: 'card_ndvi_title', descKey: 'card_ndvi_desc', icon: 'psychiatry', tag: 'Sentinel-2 Optical · NDVI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      savi: { titleKey: 'card_savi_title', descKey: 'card_savi_desc', icon: 'spoke', tag: 'Soil Adjusted · SAVI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      gndvi: { titleKey: 'card_gndvi_title', descKey: 'card_gndvi_desc', icon: 'energy_savings_leaf', tag: 'Green Band · GNDVI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      vari: { titleKey: 'card_unif_title', descKey: 'card_unif_desc', icon: 'visibility', tag: 'Atmospherically Resistant · VARI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      ndmi: { titleKey: 'card_ndmi_title', descKey: 'card_ndmi_desc', icon: 'water_drop', tag: 'Normalized Moisture · NDMI', colorClass: 'bg-sky-50 text-sky-700 border-sky-100' },
+      bsi: { titleKey: 'card_bsi_title', descKey: 'card_bsi_desc', icon: 'landscape', tag: 'Bare Soil Index · BSI', colorClass: 'bg-amber-50 text-amber-700 border-amber-100' },
+      ndsi: { titleKey: 'card_salt_title', descKey: 'card_salt_desc', icon: 'warning', tag: 'Salinity Index · NDSI', colorClass: 'bg-amber-50 text-amber-700 border-amber-100' },
+      sm: { titleKey: 'card_sm_title', descKey: 'card_sm_desc', icon: 'waves', tag: 'SAR Radar Backscatter · Soil Moisture', colorClass: 'bg-blue-50 text-blue-700 border-blue-100' },
+      lai: { titleKey: 'card_lai_title', descKey: 'card_lai_desc', icon: 'layers', tag: 'Leaf Area Index · LAI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      fcover: { titleKey: 'card_fcover_title', descKey: 'card_fcover_desc', icon: 'grass', tag: 'Fractional Vegetation Cover · fCOVER', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      ccc: { titleKey: 'card_ccc_title', descKey: 'card_ccc_desc', icon: 'compost', tag: 'Canopy Chlorophyll Content · CCC', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      reci: { titleKey: 'card_spad_title', descKey: 'card_spad_desc', icon: 'local_florist', tag: 'Red-Edge Chlorophyll · ReCI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+      rvi: { titleKey: 'card_rvi_title', descKey: 'card_rvi_desc', icon: 'radar', tag: 'SAR Radar Vegetation Index · RVI', colorClass: 'bg-indigo-50 text-indigo-700 border-indigo-100' },
+      rigidity: { titleKey: 'card_rigidity_title', descKey: 'card_rigidity_desc', icon: 'air', tag: 'Radar Polarimetric Ratio · VH/VV', colorClass: 'bg-slate-100 text-slate-700 border-slate-200' },
+      water: { titleKey: 'card_water_title', descKey: 'card_water_desc', icon: 'flood', tag: 'SAR Specular Reflection · Inundation', colorClass: 'bg-sky-50 text-sky-700 border-sky-100' },
+      wind: { titleKey: 'card_wind_title', descKey: 'card_wind_desc', icon: 'pest_control', tag: 'Structure Insensitive Pigment · SIPI', colorClass: 'bg-emerald-50 text-emerald-700 border-emerald-100' }
+    };
+
+    window.kpiCatalog = kpiCatalog;
+    window.currentActiveKpiKey = null;
+
+    window.toggleKpiInfo = function(event, key) {
+      if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+      }
+      const popover = document.getElementById('kpiInfoPopover');
+      if (!popover) return;
+
+      if (window.currentActiveKpiKey === key && popover.style.display !== 'none') {
+        window.closeKpiInfoPopover();
+        return;
+      }
+
+      window.showKpiInfo(event ? event.currentTarget : null, key);
+    };
+
+    window.currentActiveAnchorEl = null;
+
+    window.showKpiInfo = function(anchorEl, key) {
+      const item = kpiCatalog[key];
+      if (!item) return;
+
+      window.currentActiveKpiKey = key;
+      if (anchorEl) window.currentActiveAnchorEl = anchorEl;
+      const targetAnchor = anchorEl || window.currentActiveAnchorEl;
+
+      const popover = document.getElementById('kpiInfoPopover');
+      if (!popover) return;
+
+      const lang = window.currentAppLang || 'en';
+      const dict = (window.langDict && window.langDict[lang]) ? window.langDict[lang] : {};
+
+      const title = dict[item.titleKey] || item.titleKey;
+      const desc = dict[item.descKey] || '';
+
+      const elTitle = document.getElementById('kpiPopoverTitle');
+      const elDesc = document.getElementById('kpiPopoverDesc');
+      const elIcon = document.getElementById('kpiPopoverIcon');
+      const elTag = document.getElementById('kpiPopoverTag');
+      const elWrap = document.getElementById('kpiPopoverIconWrap');
+      const elGuide = document.getElementById('kpiPopoverGuideLabel');
+
+      if (elTitle) elTitle.innerText = title;
+      if (elDesc) elDesc.innerText = desc;
+      if (elIcon) elIcon.innerText = item.icon;
+      if (elTag) elTag.innerText = item.tag;
+      if (elWrap) {
+        elWrap.className = `w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border ${item.colorClass || 'bg-emerald-50 text-emerald-700 border-emerald-100'}`;
+      }
+      if (elGuide) elGuide.innerText = (lang === 'ta') ? 'விவசாயி வழிகாட்டி (எளிய விளக்கம்)' : 'Farmer Layman Guide';
+
+      popover.style.display = 'block';
+
+      // Position popover intelligently near the anchor element
+      if (targetAnchor) {
+        const rect = targetAnchor.getBoundingClientRect();
+        const popWidth = Math.min(350, window.innerWidth - 32);
+        popover.style.width = `${popWidth}px`;
+
+        let left = rect.left;
+        let top = rect.bottom + 8;
+
+        // Viewport bounds detection
+        if (left + popWidth > window.innerWidth - 16) {
+          left = Math.max(16, window.innerWidth - popWidth - 16);
+        }
+        if (top + 220 > window.innerHeight) {
+          top = Math.max(16, rect.top - 210);
+        }
+
+        popover.style.left = `${left}px`;
+        popover.style.top = `${top}px`;
+        popover.style.transform = 'none';
+      } else {
+        popover.style.left = '50%';
+        popover.style.top = '50%';
+        popover.style.transform = 'translate(-50%, -50%)';
+      }
+    };
+
+    window.closeKpiInfoPopover = function() {
+      const popover = document.getElementById('kpiInfoPopover');
+      if (popover) popover.style.display = 'none';
+      window.currentActiveKpiKey = null;
+      window.currentActiveAnchorEl = null;
+    };
+
+    // Close on click outside or escape key (exclude language buttons so user can toggle language while popover is open)
+    document.addEventListener('click', function(e) {
+      const popover = document.getElementById('kpiInfoPopover');
+      if (popover && popover.style.display !== 'none') {
+        if (!popover.contains(e.target) && !e.target.closest('.kpi-info-btn') && !e.target.closest('#langEnBtn') && !e.target.closest('#langTaBtn')) {
+          window.closeKpiInfoPopover();
+        }
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        window.closeKpiInfoPopover();
+      }
+    });
   })();
 </script>
 
