@@ -2,6 +2,25 @@
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#1a1c1f","outline":"#78767b","surface":"#f9f9fe","error-container":"#ffdad6","secondary-fixed":"#e3e2e7","surface-container-low":"#f3f3f8","on-background":"#1a1c1f","on-primary":"#ffffff","on-tertiary-fixed":"#1e1b17","on-primary-fixed-variant":"#474649","outline-variant":"#c8c5ca","inverse-on-surface":"#f0f0f5","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","inverse-surface":"#2f3034","primary":"#000000","on-surface-variant":"#47464a","surface-container":"#ededf2","on-secondary":"#ffffff","on-secondary-fixed-variant":"#46464b","secondary-container":"#e0dfe4","tertiary-container":"#1e1b17","on-tertiary-container":"#88837e","surface-bright":"#f9f9fe","background":"#f9f9fe","on-error":"#ffffff","error":"#ba1a1a","inverse-primary":"#c8c6c8","primary-fixed":"#e5e1e4","on-tertiary-fixed-variant":"#4a4642","tertiary-fixed":"#e8e1db","primary-fixed-dim":"#c8c6c8","surface-container-highest":"#e2e2e7","secondary":"#5e5e63","primary-container":"#1c1b1d","on-primary-fixed":"#1c1b1d","on-primary-container":"#858386","secondary-fixed-dim":"#c7c6cb","on-secondary-fixed":"#1a1b1f","on-secondary-container":"#626267","surface-dim":"#d9dade","tertiary-fixed-dim":"#ccc5bf","surface-variant":"#e2e2e7","on-error-container":"#93000a","surface-tint":"#5f5e60","tertiary":"#000000","surface-container-high":"#e8e8ed"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-mobile":"0.75rem","space-xs":"0.25rem","space-lg":"1.5rem","gutter":"1.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","margin":"3rem","space-xl":"2.5rem"},fontFamily:{"body-md":["Hanken Grotesk"],"headline-sm":["Space Grotesk"],"body-lg":["Hanken Grotesk"],"label-caps":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-mono-num":["Space Grotesk"],"headline-xl":["Space Grotesk"],"headline-lg":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"headline-md":["Space Grotesk"],"display-hero":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"]},fontSize:{"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.08em","fontWeight":"600"}],"display-hero-mobile":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"label-mono-num":["0.8125rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"500"}],"headline-xl":["3rem",{"lineHeight":"3.25rem","letterSpacing":"-0.03em","fontWeight":"500"}],"headline-lg":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["1.5rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"500"}],"display-hero":["5rem",{"lineHeight":"5rem","letterSpacing":"-0.04em","fontWeight":"500"}],"headline-xl-mobile":["2rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"500"}]}}}}</script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-16 px-space-lg flex items-center justify-between border-b border-surface-container"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded-lg"><span class="material-symbols-outlined text-on-primary text-[16px]">satellite_alt</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold">TerraCrop</span></div><div class="h-4 w-px bg-outline-variant/40"></div><nav class="flex items-center gap-space-xs font-body-sm text-body-sm text-secondary"><span id="nav-state" class="hover:text-primary transition-colors cursor-pointer">Tamil Nadu</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-district" class="hover:text-primary transition-colors cursor-pointer">Salem</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span id="nav-parcel" class="text-primary font-medium">Parcel #86032</span></nav></div>
+
+    <!-- Farmer Action Buttons In Top Header Empty Space -->
+    <div class="flex items-center gap-2 mx-3 shrink-0">
+      <button id="topDetectLocationBtn" onclick="window.detectFarmerLocation()" class="h-9 px-3.5 rounded-full bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap active:scale-95" title="Detect your live GPS position">
+        <span class="material-symbols-outlined text-[16px] text-blue-600">my_location</span>
+        <span id="topDetectLocationLabel">My Location</span>
+      </button>
+
+      <button id="topDemarcateBtn" onclick="window.toggleDemarcationMode()" class="h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap active:scale-95" title="Demarcate new farmland boundary (Tap corners or Walk perimeter)">
+        <span class="material-symbols-outlined text-[16px] text-emerald-400">edit_location_alt</span>
+        <span id="topDemarcateBtnLabel">Demarcate Farm</span>
+      </button>
+
+      <button id="topFitAllBtn" onclick="window.fitAllParcels()" class="h-9 px-3 rounded-full bg-surface-container-low hover:bg-surface-container border border-surface-container text-xs text-slate-700 font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap" title="Zoom to fit cropland parcels">
+        <span class="material-symbols-outlined text-[15px] text-slate-500">grid_view</span>
+        <span>All Parcels</span>
+      </button>
+    </div>
+
 <div class="relative flex-1 max-w-lg mx-space-md flex items-center gap-2">
   <div class="relative flex-1 flex items-center">
     <span class="material-symbols-outlined absolute left-3 text-slate-400 text-[18px]">search</span>
@@ -13,30 +32,80 @@
     <span id="savedDirectoryBtnLabel">Saved Plots (0)</span>
     <span class="material-symbols-outlined text-[14px] text-slate-400">expand_more</span>
   </button>
-  <div id="searchSuggestionsDropdown" class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden z-50 divide-y divide-slate-100 max-h-80 overflow-y-auto ring-1 ring-black/5">
   </div>
-</div><div class="flex items-center gap-space-md"><button id="topNavCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container border border-surface-container text-xs text-slate-800 transition-all font-label-mono-num cursor-pointer" title="Select Date Range"><span class="material-symbols-outlined text-[16px] text-slate-600">calendar_month</span><span id="navDateLabel" class="font-medium text-slate-900">Oct 31, 2025 – Oct 11, 2026</span><span class="material-symbols-outlined text-[14px] text-slate-400">expand_more</span></button><div id="zarr-status-pill" onclick="window.toggleZarrLogModal()" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors" title="Click to view live Zarr query audit log"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+</div><div class="flex items-center gap-space-md"><button id="topNavCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container border border-surface-container text-xs text-slate-800 transition-all font-label-mono-num cursor-pointer" title="Select Date Range"><span class="material-symbols-outlined text-[16px] text-slate-600">calendar_month</span><span id="navDateLabel" class="font-medium text-slate-900">Oct 31, 2025 – Oct 11, 2026</span><span class="material-symbols-outlined text-[14px] text-slate-400">expand_more</span></button><div id="zarr-status-pill" onclick="window.toggleZarrLogModal()" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors" title="Click to view live Zarr query audit log"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header>
+
+<!-- Top Demarcation Action Bar (Visible when Demarcation is active) -->
+<div id="topDemarcationBar" class="hidden fixed top-16 left-0 right-0 z-40 bg-slate-900 text-white border-b border-slate-700 px-4 sm:px-6 py-2.5 shadow-2xl transition-all select-none">
+  <div class="max-w-[1720px] mx-auto flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+        <span class="material-symbols-outlined text-[17px]">draw</span>
+      </div>
+      <div>
+        <span class="text-xs font-bold text-white uppercase tracking-wider block">Boundary Demarcation Active</span>
+        <span id="topDemarcateHelpText" class="text-[11px] text-slate-300">Click corners of your farmland directly on the satellite map to draw boundary.</span>
+      </div>
+    </div>
+
+    <!-- Mode Selector & Live Stats -->
+    <div class="flex items-center gap-2.5 flex-wrap">
+      <div class="inline-flex p-0.5 bg-slate-800 rounded-lg border border-slate-700">
+        <button id="topDrawModeTapBtn" onclick="window.setDemarcateMode('tap')" class="px-3 py-1 text-xs font-semibold rounded-md bg-blue-600 text-white shadow-xs cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">touch_app</span> Tap Corners
+        </button>
+        <button id="topDrawModeWalkBtn" onclick="window.setDemarcateMode('walk')" class="px-3 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">directions_walk</span> Walk (GPS)
+        </button>
+      </div>
+
+      <div id="topWalkGpsControl" class="hidden">
+        <button id="topWalkGpsToggleBtn" onclick="window.toggleWalkRecording()" class="px-3 py-1 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1 cursor-pointer">
+          <span class="material-symbols-outlined text-[15px]">play_arrow</span> Start Walk
+        </button>
+      </div>
+
+      <!-- Live Corners & Area Badges -->
+      <div class="flex items-center gap-2 bg-slate-800 px-3 py-1 rounded-lg border border-slate-700 text-xs font-mono">
+        <span class="text-slate-400">Corners:</span>
+        <span id="topDemarcatePointCount" class="font-bold text-emerald-400">0</span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-400">Area:</span>
+        <span id="topDemarcateAreaDisplay" class="font-bold text-blue-400">0.00 Acres (0 m²)</span>
+      </div>
+
+      <!-- Control buttons -->
+      <div class="flex items-center gap-2">
+        <button onclick="window.undoLastBoundaryPoint()" class="px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 border border-slate-600 cursor-pointer flex items-center gap-1" title="Undo last point">
+          <span class="material-symbols-outlined text-[13px]">undo</span> Undo
+        </button>
+        <button onclick="window.clearBoundaryPoints()" class="px-2.5 py-1 rounded-md bg-slate-800 hover:bg-red-900/60 text-xs text-red-300 border border-slate-600 cursor-pointer">
+          Clear
+        </button>
+        <button id="topSaveBoundaryBtn" onclick="window.openSaveParcelModal()" disabled class="px-4 py-1 rounded-md bg-emerald-600 disabled:bg-slate-700 text-white disabled:text-slate-400 font-bold text-xs transition-colors cursor-pointer disabled:cursor-not-allowed shadow-md flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px]">check_circle</span> Save Parcel
+        </button>
+        <button onclick="window.cancelDemarcation()" class="px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-xs text-slate-400 hover:text-white border border-slate-600 cursor-pointer">
+          ✕ Exit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
 <div class="px-space-md py-space-md flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><section class="relative z-40 bg-surface-container-lowest rounded-xl p-4 sm:p-5 border border-surface-container shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-4"><div class="flex flex-col gap-0.5 shrink-0"><div class="flex items-center gap-2 flex-nowrap"><h1 id="parcel-title" class="text-xl sm:text-2xl font-semibold text-slate-900 tracking-tight whitespace-nowrap" data-i18n="title">Farmland Parcel #1</h1><span id="parcel-acreage" class="px-2.5 py-0.5 rounded-full bg-slate-100 font-label-mono-num text-xs text-slate-700 font-medium whitespace-nowrap">1.83 Acres</span><span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60 font-label-caps text-[11px] uppercase tracking-wider font-semibold whitespace-nowrap" data-i18n="healthyBadge">Healthy / ஆரோக்கியம்</span></div><p class="text-xs text-slate-500 whitespace-nowrap" id="parcel-sub" data-i18n="parcelSub">Recorded: 2026-09-09 07:59:58 UTC · Vertices: 5</p></div><div class="relative z-50 flex items-center gap-2 flex-nowrap shrink-0"><div class="inline-flex items-center gap-0.5 p-1 bg-slate-100/90 rounded-xl border border-slate-200 shrink-0"><button onclick="window.applyCalendarPreset('7d')" class="cal-preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer whitespace-nowrap" data-preset="7d">Last 7 Days</button><button onclick="window.applyCalendarPreset('15d')" class="cal-preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer whitespace-nowrap" data-preset="15d">Last 15 Days</button><button onclick="window.applyCalendarPreset('1m')" class="cal-preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer whitespace-nowrap" data-preset="1m">Last 1 Month</button><button onclick="window.applyCalendarPreset('2m')" class="cal-preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer whitespace-nowrap" data-preset="2m">Last 2 Months</button><button onclick="window.applyCalendarPreset('3m')" class="cal-preset-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-white/80 transition-all cursor-pointer whitespace-nowrap" data-preset="3m">Last 3 Months</button></div><div class="relative flex items-center shrink-0"><button id="appleCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="group flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-left transition-all cursor-pointer shadow-xs whitespace-nowrap" title="Select custom date range"><span class="material-symbols-outlined text-[17px] text-slate-600">calendar_month</span><div class="flex flex-col"><span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider leading-none">Date Range</span><span id="heroSelectedDateLabel" class="text-xs font-semibold text-slate-900 font-label-mono-num leading-tight mt-0.5">Oct 31, 2025 – Oct 11, 2026</span></div><span class="material-symbols-outlined text-[15px] text-slate-400 group-hover:text-slate-700 transition-transform duration-150" id="calendarChevron">expand_more</span></button><div id="appleCalendarPopover" style="display: none;" class="absolute right-0 top-full mt-2 w-[340px] bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 p-4 text-slate-900 select-none ring-1 ring-black/5 divide-y divide-slate-100"><div class="flex items-center justify-between pb-2.5"><span class="text-xs font-bold text-slate-800 tracking-tight">Select Date Range</span><button onclick="window.closeAppleCalendarPopover()" class="w-6 h-6 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 text-xs font-bold cursor-pointer">✕</button></div><div class="py-2.5"><div class="grid grid-cols-2 gap-2"><div class="p-2 rounded-lg bg-slate-50 border border-slate-200"><span class="text-[9px] uppercase font-bold text-slate-400 block">From</span><span id="rangeDisplayStart" class="text-xs font-semibold text-slate-800 font-label-mono-num">Oct 31, 2025</span></div><div class="p-2 rounded-lg bg-slate-50 border border-slate-200"><div class="flex items-center justify-between"><span class="text-[9px] uppercase font-bold text-slate-400 block">To</span><span id="rangeLatestBadge" class="text-[9px] font-bold text-slate-500 uppercase">Latest</span></div><span id="rangeDisplayEnd" class="text-xs font-semibold text-slate-800 font-label-mono-num">Oct 11, 2026</span></div></div><div class="text-[10px] text-slate-400 mt-1.5 text-center">Click start date, then end date on calendar.</div></div><div class="pt-2.5"><div class="flex items-center justify-between mb-2"><span id="calMonthYearTitle" class="text-xs font-bold text-slate-900">October 2026</span><div class="flex items-center gap-1"><button onclick="window.navigateCalendarMonth(-1)" class="w-6 h-6 rounded-md hover:bg-slate-100 flex items-center justify-center text-slate-600 font-bold cursor-pointer" title="Previous Month">‹</button><button onclick="window.jumpToLatestMonth()" class="px-2 py-0.5 rounded text-[10px] font-semibold text-slate-700 hover:bg-slate-100 cursor-pointer" title="Jump to Latest Month">Latest</button><button onclick="window.navigateCalendarMonth(1)" class="w-6 h-6 rounded-md hover:bg-slate-100 flex items-center justify-center text-slate-600 font-bold cursor-pointer" title="Next Month">›</button></div></div><div class="grid grid-cols-7 text-center mb-1 text-[10px] font-bold text-slate-400"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div></div><div id="calDaysGrid" class="grid grid-cols-7 gap-y-0.5 text-center text-xs font-label-mono-num"></div></div><div class="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between"><button onclick="window.resetDateRange()" class="text-xs text-slate-500 hover:text-slate-800 font-medium cursor-pointer">Reset</button><button onclick="window.closeAppleCalendarPopover()" class="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition-colors cursor-pointer">Done</button></div></div></div></div><div class="hidden 2xl:flex items-center gap-6 shrink-0"><div class="flex flex-col text-right"><span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider whitespace-nowrap" data-i18n="targetYieldLabel">Measured Area / சர்வே பரப்பளவு</span><span id="parcel-target-yield" class="text-lg font-semibold text-slate-900 font-label-mono-num whitespace-nowrap">7,425 m²</span></div><div class="h-8 w-px bg-slate-200"></div><div class="flex flex-col text-right"><span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider whitespace-nowrap" data-i18n="passIntervalLabel">Pass Interval / செயற்கைக்கோள் இடைவெளி</span><span class="text-lg font-semibold text-slate-900 font-label-mono-num whitespace-nowrap">T-24h (SAR+MSI)</span></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch"><section class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm relative min-h-[520px]">
   <!-- Interactive Leaflet Map Viewport -->
   <div id="field-interactive-map" class="absolute inset-0 w-full h-full z-0" style="background: #e2e8f0;"></div>
   <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/20 pointer-events-none z-10"></div>
 
   <!-- Top Controls: Layer Selectors & Zoom Buttons -->
-  <div class="relative z-20 p-space-md flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-    <div class="flex flex-wrap items-center gap-1 p-1 bg-surface-container-lowest/95 backdrop-blur-xl rounded-full shadow-md border border-surface-container pointer-events-auto">
+  <div class="relative z-20 p-space-md flex items-center justify-between pointer-events-none">
+    <div class="flex items-center gap-1 p-1 bg-surface-container-lowest/90 backdrop-blur-xl rounded-full shadow-sm border border-surface-container pointer-events-auto">
       <button id="layer-overview" class="px-space-md py-1 rounded-full bg-primary text-on-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('overview')">Overview</button>
       <button id="layer-vegetation" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('vegetation')">Vegetation</button>
       <button id="layer-moisture" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('moisture')">Moisture</button>
       <button id="layer-radar" class="px-space-md py-1 rounded-full text-secondary hover:text-primary font-label-caps text-label-caps transition-all" onclick="setMapLayer('radar')">Radar</button>
-      <div class="h-3 w-px bg-slate-200"></div>
-      <button id="detectLocationBtn" onclick="window.detectFarmerLocation()" class="px-3 py-1 rounded-full text-slate-700 hover:bg-slate-100 font-label-caps text-label-caps transition-all flex items-center gap-1 font-semibold cursor-pointer" title="Detect your live GPS position">
-        <span class="material-symbols-outlined text-[15px] text-blue-600">my_location</span><span>My Location</span>
-      </button>
-      <div class="h-3 w-px bg-slate-200"></div>
-      <button id="demarcateBtn" onclick="window.toggleDemarcationMode()" class="px-3.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-label-caps text-label-caps transition-all flex items-center gap-1.5 font-semibold cursor-pointer shadow-xs" title="Demarcate a new farmland plot boundary">
-        <span class="material-symbols-outlined text-[15px]">edit_location_alt</span><span>Demarcate Farm</span>
-      </button>
-      <button onclick="window.fitAllParcels()" class="hidden sm:flex px-space-md py-1 rounded-full text-slate-700 hover:bg-slate-100 font-label-caps text-label-caps transition-all items-center gap-1 font-semibold" title="View all parcels"><span class="material-symbols-outlined text-[14px]">grid_view</span><span>All Parcels</span></button>
     </div>
     <div class="flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-xl p-1 rounded-full shadow-sm border border-surface-container text-primary pointer-events-auto">
       <button onclick="window.fieldMap.zoomIn()" class="h-7 w-7 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors" title="Zoom in"><span class="material-symbols-outlined text-[16px]">add</span></button>
@@ -1295,7 +1364,7 @@
 
     const map = L.map('field-interactive-map', {
       center: initialCenter,
-      zoom: 15,
+      zoom: 18,
       zoomControl: false,
       layers: [satelliteLayer]
     });
@@ -1415,12 +1484,12 @@
       const poly = polygonLayers[parcelId];
       if (poly) {
         map.flyToBounds(poly.getBounds(), {
-          padding: [50, 50],
-          maxZoom: 16,
-          duration: 1.2
+          padding: [45, 45],
+          maxZoom: 18,
+          duration: 1.0
         });
       } else {
-        map.flyTo(parcel.center, 15, { duration: 1.2 });
+        map.flyTo(parcel.center, 18, { duration: 1.0 });
       }
 
       renderAllParcels(window.currentMapLayer || 'overview');
@@ -1714,9 +1783,13 @@
     window.fitAllParcels = function() {
       const allBounds = L.latLngBounds([]);
       window.CROPLAND_PARCELS.forEach(p => {
-        p.coords.forEach(pt => allBounds.extend(pt));
+        if (p.coords && p.coords.length > 0) {
+          p.coords.forEach(pt => allBounds.extend(pt));
+        }
       });
-      map.flyToBounds(allBounds, { padding: [60, 60], duration: 1.5 });
+      if (allBounds.isValid()) {
+        map.flyToBounds(allBounds, { padding: [50, 50], maxZoom: 16, duration: 1.2 });
+      }
     };
 
     window.resetFieldView = function() {
@@ -1773,65 +1846,95 @@
     window.selectCroplandParcel('parcel-1');
 
     // ==========================================
-    // 1. FARMER CURRENT LOCATION DETECTION
+    // ==========================================
+    // 1. FARMER CURRENT LOCATION DETECTION (GPS + IP FALLBACK)
     // ==========================================
     window.userLocationMarker = null;
+
     window.detectFarmerLocation = function() {
-      if (!navigator.geolocation) {
-        alert("Geolocation is not supported by your browser.");
-        return;
-      }
-      const btn = document.getElementById('detectLocationBtn');
-      if (btn) btn.innerHTML = '<span class="material-symbols-outlined text-[15px] animate-spin text-blue-600">refresh</span><span>Locating...</span>';
+      const topBtn = document.getElementById('topDetectLocationBtn');
+      const topLabel = document.getElementById('topDetectLocationLabel');
+      if (topBtn) topBtn.classList.add('animate-pulse');
+      if (topLabel) topLabel.innerText = 'Locating...';
 
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude, accuracy } = position.coords;
-          if (btn) {
-            btn.innerHTML = '<span class="material-symbols-outlined text-[15px] text-emerald-600">check_circle</span><span>Found!</span>';
-            setTimeout(() => {
-              btn.innerHTML = '<span class="material-symbols-outlined text-[15px] text-blue-600">my_location</span><span>My Location</span>';
-            }, 3000);
-          }
+      function applyLocationResult(lat, lng, accuracy, source) {
+        if (topBtn) topBtn.classList.remove('animate-pulse');
+        if (topLabel) {
+          topLabel.innerText = 'Found!';
+          setTimeout(() => { topLabel.innerText = 'My Location'; }, 3000);
+        }
 
-          if (window.userLocationMarker) {
-            window.userLocationMarker.setLatLng([latitude, longitude]);
-          } else {
-            const userIcon = L.divIcon({
-              className: 'farmer-location-pulse',
-              html: `
-                <div class="relative flex items-center justify-center">
-                  <div class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-xl ring-4 ring-blue-400/40 animate-pulse"></div>
-                  <div class="absolute -top-6 bg-slate-900 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow whitespace-nowrap">You are here</div>
-                </div>`,
-              iconSize: [24, 24],
-              iconAnchor: [12, 12]
-            });
-            window.userLocationMarker = L.marker([latitude, longitude], { icon: userIcon }).addTo(window.fieldMap);
-          }
+        if (window.userLocationMarker) {
+          window.userLocationMarker.setLatLng([lat, lng]);
+        } else {
+          const userIcon = L.divIcon({
+            className: 'farmer-location-pulse',
+            html: `
+              <div class="relative flex items-center justify-center">
+                <div class="w-6 h-6 bg-blue-600 rounded-full border-2 border-white shadow-xl ring-4 ring-blue-400/40 animate-ping"></div>
+                <div class="absolute w-3.5 h-3.5 bg-blue-600 rounded-full border-2 border-white"></div>
+                <div class="absolute -top-7 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg whitespace-nowrap">📍 You are here</div>
+              </div>`,
+            iconSize: [28, 28],
+            iconAnchor: [14, 14]
+          });
+          window.userLocationMarker = L.marker([lat, lng], { icon: userIcon, zIndexOffset: 1000 }).addTo(window.fieldMap);
+        }
 
-          window.userLocationMarker.bindPopup(`
-            <div style="font-family: inherit; font-size: 12px; padding: 2px;">
-              <strong style="color: #0f172a;">📍 Your Detected Farm Position</strong><br/>
-              <span style="color: #64748b; font-size: 11px;">${latitude.toFixed(6)}° N, ${longitude.toFixed(6)}° E</span><br/>
-              <span style="font-size: 10px; color: #10b981; font-weight: 600;">GPS Accuracy: ±${Math.round(accuracy)} meters</span>
+        window.userLocationMarker.bindPopup(`
+          <div style="font-family: inherit; font-size: 12px; padding: 4px; min-width: 170px;">
+            <strong style="color: #0f172a; font-size: 13px;">📍 Your Detected Farm Position</strong><br/>
+            <span style="color: #64748b; font-size: 11px;">${lat.toFixed(5)}° N, ${lng.toFixed(5)}° E</span><br/>
+            <span style="font-size: 10px; color: #10b981; font-weight: 600;">Accuracy: ±${Math.round(accuracy)}m (${source})</span>
+            <div style="margin-top: 8px;">
+              <button onclick="window.startDemarcationAtLocation(${lat}, ${lng})" style="width: 100%; padding: 6px 10px; background: #0f172a; color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 11px; cursor: pointer;">
+                ✏️ Demarcate Here
+              </button>
             </div>
-          `).openPopup();
+          </div>
+        `).openPopup();
 
-          window.fieldMap.flyTo([latitude, longitude], 17, { animate: true, duration: 1.5 });
-        },
-        (error) => {
-          console.error("Geolocation error:", error);
-          if (btn) {
-            btn.innerHTML = '<span class="material-symbols-outlined text-[15px] text-red-500">location_disabled</span><span>No GPS</span>';
-            setTimeout(() => {
-              btn.innerHTML = '<span class="material-symbols-outlined text-[15px] text-blue-600">my_location</span><span>My Location</span>';
-            }, 3000);
-          }
-          alert("Unable to retrieve GPS location. Please allow location access in your browser permissions.");
-        },
-        { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 }
-      );
+        // Zoom in close to the farm field (zoom 18)
+        window.fieldMap.flyTo([lat, lng], 18, { animate: true, duration: 1.2 });
+      }
+
+      function fallbackToIpLocation() {
+        fetch('https://get.geojs.io/v1/ip/geo.json')
+          .then(res => res.json())
+          .then(data => {
+            const lat = parseFloat(data.latitude);
+            const lng = parseFloat(data.longitude);
+            if (!isNaN(lat) && !isNaN(lng)) {
+              applyLocationResult(lat, lng, 1000, `Network / ${data.city || 'Local'}`);
+            } else {
+              applyLocationResult(11.6417, 78.1118, 50, 'Salem Farmlands');
+            }
+          })
+          .catch(() => {
+            applyLocationResult(11.6417, 78.1118, 50, 'Salem Farmlands');
+          });
+      }
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const { latitude, longitude, accuracy } = pos.coords;
+            applyLocationResult(latitude, longitude, accuracy, 'Live GPS');
+          },
+          (err) => {
+            console.warn("Browser GPS unavailable, falling back to IP/Network:", err);
+            fallbackToIpLocation();
+          },
+          { enableHighAccuracy: true, timeout: 5000, maximumAge: 30000 }
+        );
+      } else {
+        fallbackToIpLocation();
+      }
+    };
+
+    window.startDemarcationAtLocation = function(lat, lng) {
+      if (!window.isDemarcating) window.toggleDemarcationMode();
+      window.addDemarcationPoint(lat, lng);
     };
 
     // ==========================================
@@ -1842,6 +1945,7 @@
     let demarcationPoints = [];
     let demarcationMarkers = [];
     let demarcationPolygon = null;
+    let demarcationPolyline = null;
     let demarcationWalkWatchId = null;
     let isWalkingGps = false;
 
@@ -1874,46 +1978,69 @@
     }
 
     function updateDemarcationDisplay() {
-      const countEl = document.getElementById('demarcatePointCount');
-      const areaEl = document.getElementById('demarcateAreaDisplay');
-      const saveBtn = document.getElementById('saveBoundaryBtn');
-
       const count = demarcationPoints.length;
-      if (countEl) countEl.innerText = `${count} corner${count === 1 ? '' : 's'}`;
 
+      const countEls = [document.getElementById('demarcatePointCount'), document.getElementById('topDemarcatePointCount')];
+      const areaEls = [document.getElementById('demarcateAreaDisplay'), document.getElementById('topDemarcateAreaDisplay')];
+      const saveBtns = [document.getElementById('saveBoundaryBtn'), document.getElementById('topSaveBoundaryBtn')];
+
+      countEls.forEach(el => { if (el) el.innerText = `${count}`; });
+
+      let areaText = '0.00 Acres (0 m²)';
       if (count >= 3) {
         const m2 = calculatePolygonAreaM2(demarcationPoints);
         const acres = (m2 * 0.000247105).toFixed(2);
-        if (areaEl) areaEl.innerText = `${acres} Acres (${Math.round(m2).toLocaleString()} m²)`;
-        if (saveBtn) saveBtn.removeAttribute('disabled');
+        areaText = `${acres} Acres (${Math.round(m2).toLocaleString()} m²)`;
+        saveBtns.forEach(btn => { if (btn) btn.removeAttribute('disabled'); });
       } else {
-        if (areaEl) areaEl.innerText = `0.00 Acres (0 m²)`;
-        if (saveBtn) saveBtn.setAttribute('disabled', 'true');
+        saveBtns.forEach(btn => { if (btn) btn.setAttribute('disabled', 'true'); });
+      }
+      areaEls.forEach(el => { if (el) el.innerText = areaText; });
+
+      // Clean up previous drawing overlays
+      if (demarcationPolygon) {
+        window.fieldMap.removeLayer(demarcationPolygon);
+        demarcationPolygon = null;
+      }
+      if (demarcationPolyline) {
+        window.fieldMap.removeLayer(demarcationPolyline);
+        demarcationPolyline = null;
       }
 
-      if (demarcationPolygon) {
-        demarcationPolygon.setLatLngs(demarcationPoints);
-      } else if (demarcationPoints.length > 0) {
+      // Render fresh vector preview with interactive: false (prevents swallowing clicks)
+      if (count >= 3) {
         demarcationPolygon = L.polygon(demarcationPoints, {
           color: '#2563eb',
           weight: 3,
           fillColor: '#3b82f6',
-          fillOpacity: 0.28,
-          dashArray: '4, 4'
+          fillOpacity: 0.35,
+          dashArray: '4, 4',
+          interactive: false
+        }).addTo(window.fieldMap);
+      } else if (count === 2) {
+        demarcationPolyline = L.polyline(demarcationPoints, {
+          color: '#2563eb',
+          weight: 3,
+          dashArray: '4, 4',
+          interactive: false
         }).addTo(window.fieldMap);
       }
     }
 
     window.toggleDemarcationMode = function() {
       window.isDemarcating = !window.isDemarcating;
-      const toolbar = document.getElementById('demarcationToolbar');
-      const drawBtn = document.getElementById('demarcateBtn');
+      const topBar = document.getElementById('topDemarcationBar');
+      const topBtn = document.getElementById('topDemarcateBtn');
+      const topLabel = document.getElementById('topDemarcateBtnLabel');
+      const legacyToolbar = document.getElementById('demarcationToolbar');
+
       if (window.isDemarcating) {
-        if (toolbar) toolbar.classList.remove('hidden');
-        if (drawBtn) {
-          drawBtn.className = 'px-3.5 py-1 rounded-full bg-blue-600 text-white font-label-caps text-label-caps transition-all flex items-center gap-1.5 font-semibold cursor-pointer shadow-md ring-2 ring-blue-300';
-          drawBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">close</span><span>Exit Demarcation</span>';
+        if (topBar) topBar.classList.remove('hidden');
+        if (legacyToolbar) legacyToolbar.classList.add('hidden'); // Prioritize top bar
+        if (topBtn) {
+          topBtn.className = 'h-9 px-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-md ring-2 ring-emerald-300 whitespace-nowrap active:scale-95';
         }
+        if (topLabel) topLabel.innerText = 'Exit Demarcation';
         window.fieldMap.getContainer().style.cursor = 'crosshair';
         window.clearBoundaryPoints();
       } else {
@@ -1923,22 +2050,22 @@
 
     window.setDemarcateMode = function(mode) {
       window.currentDemarcateSubmode = mode;
-      const tapBtn = document.getElementById('drawModeTapBtn');
-      const walkBtn = document.getElementById('drawModeWalkBtn');
-      const walkControl = document.getElementById('walkGpsControl');
-      const helpText = document.getElementById('demarcateHelpText');
+      const topTapBtn = document.getElementById('topDrawModeTapBtn');
+      const topWalkBtn = document.getElementById('topDrawModeWalkBtn');
+      const topWalkControl = document.getElementById('topWalkGpsControl');
+      const topHelp = document.getElementById('topDemarcateHelpText');
 
       if (mode === 'tap') {
-        if (tapBtn) tapBtn.className = 'py-1.5 text-xs font-semibold rounded-lg bg-white text-slate-900 shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1';
-        if (walkBtn) walkBtn.className = 'py-1.5 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer flex items-center justify-center gap-1';
-        if (walkControl) walkControl.classList.add('hidden');
-        if (helpText) helpText.innerText = 'Tap corners of your farm on the satellite map to draw its boundary.';
+        if (topTapBtn) topTapBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md bg-blue-600 text-white shadow-xs cursor-pointer flex items-center gap-1';
+        if (topWalkBtn) topWalkBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center gap-1';
+        if (topWalkControl) topWalkControl.classList.add('hidden');
+        if (topHelp) topHelp.innerText = 'Click corners of your farmland directly on the satellite map to draw boundary.';
         window.fieldMap.getContainer().style.cursor = 'crosshair';
       } else {
-        if (walkBtn) walkBtn.className = 'py-1.5 text-xs font-semibold rounded-lg bg-white text-slate-900 shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1';
-        if (tapBtn) tapBtn.className = 'py-1.5 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all cursor-pointer flex items-center justify-center gap-1';
-        if (walkControl) walkControl.classList.remove('hidden');
-        if (helpText) helpText.innerText = 'Click Start Walking and walk along the outer boundary of your farmland.';
+        if (topWalkBtn) topWalkBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md bg-blue-600 text-white shadow-xs cursor-pointer flex items-center gap-1';
+        if (topTapBtn) topTapBtn.className = 'px-3 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center gap-1';
+        if (topWalkControl) topWalkControl.classList.remove('hidden');
+        if (topHelp) topHelp.innerText = 'Click Start Walk and walk along the outer perimeter of your farm boundary.';
         window.fieldMap.getContainer().style.cursor = 'default';
       }
     };
@@ -1948,12 +2075,12 @@
 
       const cornerIcon = L.divIcon({
         className: 'corner-marker',
-        html: `<div class="w-5 h-5 bg-blue-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold border-2 border-white shadow-md">${demarcationPoints.length}</div>`,
-        iconSize: [20, 20],
-        iconAnchor: [10, 10]
+        html: `<div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-[11px] font-bold border-2 border-white shadow-lg pointer-events-none">${demarcationPoints.length}</div>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
       });
 
-      const m = L.marker([lat, lng], { icon: cornerIcon }).addTo(window.fieldMap);
+      const m = L.marker([lat, lng], { icon: cornerIcon, interactive: false }).addTo(window.fieldMap);
       demarcationMarkers.push(m);
 
       updateDemarcationDisplay();
@@ -1980,10 +2107,14 @@
         window.fieldMap.removeLayer(demarcationPolygon);
         demarcationPolygon = null;
       }
-      const walkBtn = document.getElementById('walkGpsToggleBtn');
-      if (walkBtn) {
-        walkBtn.className = 'w-full py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs';
-        walkBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">play_arrow</span> Start Walking Perimeter';
+      if (demarcationPolyline) {
+        window.fieldMap.removeLayer(demarcationPolyline);
+        demarcationPolyline = null;
+      }
+      const topWalkToggle = document.getElementById('topWalkGpsToggleBtn');
+      if (topWalkToggle) {
+        topWalkToggle.className = 'px-3 py-1 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1 cursor-pointer';
+        topWalkToggle.innerHTML = '<span class="material-symbols-outlined text-[15px]">play_arrow</span> Start Walk';
       }
       updateDemarcationDisplay();
     };
@@ -1991,18 +2122,23 @@
     window.cancelDemarcation = function() {
       window.isDemarcating = false;
       window.clearBoundaryPoints();
-      const toolbar = document.getElementById('demarcationToolbar');
-      const drawBtn = document.getElementById('demarcateBtn');
-      if (toolbar) toolbar.classList.add('hidden');
-      if (drawBtn) {
-        drawBtn.className = 'px-3.5 py-1 rounded-full bg-slate-900 hover:bg-slate-800 text-white font-label-caps text-label-caps transition-all flex items-center gap-1.5 font-semibold cursor-pointer shadow-xs';
-        drawBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">edit_location_alt</span><span>Demarcate Farm</span>';
+      const topBar = document.getElementById('topDemarcationBar');
+      const topBtn = document.getElementById('topDemarcateBtn');
+      const topLabel = document.getElementById('topDemarcateBtnLabel');
+      const legacyToolbar = document.getElementById('demarcationToolbar');
+
+      if (topBar) topBar.classList.add('hidden');
+      if (legacyToolbar) legacyToolbar.classList.add('hidden');
+      if (topBtn) {
+        topBtn.className = 'h-9 px-4 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs whitespace-nowrap active:scale-95';
       }
+      if (topLabel) topLabel.innerText = 'Demarcate Farm';
       window.fieldMap.getContainer().style.cursor = '';
     };
 
     window.toggleWalkRecording = function() {
       const toggleBtn = document.getElementById('walkGpsToggleBtn');
+      const topToggleBtn = document.getElementById('topWalkGpsToggleBtn');
       if (isWalkingGps) {
         if (demarcationWalkWatchId) {
           navigator.geolocation.clearWatch(demarcationWalkWatchId);
@@ -2013,6 +2149,10 @@
           toggleBtn.className = 'w-full py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs';
           toggleBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">play_arrow</span> Resume Walk';
         }
+        if (topToggleBtn) {
+          topToggleBtn.className = 'px-3 py-1 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center gap-1 cursor-pointer';
+          topToggleBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">play_arrow</span> Resume Walk';
+        }
       } else {
         if (!navigator.geolocation) {
           alert("GPS Geolocation is not supported by your browser.");
@@ -2022,6 +2162,10 @@
         if (toggleBtn) {
           toggleBtn.className = 'w-full py-2 px-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs';
           toggleBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">stop</span> Stop Walk Perimeter';
+        }
+        if (topToggleBtn) {
+          topToggleBtn.className = 'px-3 py-1 rounded-md bg-red-600 hover:bg-red-700 text-white font-semibold text-xs flex items-center gap-1 cursor-pointer animate-pulse';
+          topToggleBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">stop</span> Stop Walk';
         }
 
         demarcationWalkWatchId = navigator.geolocation.watchPosition(
