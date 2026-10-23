@@ -1669,16 +1669,60 @@
       }
 
       // Universal Zarr Datacube Fetcher & Date Slicer (Localhost Python Server or Cloud-Native Static Zarr Store on GitHub)
-      window.applyZarrMetrics = function(m, sourceLabel, dateIdx) {
+      window.applyZarrMetrics = function(m, sourceLabel, dateParam) {
         if (!m) return;
         window.activeParcelMetrics = m;
-        const idx = (dateIdx !== undefined) ? dateIdx : (window.CURRENT_OBSERVATION_INDEX !== undefined ? window.CURRENT_OBSERVATION_INDEX : 55);
-        const activeDate = (window.SATELLITE_PASS_DATES && window.SATELLITE_PASS_DATES[idx]) ? window.SATELLITE_PASS_DATES[idx] : '2026-10-11';
+
+        const dates = window.SATELLITE_PASS_DATES || [];
+        let rangeStart = window.RANGE_START_DATE || '2025-10-31';
+        let rangeEnd = window.RANGE_END_DATE || '2026-10-11';
+        let isSingle = false;
+        let singleIdx = null;
+
+        if (typeof dateParam === 'number') {
+          isSingle = true;
+          singleIdx = dateParam;
+        } else if (dateParam && typeof dateParam === 'object') {
+          if (dateParam.startDate && dateParam.endDate) {
+            rangeStart = dateParam.startDate;
+            rangeEnd = dateParam.endDate;
+          } else if (typeof dateParam.index === 'number') {
+            isSingle = true;
+            singleIdx = dateParam.index;
+          }
+        }
+
+        // Determine matching indices for the period
+        let matchingIndices = [];
+        if (isSingle) {
+          matchingIndices = [Math.max(0, Math.min(dates.length - 1, singleIdx))];
+        } else {
+          matchingIndices = dates
+            .map((d, i) => ({ d, i }))
+            .filter(item => item.d >= rangeStart && item.d <= rangeEnd)
+            .map(item => item.i);
+          if (matchingIndices.length === 0) {
+            const nearest = dates.findIndex(d => d <= rangeEnd);
+            matchingIndices = [nearest >= 0 ? nearest : (dates.length > 0 ? dates.length - 1 : 55)];
+          }
+        }
+
+        const count = matchingIndices.length;
+        const fmt = window.formatDateDisplay || (s => s);
+        const activeDateText = (count === 1)
+          ? (dates[matchingIndices[0]] || rangeEnd)
+          : `${fmt(rangeStart)} – ${fmt(rangeEnd)}`;
 
         function getVal(metricObj) {
           if (!metricObj) return 0;
-          if (metricObj.timeseries && metricObj.timeseries[idx] !== undefined) {
-            return metricObj.timeseries[idx];
+          if (metricObj.timeseries && Array.isArray(metricObj.timeseries) && metricObj.timeseries.length > 0) {
+            const vals = matchingIndices
+              .map(i => metricObj.timeseries[i])
+              .filter(v => v !== undefined && v !== null && !isNaN(v));
+            if (vals.length > 0) {
+              const sum = vals.reduce((a, b) => a + b, 0);
+              return sum / vals.length;
+            }
           }
           return metricObj.latest !== undefined ? metricObj.latest : 0;
         }
@@ -1700,29 +1744,73 @@
         const inun = getVal(m.SAR_Inundated_Flag);
         const sipi = getVal(m.SIPI);
 
-        if (vNdvi) vNdvi.innerText = ndvi.toFixed(2);
-        if (vSavi) vSavi.innerText = Math.round(savi * 100) + '%';
-        if (vSaviSub) vSaviSub.innerText = savi.toFixed(2);
-        if (vGndvi) vGndvi.innerText = gndvi.toFixed(2);
-        if (vVari) vVari.innerText = Math.round(vari * 100) + '%';
-        if (vNdmi) vNdmi.innerText = (ndmi > 0 ? '+' : '') + ndmi.toFixed(2);
-        if (vBsi) vBsi.innerText = bsi.toFixed(2);
-        if (vNdsi) vNdsi.innerText = '< ' + ndsi.toFixed(1);
-        if (vSm) vSm.innerText = Math.round(sm) + '%';
-        if (vLai) vLai.innerText = lai.toFixed(1);
-        if (vFcover) vFcover.innerText = Math.round(fcover) + '%';
-        if (vCcc) vCcc.innerText = ccc.toFixed(1);
-        if (vReci) vReci.innerText = reci.toFixed(1);
-        if (vRvi) vRvi.innerText = rvi.toFixed(2);
-        if (vRig) vRig.innerText = rig.toFixed(1) + ' dB';
-        if (vInun) vInun.innerText = inun === 0 ? 'Clear' : 'Flooded';
-        if (vSipi) vSipi.innerText = Math.round(sipi) + '%';
+        // Fetch fresh DOM elements
+        const elVNdvi = document.getElementById('val-ndvi');
+        const elVSavi = document.getElementById('val-savi');
+        const elVSaviSub = document.getElementById('val-savi-sub');
+        const elVGndvi = document.getElementById('val-gndvi');
+        const elVVari = document.getElementById('val-vari');
+        const elVNdmi = document.getElementById('val-ndmi');
+        const elVBsi = document.getElementById('val-bsi');
+        const elVNdsi = document.getElementById('val-ndsi');
+        const elVSm = document.getElementById('val-sm');
+        const elVLai = document.getElementById('val-lai');
+        const elVFcover = document.getElementById('val-fcover');
+        const elVCcc = document.getElementById('val-ccc');
+        const elVReci = document.getElementById('val-reci');
+        const elVRvi = document.getElementById('val-rvi');
+        const elVRig = document.getElementById('val-rigidity');
+        const elVInun = document.getElementById('val-inundated');
+        const elVSipi = document.getElementById('val-sipi');
+
+        if (elVNdvi) elVNdvi.innerText = ndvi.toFixed(2);
+        if (elVSavi) elVSavi.innerText = Math.round(savi * 100) + '%';
+        if (elVSaviSub) elVSaviSub.innerText = savi.toFixed(2);
+        if (elVGndvi) elVGndvi.innerText = gndvi.toFixed(2);
+        if (elVVari) elVVari.innerText = Math.round(vari * 100) + '%';
+        if (elVNdmi) elVNdmi.innerText = (ndmi > 0 ? '+' : '') + ndmi.toFixed(2);
+        if (elVBsi) elVBsi.innerText = bsi.toFixed(2);
+        if (elVNdsi) elVNdsi.innerText = '< ' + ndsi.toFixed(1);
+        if (elVSm) elVSm.innerText = Math.round(sm) + '%';
+        if (elVLai) elVLai.innerText = lai.toFixed(1);
+        if (elVFcover) elVFcover.innerText = Math.round(fcover) + '%';
+        if (elVCcc) elVCcc.innerText = ccc.toFixed(1);
+        if (elVReci) elVReci.innerText = reci.toFixed(1);
+        if (elVRvi) elVRvi.innerText = rvi.toFixed(2);
+        if (elVRig) elVRig.innerText = rig.toFixed(1) + ' dB';
+        if (elVInun) elVInun.innerText = inun === 0 ? 'Clear' : 'Flooded';
+        if (elVSipi) elVSipi.innerText = Math.round(sipi) + '%';
 
         // Update Top 4 Hero KPI Summary Cards
-        if (kpiWater) kpiWater.innerText = (ndmi > 0 ? '+' : '') + ndmi.toFixed(2);
-        if (kpiGreen) kpiGreen.innerHTML = Math.round(ndvi * 100) + '<span class="text-headline-sm font-normal text-secondary">/100</span>';
-        if (kpiMoist) kpiMoist.innerText = Math.round(sm) + '%';
-        if (kpiPest) kpiPest.innerText = 'Low (' + Math.round(sipi) + '%)';
+        const elKpiWater = document.getElementById('kpi-water-val');
+        const elKpiGreen = document.getElementById('kpi-green-val');
+        const elKpiMoist = document.getElementById('kpi-moisture-val');
+        const elKpiPest = document.getElementById('kpi-pest-val');
+
+        if (elKpiWater) {
+          elKpiWater.innerText = (ndmi > 0 ? '+' : '') + ndmi.toFixed(2);
+        }
+        if (elKpiGreen) {
+          elKpiGreen.innerHTML = Math.round(ndvi * 100) + '<span class="text-headline-sm font-normal text-secondary">/100</span>';
+        }
+        if (elKpiMoist) {
+          elKpiMoist.innerText = Math.round(sm) + '%';
+        }
+        if (elKpiPest) {
+          const sRound = Math.round(sipi);
+          const pestLabel = sRound < 7 ? 'Low' : (sRound < 10 ? 'Mild' : 'Moderate');
+          elKpiPest.innerText = `${pestLabel} (${sRound}%)`;
+        }
+
+        // Micro-pulse animation on top 4 KPIs to give visual feedback that numbers changed
+        [elKpiWater, elKpiGreen, elKpiMoist, elKpiPest].forEach(el => {
+          if (el) {
+            el.classList.add('scale-105', 'text-emerald-600', 'transition-transform', 'duration-200');
+            setTimeout(() => {
+              el.classList.remove('scale-105', 'text-emerald-600');
+            }, 300);
+          }
+        });
 
         // Update SVG Radial Arc Gauge (Circumference 119.38)
         const gaugeCircle = document.getElementById('gauge-ndvi-circle');
@@ -1742,25 +1830,31 @@
           lollipopText.innerText = Math.round(savi * 100) + '%';
         }
 
-        // Subtitle with pass date
+        // Subtitle with pass date / period average
         const parcelSub = document.getElementById('parcel-sub');
-        if (parcelSub && parcel) {
-          parcelSub.innerText = `Observed: ${activeDate} (Pass #${idx + 1} of 56) · Vertices: ${parcel.vertices_count} · Baseline: 2025-10-31`;
+        if (parcelSub) {
+          const vertices = (parcel && parcel.vertices_count) ? parcel.vertices_count : 5;
+          if (count > 1) {
+            parcelSub.innerText = `Observed Period: ${activeDateText} (${count} passes averaged) · Vertices: ${vertices} · Baseline: 2025-10-31`;
+          } else {
+            parcelSub.innerText = `Observed: ${activeDateText} (Pass #${matchingIndices[0] + 1} of 56) · Vertices: ${vertices} · Baseline: 2025-10-31`;
+          }
         }
 
         const pillText = document.getElementById('pixel-status-text');
         if (pillText && parcel) {
-          pillText.innerHTML = `${parcel.name}: <strong class="text-emerald-700">NDVI ${ndvi.toFixed(2)} (${activeDate})</strong>`;
+          pillText.innerHTML = `${parcel.name}: <strong class="text-emerald-700">NDVI ${ndvi.toFixed(2)} (${count > 1 ? count + ' passes' : activeDateText})</strong>`;
         }
 
         const statusPill = document.getElementById('zarr-status-pill');
         if (statusPill) {
-          statusPill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr Read: ${parcelId} [${activeDate}] (${sourceLabel})</span>`;
+          const periodTag = count > 1 ? `${count} Passes Avg` : activeDateText;
+          statusPill.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr Read: ${parcelId} [${periodTag}] (${sourceLabel})</span>`;
         }
       };
 
       function applyZarrMetrics(m, sourceLabel) {
-        window.applyZarrMetrics(m, sourceLabel, window.CURRENT_OBSERVATION_INDEX);
+        window.applyZarrMetrics(m, sourceLabel, { startDate: window.RANGE_START_DATE, endDate: window.RANGE_END_DATE });
       }
 
       function logClientZarrPull(pId, metricsObj, durationMs) {
@@ -3041,6 +3135,7 @@
     const d = parseInt(parts[2], 10);
     return `${MONTH_SHORT[m - 1]} ${d}, ${y}`;
   }
+  window.formatDateDisplay = formatDateDisplay;
 
   function renderCalendarDays(year, month) {
     const grid = document.getElementById('calDaysGrid');
@@ -3212,9 +3307,9 @@
     // Re-render days
     renderCalendarDays(calYear, calMonth);
 
-    // Update all 24 KPIs
+    // Update all 24 KPIs based on the selected period
     if (window.activeParcelMetrics && window.applyZarrMetrics) {
-      window.applyZarrMetrics(window.activeParcelMetrics, 'ZARR CLOUD', idx);
+      window.applyZarrMetrics(window.activeParcelMetrics, 'ZARR CLOUD', { startDate, endDate });
     } else if (window.activeParcel) {
       window.selectCroplandParcel(window.activeParcel.id);
     }
@@ -3222,7 +3317,8 @@
     // Log event
     if (!window.CLIENT_ZARR_LOGS) window.CLIENT_ZARR_LOGS = [];
     const nowIso = new Date().toISOString();
-    window.CLIENT_ZARR_LOGS.push(`[${nowIso}] [DATE_RANGE_SELECTED] Range: ${startDate} to ${endDate} | Observation: ${target} (Pass #${idx + 1}/56)`);
+    const passesInPeriod = SATELLITE_PASS_DATES.filter(d => d >= startDate && d <= endDate).length;
+    window.CLIENT_ZARR_LOGS.push(`[${nowIso}] [DATE_RANGE_SELECTED] Range: ${startDate} to ${endDate} (${passesInPeriod} passes averaged)`);
   }
 
   window.navigateCalendarMonth = function(dir) {
@@ -3296,6 +3392,7 @@
 
   renderCalendarDays(calYear, calMonth);
 })();
+</script>
 <!-- Location Helper Modal -->
 <div id="locationHelpModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
   <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-5 select-none pointer-events-auto">
