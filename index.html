@@ -287,9 +287,9 @@
     </div>
   </div>
 
-  <!-- Center Status Pill -->
-  <div class="relative z-20 flex-1 flex items-center justify-center pointer-events-none p-space-lg">
-    <div id="selected-pixel-pill" class="pointer-events-auto -mt-24 bg-surface-container-lowest/95 backdrop-blur-xl px-space-md py-1.5 rounded-full shadow-lg flex items-center gap-space-sm border border-surface-container transition-all cursor-pointer">
+  <!-- Center Status Pill (hidden so it does not obstruct parcels) -->
+  <div class="hidden relative z-20 flex-1 items-center justify-center pointer-events-none p-space-lg">
+    <div id="selected-pixel-pill" class="hidden pointer-events-auto -mt-24 bg-surface-container-lowest/95 backdrop-blur-xl px-space-md py-1.5 rounded-full shadow-lg flex items-center gap-space-sm border border-surface-container transition-all cursor-pointer">
       <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
       <span class="font-body-sm text-body-sm text-primary font-medium" id="pixel-status-text">Field NDVI: <strong class="text-emerald-700">0.74 (Optimal)</strong></span>
     </div>
@@ -1523,10 +1523,10 @@
 
         // Permanent interactive Map Badge for EVERY parcel
         const badgeHtml = `
-          <div onclick="window.selectCroplandParcel('${parcel.id}')" class="flex items-center gap-1 px-2 py-0.5 rounded-full ${isActive ? 'bg-emerald-600 text-white ring-2 ring-white shadow-xl scale-110 z-30 font-bold' : (parcel.is_custom ? 'bg-blue-800/90 text-white border border-blue-400 shadow-md hover:scale-105 font-semibold' : 'bg-slate-900/90 text-white hover:bg-slate-800 shadow-md border border-slate-700 hover:scale-105 font-medium')} text-[11px] cursor-pointer select-none whitespace-nowrap transition-all -translate-x-1/2 -translate-y-1/2 pointer-events-auto backdrop-blur-sm">
-            <span class="w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white animate-ping' : (parcel.is_custom ? 'bg-blue-400' : 'bg-emerald-400')}"></span>
-            <span>${parcel.name}</span>
-            <span class="text-[10px] ${isActive ? 'text-emerald-100' : 'text-emerald-300'} font-mono">${parcel.area_acres}</span>
+          <div onclick="window.selectCroplandParcel('${parcel.id}')" class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full ${isActive ? 'bg-emerald-600 text-white ring-2 ring-emerald-300 shadow-xl scale-110 z-30 font-bold' : (parcel.is_custom ? 'bg-blue-900/90 text-white border border-blue-400 shadow-md hover:scale-105 font-medium' : 'bg-neutral-900/90 text-white hover:bg-neutral-800 shadow-lg border border-white/20 hover:scale-105 font-medium')} text-[11px] cursor-pointer select-none whitespace-nowrap transition-all -translate-x-1/2 -translate-y-1/2 pointer-events-auto backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full ${isActive ? 'bg-white animate-ping' : (parcel.is_custom ? 'bg-blue-400' : 'bg-emerald-400')}"></span>
+            <span class="tracking-tight">${parcel.name}</span>
+            <span class="text-[10px] ${isActive ? 'text-emerald-100 font-semibold' : 'text-emerald-300'} font-mono ml-0.5">${parcel.area_acres}</span>
           </div>
         `;
         L.marker(parcel.center, {
