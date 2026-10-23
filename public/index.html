@@ -10,8 +10,8 @@
   </div>
   <div id="searchSuggestionsDropdown" class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden z-50 divide-y divide-slate-100 max-h-72 overflow-y-auto">
   </div>
-</div><div class="flex items-center gap-space-md"><button id="topNavCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container border border-surface-container text-xs text-slate-800 transition-all font-label-mono-num cursor-pointer" title="Telemetry Date Range: Oct 31, 2025 to Oct 11, 2026"><span class="material-symbols-outlined text-[16px] text-emerald-600">calendar_month</span><span id="navDateLabel" class="font-semibold text-slate-900">Oct 31, 2025 → Oct 11, 2026</span><span id="navLatestPill" class="px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-emerald-100 text-emerald-800 uppercase tracking-wider">Latest</span><span class="material-symbols-outlined text-[14px] text-slate-400">expand_more</span></button><div id="zarr-status-pill" onclick="window.toggleZarrLogModal()" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors" title="Click to view live Zarr query audit log"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
-<div class="px-space-md py-space-md flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><h1 id="parcel-title" class="text-headline-md font-headline-md font-semibold text-primary tracking-tight" data-i18n="title">Farmland Parcel #1</h1><span id="parcel-acreage" class="px-space-sm py-0.5 rounded-full bg-surface-container font-label-mono-num text-label-mono-num text-primary font-medium">1.83 Acres</span><span class="px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-caps text-label-caps uppercase tracking-wider font-semibold" data-i18n="healthyBadge">Healthy / ஆரோக்கியம்</span></div><p class="text-body-sm font-body-sm text-secondary" id="parcel-sub" data-i18n="parcelSub">Recorded: 2026-09-09 07:59:58 UTC · Vertices: 5</p></div><div class="relative flex items-center"><button id="appleCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="group flex items-center gap-3 px-3.5 py-2 rounded-2xl bg-surface-container-low hover:bg-white border border-surface-container shadow-xs hover:shadow-md transition-all text-left cursor-pointer"><div class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center shadow-xs"><span class="material-symbols-outlined text-[20px]">calendar_month</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="text-[9px] font-label-caps uppercase tracking-wider text-slate-500 font-bold">Telemetry Date Window</span><span id="heroLatestBadge" class="px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200 tracking-wide uppercase">Latest Pass</span></div><div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 font-label-mono-num"><span class="text-slate-500 font-normal">Oct 31, 2025</span><span class="text-slate-400 font-normal">→</span><span id="heroSelectedDateLabel" class="text-emerald-700 font-extrabold">Oct 11, 2026</span><span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-slate-800 transition-transform duration-200" id="calendarChevron">keyboard_arrow_down</span></div></div></button><div id="appleCalendarPopover" class="hidden absolute left-0 md:left-auto md:right-0 top-full mt-2 w-[380px] sm:w-[410px] bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_24px_64px_rgba(0,0,0,0.18),0_4px_16px_rgba(0,0,0,0.06)] border border-slate-200/90 z-50 p-4 divide-y divide-slate-100 ring-1 ring-black/5 text-slate-900 select-none"><div class="pb-3 flex flex-col gap-2"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="text-xs font-bold font-label-caps uppercase tracking-wider text-slate-800">Satellite Telemetry Window</span></div><button onclick="window.closeAppleCalendarPopover()" class="w-6 h-6 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 transition-colors"><span class="material-symbols-outlined text-[16px]">close</span></button></div><div class="grid grid-cols-2 gap-2 mt-1"><div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between"><div class="flex items-center justify-between text-[10px] font-label-caps uppercase text-slate-400 font-bold"><span>Start Date (Baseline)</span><span class="material-symbols-outlined text-[13px] text-slate-400" title="Earliest observation baseline locked">lock</span></div><div class="text-sm font-bold font-label-mono-num text-slate-800 mt-0.5">Oct 31, 2025</div><div class="text-[10px] text-slate-400">Pass #1 · Double-Crop Base</div></div><div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200/80 flex flex-col justify-between"><div class="flex items-center justify-between text-[10px] font-label-caps uppercase text-emerald-800 font-bold"><span>End Date (Selected)</span><span id="popoverLatestIndicator" class="px-1 py-0.2 rounded text-[9px] font-extrabold bg-emerald-200/80 text-emerald-900">LATEST</span></div><div id="popoverEndDateValue" class="text-sm font-bold font-label-mono-num text-emerald-800 mt-0.5">Oct 11, 2026</div><div id="popoverPassSubtitle" class="text-[10px] text-emerald-700">Pass #56 · Active Telemetry</div></div></div></div><div class="py-2.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar"><button onclick="window.applyCalendarPreset('latest')" class="cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-600 text-white shadow-xs transition-all flex items-center gap-1 shrink-0" data-preset="latest"><span class="material-symbols-outlined text-[13px]">sparkles</span>Latest Pass</button><button onclick="window.applyCalendarPreset('past30')" class="cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-medium bg-slate-100 hover:bg-slate-200/70 text-slate-700 transition-all shrink-0" data-preset="past30">Past 30 Days</button><button onclick="window.applyCalendarPreset('past90')" class="cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-medium bg-slate-100 hover:bg-slate-200/70 text-slate-700 transition-all shrink-0" data-preset="past90">Past 90 Days</button><button onclick="window.applyCalendarPreset('samba')" class="cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-medium bg-slate-100 hover:bg-slate-200/70 text-slate-700 transition-all shrink-0" data-preset="samba">Samba Harvest</button><button onclick="window.applyCalendarPreset('full')" class="cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-medium bg-slate-100 hover:bg-slate-200/70 text-slate-700 transition-all shrink-0" data-preset="full">Full Season</button></div><div class="py-2.5"><div class="flex items-center justify-between mb-2"><div class="flex items-center gap-1"><h4 id="calMonthYearTitle" class="text-sm font-bold text-slate-900 tracking-tight">October 2026</h4><span class="text-[11px] text-slate-400 font-normal" id="calMonthPassesCount">(6 Passes)</span></div><div class="flex items-center gap-1"><button onclick="window.navigateCalendarMonth(-1)" class="w-7 h-7 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-600 active:scale-95 transition-all" title="Previous Month"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button><button onclick="window.jumpToLatestMonth()" class="px-2 py-0.5 rounded-md hover:bg-slate-100 text-[11px] font-semibold text-emerald-700" title="Jump to Latest Pass Month">Latest</button><button onclick="window.navigateCalendarMonth(1)" class="w-7 h-7 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-600 active:scale-95 transition-all" title="Next Month"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button></div></div><div class="grid grid-cols-7 text-center mb-1 text-[11px] font-semibold text-slate-400 font-label-caps"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div></div><div id="calDaysGrid" class="grid grid-cols-7 gap-y-1 text-center text-xs font-label-mono-num"></div></div><div class="pt-3 flex items-center justify-between text-[11px]"><div class="flex items-center gap-2 text-slate-500"><span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-[10px]">Pass Date</span></span><span class="text-slate-300">·</span><span id="footerPassNumber" class="font-medium text-slate-700">Pass #56 of 56</span></div><div class="flex items-center gap-2"><button onclick="window.snapToLatestPass()" class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold transition-colors">Mark as Latest</button><button onclick="window.closeAppleCalendarPopover()" class="px-3 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-medium transition-colors">Done</button></div></div></div></div><div class="flex items-center gap-space-lg"><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="targetYieldLabel">Measured Area / சர்வே பரப்பளவு</span><span id="parcel-target-yield" class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">7,425 m²</span></div><div class="h-8 w-px bg-outline-variant/40"></div><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="passIntervalLabel">Pass Interval / செயற்கைக்கோள் இடைவெளி</span><span class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">T-24h (SAR+MSI)</span></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch"><section class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm relative min-h-[520px]">
+</div><div class="flex items-center gap-space-md"><button id="topNavCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container border border-surface-container text-xs text-slate-800 transition-all font-label-mono-num cursor-pointer" title="Select Date Range"><span class="material-symbols-outlined text-[16px] text-slate-600">calendar_month</span><span id="navDateLabel" class="font-medium text-slate-900">Oct 31, 2025 – Oct 11, 2026</span><span class="material-symbols-outlined text-[14px] text-slate-400">expand_more</span></button><div id="zarr-status-pill" onclick="window.toggleZarrLogModal()" class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors" title="Click to view live Zarr query audit log"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span><span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Zarr: multipolygon_pixels.zarr</span></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps text-secondary hover:text-primary transition-all" id="farmerModeBtn">Farmer</button><button class="px-space-md py-1 rounded-full font-label-caps text-label-caps bg-primary text-on-primary font-medium transition-all" id="expertModeBtn">Analyst</button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="flex items-center bg-surface-container-low p-0.5 rounded-full border border-surface-container"><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] bg-primary text-on-primary font-semibold transition-all flex items-center gap-1" id="langEnBtn"><span class="material-symbols-outlined text-[14px]">language</span>English</button><button class="px-space-sm py-1 rounded-full font-label-caps text-[11px] text-secondary hover:text-primary font-semibold transition-all" id="langTaBtn">தமிழ்</button></div><div class="h-4 w-px bg-outline-variant/40"></div><button class="h-8 px-space-md flex items-center gap-space-xs rounded-full bg-surface-container-low hover:bg-surface-container text-primary text-label-caps font-label-caps uppercase tracking-wider transition-colors border border-surface-container" type="button"><span class="material-symbols-outlined text-[16px]">ios_share</span><span>Export</span></button><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest/70 backdrop-blur-xl z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col gap-space-md"><div class="px-space-sm"><span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Geospatial Modules</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary text-on-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors font-body-sm bg-primary text-on-primary" data-path="field-telemetry" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span>Field Telemetry</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="spectral-vegetation" href="#"><span class="material-symbols-outlined text-[20px]">nature</span>Spectral NDVI</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="soil-hydrology" href="#"><span class="material-symbols-outlined text-[20px]">water_drop</span>Soil Hydrology</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="yield-intelligence" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Yield Projection</a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="drone-surveys" href="#"><span class="material-symbols-outlined text-[20px]">flight</span>Survey Missions</a></nav></div><div class="px-space-sm pt-space-md bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-caps text-label-caps text-secondary">PARCEL AREA</span><span class="font-label-mono-num text-label-mono-num text-primary">14.28 HA</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary">SENTINEL-2 REF</span><span class="font-label-mono-num text-label-mono-num text-primary">PASS 48H</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md py-space-md flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><h1 id="parcel-title" class="text-headline-md font-headline-md font-semibold text-primary tracking-tight" data-i18n="title">Farmland Parcel #1</h1><span id="parcel-acreage" class="px-space-sm py-0.5 rounded-full bg-surface-container font-label-mono-num text-label-mono-num text-primary font-medium">1.83 Acres</span><span class="px-space-sm py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 font-label-caps text-label-caps uppercase tracking-wider font-semibold" data-i18n="healthyBadge">Healthy / ஆரோக்கியம்</span></div><p class="text-body-sm font-body-sm text-secondary" id="parcel-sub" data-i18n="parcelSub">Recorded: 2026-09-09 07:59:58 UTC · Vertices: 5</p></div><div class="relative flex items-center"><button id="appleCalendarBtn" onclick="window.toggleAppleCalendarPopover(event)" class="group flex items-center gap-3 px-3.5 py-2 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 text-left transition-all cursor-pointer shadow-xs"><span class="material-symbols-outlined text-[18px] text-slate-700">calendar_month</span><div class="flex flex-col"><span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Date Window</span><span id="heroSelectedDateLabel" class="text-xs font-semibold text-slate-900 font-label-mono-num">Oct 31, 2025 – Oct 11, 2026</span></div><span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-slate-700 transition-transform duration-150" id="calendarChevron">expand_more</span></button><div id="appleCalendarPopover" class="hidden absolute left-0 md:left-auto md:right-0 top-full mt-2 w-[360px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 p-4 text-slate-900 select-none divide-y divide-slate-100 ring-1 ring-black/5"><div class="flex items-center justify-between pb-3"><span class="text-xs font-bold text-slate-800 uppercase tracking-wider">Select Date Range</span><button onclick="window.closeAppleCalendarPopover()" class="w-6 h-6 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 text-sm font-bold">✕</button></div><div class="py-3"><div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Quick Presets</div><div class="flex flex-wrap gap-1.5"><button onclick="window.applyCalendarPreset('7d')" class="cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all" data-preset="7d">Last 7 Days</button><button onclick="window.applyCalendarPreset('15d')" class="cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all" data-preset="15d">Last 15 Days</button><button onclick="window.applyCalendarPreset('1m')" class="cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all" data-preset="1m">Last 1 Month</button><button onclick="window.applyCalendarPreset('2m')" class="cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all" data-preset="2m">Last 2 Months</button><button onclick="window.applyCalendarPreset('3m')" class="cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all" data-preset="3m">Last 3 Months</button><button onclick="window.applyCalendarPreset('all')" class="cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-900 text-white transition-all" data-preset="all">Full Range</button></div></div><div class="py-3"><div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Custom Date Range</div><div class="grid grid-cols-2 gap-2"><div class="p-2 rounded-lg bg-slate-50 border border-slate-200"><span class="text-[9px] uppercase font-bold text-slate-400 block">From</span><span id="rangeDisplayStart" class="text-xs font-semibold text-slate-800 font-label-mono-num">Oct 31, 2025</span></div><div class="p-2 rounded-lg bg-slate-50 border border-slate-200"><div class="flex items-center justify-between"><span class="text-[9px] uppercase font-bold text-slate-400 block">To</span><span id="rangeLatestBadge" class="text-[9px] font-bold text-slate-500 uppercase">Latest</span></div><span id="rangeDisplayEnd" class="text-xs font-semibold text-slate-800 font-label-mono-num">Oct 11, 2026</span></div></div><div class="text-[10px] text-slate-400 mt-1.5">Click any date on calendar below to pick Start Date, then End Date.</div></div><div class="pt-3"><div class="flex items-center justify-between mb-2"><span id="calMonthYearTitle" class="text-xs font-bold text-slate-900">October 2026</span><div class="flex items-center gap-1"><button onclick="window.navigateCalendarMonth(-1)" class="w-6 h-6 rounded-md hover:bg-slate-100 flex items-center justify-center text-slate-600 font-bold" title="Previous Month">‹</button><button onclick="window.jumpToLatestMonth()" class="px-2 py-0.5 rounded text-[10px] font-semibold text-slate-700 hover:bg-slate-100" title="Go to Latest Month">Latest</button><button onclick="window.navigateCalendarMonth(1)" class="w-6 h-6 rounded-md hover:bg-slate-100 flex items-center justify-center text-slate-600 font-bold" title="Next Month">›</button></div></div><div class="grid grid-cols-7 text-center mb-1 text-[10px] font-bold text-slate-400"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div></div><div id="calDaysGrid" class="grid grid-cols-7 gap-y-0.5 text-center text-xs font-label-mono-num"></div></div><div class="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between"><button onclick="window.applyCalendarPreset('all')" class="text-xs text-slate-500 hover:text-slate-800 font-medium cursor-pointer">Reset</button><button onclick="window.closeAppleCalendarPopover()" class="px-4 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition-colors cursor-pointer">Done</button></div></div></div><div class="flex items-center gap-space-lg"><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="targetYieldLabel">Measured Area / சர்வே பரப்பளவு</span><span id="parcel-target-yield" class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">7,425 m²</span></div><div class="h-8 w-px bg-outline-variant/40"></div><div class="flex flex-col text-right"><span class="text-label-caps font-label-caps text-outline uppercase tracking-wider" data-i18n="passIntervalLabel">Pass Interval / செயற்கைக்கோள் இடைவெளி</span><span class="text-headline-sm font-headline-sm font-semibold text-primary font-label-mono-num">T-24h (SAR+MSI)</span></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch"><section class="lg:col-span-7 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm relative min-h-[520px]">
   <!-- Interactive Leaflet Map Viewport -->
   <div id="field-interactive-map" class="absolute inset-0 w-full h-full z-0" style="background: #e2e8f0;"></div>
   <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/20 pointer-events-none z-10"></div>
@@ -1952,9 +1952,9 @@
   })();
 </script>
 
-<!-- Apple Calendar Date Picker Engine -->
+<!-- Clean Date Range Picker Engine -->
 <script>
-(function initAppleCalendarEngine() {
+(function initDateRangeEngine() {
   const SATELLITE_PASS_DATES = [
     '2025-10-31', '2025-11-05', '2025-11-10', '2025-11-15', '2025-11-20',
     '2025-12-15', '2025-12-20', '2025-12-25', '2025-12-30', '2026-01-04',
@@ -1973,11 +1973,15 @@
   window.SATELLITE_PASS_DATES = SATELLITE_PASS_DATES;
   window.DATA_START_DATE = '2025-10-31';
   window.LATEST_PASS_DATE = '2026-10-11';
+
+  window.RANGE_START_DATE = '2025-10-31';
+  window.RANGE_END_DATE = '2026-10-11';
   window.CURRENT_OBSERVATION_DATE = '2026-10-11';
   window.CURRENT_OBSERVATION_INDEX = 55;
 
+  let pickingStep = 0; // 0 = start picking, 1 = picked start, 2 = picked range
   let calYear = 2026;
-  let calMonth = 9; // 0-indexed: 9 = October
+  let calMonth = 9; // 9 = October (0-indexed)
 
   const MONTH_NAMES = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -1997,16 +2001,9 @@
   function renderCalendarDays(year, month) {
     const grid = document.getElementById('calDaysGrid');
     const titleEl = document.getElementById('calMonthYearTitle');
-    const passesCountEl = document.getElementById('calMonthPassesCount');
     if (!grid) return;
 
     if (titleEl) titleEl.innerText = `${MONTH_NAMES[month]} ${year}`;
-
-    const monthPrefix = `${year}-${String(month + 1).padStart(2, '0')}`;
-    const passesInMonth = SATELLITE_PASS_DATES.filter(d => d.startsWith(monthPrefix));
-    if (passesCountEl) {
-      passesCountEl.innerText = `(${passesInMonth.length} ${passesInMonth.length === 1 ? 'Pass' : 'Passes'})`;
-    }
 
     const firstDayIndex = new Date(year, month, 1).getDay();
     const totalDays = new Date(year, month + 1, 0).getDate();
@@ -2014,43 +2011,38 @@
     let html = '';
 
     for (let i = 0; i < firstDayIndex; i++) {
-      html += '<div class="py-1"></div>';
+      html += '<div class="h-8"></div>';
     }
 
     for (let d = 1; d <= totalDays; d++) {
       const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-      const isPass = SATELLITE_PASS_DATES.includes(dateStr);
-      const isStart = (dateStr === window.DATA_START_DATE);
-      const isLatest = (dateStr === window.LATEST_PASS_DATE);
-      const isSelected = (dateStr === window.CURRENT_OBSERVATION_DATE);
-      const isInRange = (dateStr >= window.DATA_START_DATE && dateStr <= window.CURRENT_OBSERVATION_DATE);
-      const isOutOfWindow = (dateStr < window.DATA_START_DATE || dateStr > window.LATEST_PASS_DATE);
+      const isStart = (dateStr === window.RANGE_START_DATE);
+      const isEnd = (dateStr === window.RANGE_END_DATE);
+      const isInRange = (dateStr >= window.RANGE_START_DATE && dateStr <= window.RANGE_END_DATE);
+      const isOutOfData = (dateStr < window.DATA_START_DATE || dateStr > window.LATEST_PASS_DATE);
 
-      if (isOutOfWindow) {
+      if (isOutOfData) {
+        html += `<div class="h-8 flex items-center justify-center text-slate-300 text-xs">${d}</div>`;
+      } else if (isStart || isEnd) {
+        const bgRange = (window.RANGE_START_DATE !== window.RANGE_END_DATE) ? 'bg-slate-100' : '';
+        const roundEdge = isStart ? 'rounded-l-full' : 'rounded-r-full';
         html += `
-          <div class="py-1">
-            <span class="w-7 h-7 mx-auto flex items-center justify-center text-slate-300 text-[11px] select-none">${d}</span>
-          </div>`;
-      } else if (isSelected) {
-        html += `
-          <div class="relative py-1 ${isInRange ? 'bg-emerald-50/70' : ''} ${isSelected ? 'rounded-r-full' : ''} ${isStart ? 'rounded-l-full' : ''}">
-            <button onclick="window.selectObservationDate('${dateStr}')" class="w-7 h-7 mx-auto rounded-full bg-slate-900 text-white font-bold flex flex-col items-center justify-center shadow-md scale-105 transition-transform" title="${isLatest ? 'Latest Satellite Pass (Oct 11, 2026)' : 'Selected Pass: ' + dateStr}">
-              <span class="text-[11px] leading-none">${d}</span>
-              <span class="w-1 h-1 rounded-full ${isLatest ? 'bg-emerald-400' : 'bg-white'} mt-0.5"></span>
+          <div class="h-8 flex items-center justify-center ${bgRange} ${roundEdge}">
+            <button onclick="window.onDayClick('${dateStr}')" class="w-7 h-7 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs shadow-xs" title="${dateStr}">
+              ${d}
             </button>
           </div>`;
-      } else if (isPass) {
+      } else if (isInRange) {
         html += `
-          <div class="relative py-1 ${isInRange ? 'bg-emerald-50/70' : ''} ${isStart ? 'rounded-l-full' : ''}">
-            <button onclick="window.selectObservationDate('${dateStr}')" class="w-7 h-7 mx-auto rounded-full font-semibold text-slate-800 hover:bg-emerald-100 flex flex-col items-center justify-center transition-colors cursor-pointer group" title="Sentinel-2 Pass on ${dateStr}">
-              <span class="text-[11px] leading-none group-hover:text-emerald-900">${d}</span>
-              <span class="w-1 h-1 rounded-full bg-emerald-500 mt-0.5"></span>
+          <div class="h-8 flex items-center justify-center bg-slate-100">
+            <button onclick="window.onDayClick('${dateStr}')" class="w-full h-full text-slate-800 text-xs hover:bg-slate-200/80 transition-colors" title="${dateStr}">
+              ${d}
             </button>
           </div>`;
       } else {
         html += `
-          <div class="relative py-1 ${isInRange ? 'bg-emerald-50/70' : ''} ${isStart ? 'rounded-l-full' : ''}">
-            <button onclick="window.selectObservationDate('${dateStr}')" class="w-7 h-7 mx-auto rounded-full text-slate-600 hover:bg-slate-200/60 flex items-center justify-center transition-colors text-[11px]" title="Interpolate telemetry at ${dateStr}">
+          <div class="h-8 flex items-center justify-center">
+            <button onclick="window.onDayClick('${dateStr}')" class="w-7 h-7 rounded-full text-slate-700 hover:bg-slate-100 flex items-center justify-center text-xs transition-colors" title="${dateStr}">
               ${d}
             </button>
           </div>`;
@@ -2058,6 +2050,125 @@
     }
 
     grid.innerHTML = html;
+  }
+
+  window.onDayClick = function(dateStr) {
+    if (pickingStep === 0 || pickingStep === 2) {
+      window.RANGE_START_DATE = dateStr;
+      window.RANGE_END_DATE = dateStr;
+      pickingStep = 1;
+    } else if (pickingStep === 1) {
+      if (dateStr < window.RANGE_START_DATE) {
+        window.RANGE_END_DATE = window.RANGE_START_DATE;
+        window.RANGE_START_DATE = dateStr;
+      } else {
+        window.RANGE_END_DATE = dateStr;
+      }
+      pickingStep = 2;
+    }
+
+    // Clear preset button highlights
+    document.querySelectorAll('.cal-preset-btn').forEach(b => {
+      b.className = 'cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all';
+    });
+
+    applyDateRange(window.RANGE_START_DATE, window.RANGE_END_DATE);
+  };
+
+  window.applyCalendarPreset = function(presetKey) {
+    document.querySelectorAll('.cal-preset-btn').forEach(b => {
+      if (b.getAttribute('data-preset') === presetKey) {
+        b.className = 'cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-900 text-white transition-all';
+      } else {
+        b.className = 'cal-preset-btn px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all';
+      }
+    });
+
+    const endTarget = '2026-10-11';
+    let startTarget = '2025-10-31';
+
+    if (presetKey === '7d') {
+      startTarget = '2026-10-04'; // 7 days prior
+    } else if (presetKey === '15d') {
+      startTarget = '2026-09-26'; // 15 days prior
+    } else if (presetKey === '1m') {
+      startTarget = '2026-09-11'; // 1 month prior
+    } else if (presetKey === '2m') {
+      startTarget = '2026-08-11'; // 2 months prior
+    } else if (presetKey === '3m') {
+      startTarget = '2026-07-11'; // 3 months prior
+    } else if (presetKey === 'all') {
+      startTarget = '2025-10-31';
+    }
+
+    window.RANGE_START_DATE = startTarget;
+    window.RANGE_END_DATE = endTarget;
+    pickingStep = 0;
+
+    // Navigate calendar to endTarget month
+    const [y, m] = endTarget.split('-').map(Number);
+    calYear = y;
+    calMonth = m - 1;
+
+    applyDateRange(startTarget, endTarget);
+  };
+
+  function applyDateRange(startDate, endDate) {
+    // Find nearest pass on or before endDate to drive KPI telemetry
+    let target = endDate;
+    let idx = SATELLITE_PASS_DATES.indexOf(target);
+    if (idx === -1) {
+      const valid = SATELLITE_PASS_DATES.filter(d => d <= endDate);
+      if (valid.length > 0) {
+        target = valid[valid.length - 1];
+        idx = SATELLITE_PASS_DATES.indexOf(target);
+      } else {
+        target = SATELLITE_PASS_DATES[0];
+        idx = 0;
+      }
+    }
+
+    window.CURRENT_OBSERVATION_DATE = target;
+    window.CURRENT_OBSERVATION_INDEX = idx;
+
+    const formattedStart = formatDateDisplay(startDate);
+    const formattedEnd = formatDateDisplay(endDate);
+    const rangeText = `${formattedStart} – ${formattedEnd}`;
+
+    // Update Hero label
+    const heroLabel = document.getElementById('heroSelectedDateLabel');
+    if (heroLabel) heroLabel.innerText = rangeText;
+
+    // Update Top Navigation label
+    const navLabel = document.getElementById('navDateLabel');
+    if (navLabel) navLabel.innerText = rangeText;
+
+    // Update Popover input cards
+    const dispStart = document.getElementById('rangeDisplayStart');
+    if (dispStart) dispStart.innerText = formattedStart;
+
+    const dispEnd = document.getElementById('rangeDisplayEnd');
+    if (dispEnd) dispEnd.innerText = formattedEnd;
+
+    const latestBadge = document.getElementById('rangeLatestBadge');
+    if (latestBadge) {
+      latestBadge.style.display = (endDate === window.LATEST_PASS_DATE) ? 'inline-block' : 'none';
+    }
+
+    // Re-render days
+    renderCalendarDays(calYear, calMonth);
+
+    // Update all 24 KPIs
+    if (window.activeParcelMetrics && window.applyZarrMetrics) {
+      window.applyZarrMetrics(window.activeParcelMetrics, 'ZARR CLOUD', idx);
+    } else if (window.activeParcel) {
+      window.selectCroplandParcel(window.activeParcel.id);
+    }
+
+    // Log event
+    if (!window.CLIENT_ZARR_LOGS) window.CLIENT_ZARR_LOGS = [];
+    const nowIso = new Date().toISOString();
+    window.CLIENT_ZARR_LOGS.push(`[${nowIso}] [DATE_RANGE_SELECTED] Range: ${startDate} to ${endDate} | Observation: ${target} (Pass #${idx + 1}/56)`);
   }
 
   window.navigateCalendarMonth = function(dir) {
@@ -2086,115 +2197,6 @@
     renderCalendarDays(calYear, calMonth);
   };
 
-  window.applyCalendarPreset = function(presetKey) {
-    const buttons = document.querySelectorAll('.cal-preset-btn');
-    buttons.forEach(btn => {
-      if (btn.getAttribute('data-preset') === presetKey) {
-        btn.className = 'cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-600 text-white shadow-xs transition-all flex items-center gap-1 shrink-0';
-      } else {
-        btn.className = 'cal-preset-btn px-2.5 py-1 rounded-full text-[11px] font-medium bg-slate-100 hover:bg-slate-200/70 text-slate-700 transition-all shrink-0';
-      }
-    });
-
-    let targetDate = '2026-10-11';
-    if (presetKey === 'past30') {
-      targetDate = '2026-09-16';
-    } else if (presetKey === 'past90') {
-      targetDate = '2026-07-13';
-    } else if (presetKey === 'samba') {
-      targetDate = '2026-03-05';
-    } else if (presetKey === 'full' || presetKey === 'latest') {
-      targetDate = '2026-10-11';
-    }
-
-    const [y, m] = targetDate.split('-').map(Number);
-    calYear = y;
-    calMonth = m - 1;
-
-    window.selectObservationDate(targetDate);
-  };
-
-  window.snapToLatestPass = function() {
-    window.applyCalendarPreset('latest');
-  };
-
-  window.selectObservationDate = function(targetDateStr) {
-    if (!targetDateStr) return;
-
-    let target = targetDateStr;
-    let idx = SATELLITE_PASS_DATES.indexOf(target);
-    if (idx === -1) {
-      const valid = SATELLITE_PASS_DATES.filter(d => d <= targetDateStr);
-      if (valid.length > 0) {
-        target = valid[valid.length - 1];
-        idx = SATELLITE_PASS_DATES.indexOf(target);
-      } else {
-        target = SATELLITE_PASS_DATES[0];
-        idx = 0;
-      }
-    }
-
-    window.CURRENT_OBSERVATION_DATE = target;
-    window.CURRENT_OBSERVATION_INDEX = idx;
-
-    const isLatest = (target === window.LATEST_PASS_DATE);
-    const formatted = formatDateDisplay(target);
-
-    const heroDateLabel = document.getElementById('heroSelectedDateLabel');
-    if (heroDateLabel) heroDateLabel.innerText = target;
-
-    const heroBadge = document.getElementById('heroLatestBadge');
-    if (heroBadge) {
-      if (isLatest) {
-        heroBadge.className = 'px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-emerald-100 text-emerald-800 border border-emerald-200 tracking-wide uppercase';
-        heroBadge.innerText = 'Latest Pass';
-      } else {
-        heroBadge.className = 'px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-slate-200 text-slate-700 border border-slate-300 tracking-wide uppercase';
-        heroBadge.innerText = `Pass #${idx + 1}`;
-      }
-    }
-
-    const navDateLabel = document.getElementById('navDateLabel');
-    if (navDateLabel) navDateLabel.innerText = `Oct 31, 2025 → ${target}`;
-
-    const navLatestPill = document.getElementById('navLatestPill');
-    if (navLatestPill) {
-      if (isLatest) {
-        navLatestPill.className = 'px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-emerald-100 text-emerald-800 uppercase tracking-wider';
-        navLatestPill.innerText = 'Latest';
-      } else {
-        navLatestPill.className = 'px-1.5 py-0.2 rounded-full text-[9px] font-extrabold bg-slate-200 text-slate-700 uppercase tracking-wider';
-        navLatestPill.innerText = `Pass #${idx + 1}`;
-      }
-    }
-
-    const popoverEnd = document.getElementById('popoverEndDateValue');
-    if (popoverEnd) popoverEnd.innerText = formatted;
-
-    const popoverSub = document.getElementById('popoverPassSubtitle');
-    if (popoverSub) popoverSub.innerText = `Pass #${idx + 1} of 56 · Active Telemetry`;
-
-    const popoverIndicator = document.getElementById('popoverLatestIndicator');
-    if (popoverIndicator) {
-      popoverIndicator.style.display = isLatest ? 'inline-block' : 'none';
-    }
-
-    const footerPass = document.getElementById('footerPassNumber');
-    if (footerPass) footerPass.innerText = `Pass #${idx + 1} of 56 (${target})`;
-
-    renderCalendarDays(calYear, calMonth);
-
-    if (window.activeParcelMetrics && window.applyZarrMetrics) {
-      window.applyZarrMetrics(window.activeParcelMetrics, 'ZARR CLOUD', idx);
-    } else if (window.activeParcel) {
-      window.selectCroplandParcel(window.activeParcel.id);
-    }
-
-    if (!window.CLIENT_ZARR_LOGS) window.CLIENT_ZARR_LOGS = [];
-    const nowIso = new Date().toISOString();
-    window.CLIENT_ZARR_LOGS.push(`[${nowIso}] [ZARR_DATE_SLICE] Date: ${target} (Pass #${idx + 1}/56) | Baseline: 2025-10-31 | 24 Agro Metrics Updated`);
-  };
-
   window.toggleAppleCalendarPopover = function(e) {
     if (e) {
       e.preventDefault();
@@ -2207,9 +2209,6 @@
     if (popover.classList.contains('hidden')) {
       popover.classList.remove('hidden');
       if (chevron) chevron.style.transform = 'rotate(180deg)';
-      const parts = window.CURRENT_OBSERVATION_DATE.split('-');
-      calYear = parseInt(parts[0], 10);
-      calMonth = parseInt(parts[1], 10) - 1;
       renderCalendarDays(calYear, calMonth);
     } else {
       window.closeAppleCalendarPopover();
