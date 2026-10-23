@@ -308,7 +308,96 @@
       <span id="scale-range" class="font-label-mono-num text-label-mono-num text-primary font-medium">0.0 — 1.0</span>
     </div>
   </div>
-</section></section><section class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-space-md"><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi1Title">Watering Need (MSI / NDMI)</span><div class="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600"><span class="material-symbols-outlined text-[18px]">water_drop</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-water-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">0.28</div><span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Adequate Reserve</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Next watering</span><span class="font-medium text-primary font-label-mono-num">In 4 days (Oct 23)</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi2Title">Crop Greenness Score (NDVI)</span><div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><span class="material-symbols-outlined text-[18px]">eco</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-green-val" class="text-headline-xl font-headline-xl font-bold text-primary font-label-mono-num tracking-tight">78<span class="text-headline-sm font-normal text-secondary">/100</span></div><span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-1">Peak Canopy Vigor</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">District benchmark</span><span class="font-semibold text-emerald-600 font-label-mono-num">92nd Percentile</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi3Title">TopSoil Moisture Check (SAR SM)</span><div class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600"><span class="material-symbols-outlined text-[18px]">grain</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-moisture-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">68%</div><span class="text-body-sm font-body-sm text-secondary mt-1">Normal Aerobic Drainage</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Optimal bracket</span><span class="font-medium text-primary font-label-mono-num">65% — 75%</span></div></div><div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider" data-i18n="kpi4Title">Pest &amp; Sickness Alert (SIPI)</span><div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600"><span class="material-symbols-outlined text-[18px]">verified</span></div></div><div class="my-space-md flex flex-col items-center justify-center"><div id="kpi-pest-val" class="text-headline-xl font-headline-xl font-bold text-emerald-600 tracking-tight">Low</div><span class="text-body-sm font-body-sm text-secondary mt-1">Healthy Leaf Carotenoid</span></div><div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm"><span class="text-secondary">Infestation detected</span><span class="font-semibold text-emerald-700">None</span></div></div></section></div><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col gap-space-md">
+</section></section>
+
+<!-- Top 4 Hero KPI Summary Cards with Layman Descriptions -->
+<section class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+  <!-- KPI 1: Watering Need -->
+  <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between">
+      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi1Title">Watering Need (MSI / NDMI)</span>
+      <div class="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600">
+        <span class="material-symbols-outlined text-[18px]">water_drop</span>
+      </div>
+    </div>
+    <div class="my-space-sm flex flex-col items-center justify-center text-center">
+      <div id="kpi-water-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">+0.48</div>
+      <span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-0.5 flex items-center gap-1" data-i18n="kpi1Status">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Adequate Reserve
+      </span>
+      <p class="text-[11px] text-slate-600 bg-sky-50/70 p-2 rounded-lg border border-sky-100 mt-2 text-left leading-snug" data-i18n="kpi1Desc">
+        Shows if crops have sufficient water. Positive (+0.48) means healthy moisture; negative means thirsty crops that need urgent watering.
+      </p>
+    </div>
+    <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+      <span class="text-secondary" data-i18n="kpiWateringSub">Next watering</span>
+      <span class="font-medium text-primary font-label-mono-num" data-i18n="kpiWateringSubVal">In 4 days (Oct 23)</span>
+    </div>
+  </div>
+
+  <!-- KPI 2: Crop Greenness Score -->
+  <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between">
+      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi2Title">Crop Greenness Score (NDVI)</span>
+      <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+        <span class="material-symbols-outlined text-[18px]">eco</span>
+      </div>
+    </div>
+    <div class="my-space-sm flex flex-col items-center justify-center text-center">
+      <div id="kpi-green-val" class="text-headline-xl font-headline-xl font-bold text-primary font-label-mono-num tracking-tight">70<span class="text-headline-sm font-normal text-secondary">/100</span></div>
+      <span class="text-body-sm font-body-sm text-emerald-700 font-medium mt-0.5" data-i18n="kpi2Status">Peak Canopy Vigor</span>
+      <p class="text-[11px] text-slate-600 bg-emerald-50/70 p-2 rounded-lg border border-emerald-100 mt-2 text-left leading-snug" data-i18n="kpi2Desc">
+        Scores leaf greenness from 0 to 100. Above 65 means crops are dense, green, and growing vigorously.
+      </p>
+    </div>
+    <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+      <span class="text-secondary" data-i18n="kpiDistrictSub">District benchmark</span>
+      <span class="font-semibold text-emerald-600 font-label-mono-num" data-i18n="kpiDistrictSubVal">92nd Percentile</span>
+    </div>
+  </div>
+
+  <!-- KPI 3: TopSoil Moisture Check -->
+  <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between">
+      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi3Title">TopSoil Moisture Check (SAR SM)</span>
+      <div class="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+        <span class="material-symbols-outlined text-[18px]">grain</span>
+      </div>
+    </div>
+    <div class="my-space-sm flex flex-col items-center justify-center text-center">
+      <div id="kpi-moisture-val" class="text-headline-xl font-headline-xl font-bold text-[#1e293b] font-label-mono-num tracking-tight">73%</div>
+      <span class="text-body-sm font-body-sm text-secondary mt-0.5" data-i18n="kpi3Status">Normal Aerobic Drainage</span>
+      <p class="text-[11px] text-slate-600 bg-blue-50/70 p-2 rounded-lg border border-blue-100 mt-2 text-left leading-snug" data-i18n="kpi3Desc">
+        Measures moisture in the top root layer using radar. 65%–75% is optimal for root breathing and growth without waterlogging.
+      </p>
+    </div>
+    <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+      <span class="text-secondary" data-i18n="kpiOptimalSub">Optimal bracket</span>
+      <span class="font-medium text-primary font-label-mono-num">65% — 75%</span>
+    </div>
+  </div>
+
+  <!-- KPI 4: Pest & Sickness Alert -->
+  <div class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between">
+      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" data-i18n="kpi4Title">Pest &amp; Sickness Alert (SIPI)</span>
+      <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+      </div>
+    </div>
+    <div class="my-space-sm flex flex-col items-center justify-center text-center">
+      <div id="kpi-pest-val" class="text-headline-xl font-headline-xl font-bold text-emerald-600 tracking-tight">Low (6%)</div>
+      <span class="text-body-sm font-body-sm text-secondary mt-0.5" data-i18n="kpi4Status">Healthy Leaf Carotenoid</span>
+      <p class="text-[11px] text-slate-600 bg-emerald-50/70 p-2 rounded-lg border border-emerald-100 mt-2 text-left leading-snug" data-i18n="kpi4Desc">
+        Early warning scanner for bugs, blight, or fungal disease. "Low" means healthy leaves with zero disease threat.
+      </p>
+    </div>
+    <div class="pt-space-xs border-t border-surface-container flex items-center justify-between text-body-sm">
+      <span class="text-secondary" data-i18n="kpiPestSub">Infestation detected</span>
+      <span class="font-semibold text-emerald-700" data-i18n="kpiPestSubVal">None (Clear)</span>
+    </div>
+  </div>
+</section></div><section class="bg-surface-container-lowest rounded-xl p-space-lg border border-surface-container shadow-sm flex flex-col gap-space-md">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container">
 <div>
 <div class="flex items-center gap-space-sm">
@@ -359,6 +448,7 @@
 <span class="text-slate-500 text-[11px]">Stalk growth status</span>
 <span class="font-medium text-slate-900 text-[11px]">Optimal Trajectory</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_ndvi_desc">Measures overall leaf greenness and crop growth vigor. Higher means healthier plants.</p>
 </div>
 <!-- Card 2: Sprout Health with Lollipop / Stem-and-Marker Chart -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -396,6 +486,7 @@
 <span class="text-slate-500 text-[11px]">Tillering distribution</span>
 <span class="font-medium text-slate-900 text-[11px]">Uniform Stance</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_savi_desc">Checks young sprout emergence by removing bare soil reflection glare.</p>
 </div>
 <!-- Card 3: Deep Leaf Stamina -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -411,6 +502,7 @@
 <span class="text-slate-500 text-[11px]">Vascular status</span>
 <span class="font-medium text-slate-900 text-[11px]">Robust Hydration</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_gndvi_desc">Checks chlorophyll deep inside mature crops to verify thick canopy stamina.</p>
 </div>
 <!-- Card 4: Emergence Uniformity -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -428,6 +520,7 @@
 <span class="text-slate-500 text-[11px]">Solar absorption</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">34.8 MJ/m²·d</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_unif_desc">Scans true leaf greenness through atmospheric morning mist and clouds.</p>
 </div></div>
 <!-- COLUMN 2: Water & Soil Status -->
 <div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl border border-slate-200 shadow-xs">
@@ -470,6 +563,7 @@
 <span class="text-slate-500 text-[11px]">Turgor pressure</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">96% Cellular</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_ndmi_desc">Measures leaf water content to detect thirst and drought stress before crops wilt.</p>
 </div>
 <!-- Card 2: Plowed Ground -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
@@ -515,7 +609,9 @@
 <div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
 <span class="text-slate-500 text-[11px]">Soil erosion index</span>
 <span class="font-medium text-slate-900 text-[11px]">Protected (18% bare)</span>
-</div></div>
+</div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_bsi_desc">Shows exposed bare soil vs covered ground to verify plowing or canopy spread.</p>
+</div>
 <!-- Card 3: White Salt Warning -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
@@ -530,6 +626,7 @@
 <span class="text-slate-500 text-[11px]">Salinity status</span>
 <span class="font-medium text-slate-900 text-[11px]">No Alkalization</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_salt_desc">Warns if white salt or alkaline patches are building up in your soil.</p>
 </div>
 <!-- Card 4: Topsoil Moisture -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -547,6 +644,7 @@
 <span class="text-slate-500 text-[11px]">Oxygen diffusion</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.32 g/m²·h</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_sm_desc">All-weather radar scan of wetness in the top 5cm root zone.</p>
 </div>
 </div>
 <!-- COLUMN 3: Canopy & Nutrients -->
@@ -589,7 +687,9 @@
 <div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
 <span class="text-slate-500 text-[11px]">Density benchmark</span>
 <span class="font-medium text-slate-900 text-[11px]">Optimal Vigor (95%)</span>
-</div></div>
+</div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_lai_desc">Measures leaf layers per square meter to track canopy density and crop size.</p>
+</div>
 <!-- Card 2: Ground Coverage -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
@@ -611,6 +711,7 @@
 <span class="text-slate-500 text-[11px]">Shadow ratio</span>
 <span class="font-medium text-slate-900 text-[11px]">76% Interception</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_fcover_desc">Percentage of soil covered by leaves; prevents soil drying and suppresses weeds.</p>
 </div>
 <!-- Card 3: Nitrogen Reserve -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -626,6 +727,7 @@
 <span class="text-slate-500 text-[11px]">Urea top dressing</span>
 <span class="font-medium text-slate-900 text-[11px]">Not Required</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_ccc_desc">Total nitrogen fertilizer absorbed and stored across field foliage.</p>
 </div>
 <!-- Card 4: Chlorophyll Trajectory -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -641,6 +743,7 @@
 <span class="text-slate-500 text-[11px]">Thermal anomaly</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">27.4°C (-3.8°C)</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_spad_desc">Digital chlorophyll meter showing if nitrogen fertilizer top-dressing is needed.</p>
 </div>
 </div>
 <!-- COLUMN 4: Monsoon & SAR Radar -->
@@ -684,6 +787,7 @@
 <span class="text-slate-500 text-[11px]">Biomass rate</span>
 <span class="font-medium text-slate-900 text-[11px]">Stalk Thickening</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_rvi_desc">Radar measuring total crop biomass through rain, clouds, and darkness.</p>
 </div>
 <!-- Card 2: Stalk Rigidity / Height (VH/VV) -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs"><div class="flex items-center justify-between">
@@ -716,7 +820,9 @@
 <div class="pt-space-xs border-t border-slate-100 flex items-center justify-between text-body-sm">
 <span class="text-slate-500 text-[11px]">Canopy stance</span>
 <span class="font-medium text-slate-900 text-[11px]">Well-Anchored · No Lodging</span>
-</div></div>
+</div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_rigidity_desc">Monitors stem stiffness and crop height to warn against lodging/flattening from high winds.</p>
+</div>
 <!-- Card 3: Standing Water Flag -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
 <div class="flex items-center justify-between">
@@ -731,6 +837,7 @@
 <span class="text-slate-500 text-[11px]">Ponding detection</span>
 <span class="font-medium text-slate-900 text-[11px]">No Flooding</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_water_desc">Detects standing water pools after heavy rainfall to prevent root rot.</p>
 </div>
 <!-- Card 4: Wind Lodging Risk -->
 <div class="bg-surface-container-lowest p-space-md rounded-lg border border-slate-200 flex flex-col justify-between shadow-xs">
@@ -748,6 +855,7 @@
 <span class="text-slate-500 text-[11px]">Phase coherence</span>
 <span class="font-medium text-slate-900 text-[11px] font-label-mono-num">0.89 Solid</span>
 </div>
+<p class="text-[11px] text-slate-500 mt-1 leading-snug border-t border-slate-100/80 pt-1" data-i18n="card_wind_desc">Scans leaf stress pigments for early fungal blight, rust, or insect damage.</p>
 </div>
 </div></div>
 <div class="bg-surface-container-low px-space-md py-space-sm rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm text-body-sm">
@@ -1778,7 +1886,8 @@
         if (elVReci) elVReci.innerText = reci.toFixed(1);
         if (elVRvi) elVRvi.innerText = rvi.toFixed(2);
         if (elVRig) elVRig.innerText = rig.toFixed(1) + ' dB';
-        if (elVInun) elVInun.innerText = inun === 0 ? 'Clear' : 'Flooded';
+        const isTa = (window.currentAppLang === 'ta');
+        if (elVInun) elVInun.innerText = inun === 0 ? (isTa ? 'வடிகால் நன்று (பாதுகாப்பானது)' : 'Clear') : (isTa ? 'வெள்ள அபாயம்' : 'Flooded');
         if (elVSipi) elVSipi.innerText = Math.round(sipi) + '%';
 
         // Update Top 4 Hero KPI Summary Cards
@@ -1798,7 +1907,9 @@
         }
         if (elKpiPest) {
           const sRound = Math.round(sipi);
-          const pestLabel = sRound < 7 ? 'Low' : (sRound < 10 ? 'Mild' : 'Moderate');
+          const pestLabel = isTa
+            ? (sRound < 7 ? 'குறைவு' : (sRound < 10 ? 'மிதமானது' : 'நடுத்தர அபாயம்'))
+            : (sRound < 7 ? 'Low' : (sRound < 10 ? 'Mild' : 'Moderate'));
           elKpiPest.innerText = `${pestLabel} (${sRound}%)`;
         }
 
@@ -1834,10 +1945,15 @@
         const parcelSub = document.getElementById('parcel-sub');
         if (parcelSub) {
           const vertices = (parcel && parcel.vertices_count) ? parcel.vertices_count : 5;
+          const isTa = (window.currentAppLang === 'ta');
           if (count > 1) {
-            parcelSub.innerText = `Observed Period: ${activeDateText} (${count} passes averaged) · Vertices: ${vertices} · Baseline: 2025-10-31`;
+            parcelSub.innerText = isTa
+              ? `கண்காணிக்கப்பட்ட காலம்: ${activeDateText} (${count} பதிவுகள் சராசரி) · எல்லை புள்ளிகள்: ${vertices} · தொடக்க நாள்: 2025-10-31`
+              : `Observed Period: ${activeDateText} (${count} passes averaged) · Vertices: ${vertices} · Baseline: 2025-10-31`;
           } else {
-            parcelSub.innerText = `Observed: ${activeDateText} (Pass #${matchingIndices[0] + 1} of 56) · Vertices: ${vertices} · Baseline: 2025-10-31`;
+            parcelSub.innerText = isTa
+              ? `கண்காணிக்கப்பட்ட நாள்: ${activeDateText} (பதிவு #${matchingIndices[0] + 1} / 56) · எல்லை புள்ளிகள்: ${vertices} · தொடக்க நாள்: 2025-10-31`
+              : `Observed: ${activeDateText} (Pass #${matchingIndices[0] + 1} of 56) · Vertices: ${vertices} · Baseline: 2025-10-31`;
           }
         }
 
@@ -2808,34 +2924,75 @@
       en: {
         title: 'Farmland Parcel #1',
         parcelSub: 'Recorded: 2026-09-09 07:59:58 UTC · Vertices: 5',
-        healthyBadge: 'Healthy',
+        healthyBadge: 'Healthy / Active',
         targetYieldLabel: 'Measured Area',
         passIntervalLabel: 'Pass Interval',
         allIndicesBtn: 'All 24 Indices',
+
+        // Top 4 Hero KPIs (Layman English)
         kpi1Title: 'Watering Need (MSI / NDMI)',
+        kpi1Status: '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Adequate Reserve',
+        kpi1Desc: 'Shows if crops have sufficient water. Positive (+0.48) means healthy moisture; negative means thirsty crops that need urgent watering.',
+        kpiWateringSub: 'Next watering',
+        kpiWateringSubVal: 'In 4 days (Oct 23)',
+
         kpi2Title: 'Crop Greenness Score (NDVI)',
+        kpi2Status: 'Peak Canopy Vigor',
+        kpi2Desc: 'Scores leaf greenness from 0 to 100. Above 65 means crops are dense, green, and growing vigorously.',
+        kpiDistrictSub: 'District benchmark',
+        kpiDistrictSubVal: '92nd Percentile',
+
         kpi3Title: 'TopSoil Moisture Check (SAR SM)',
+        kpi3Status: 'Normal Aerobic Drainage',
+        kpi3Desc: 'Measures moisture in the top root layer using radar. 65%–75% is optimal for root breathing and growth without waterlogging.',
+        kpiOptimalSub: 'Optimal bracket',
+
         kpi4Title: 'Pest & Sickness Alert (SIPI)',
+        kpi4Status: 'Healthy Leaf Carotenoid',
+        kpi4Desc: 'Early warning scanner for bugs, blight, or fungal disease. "Low" means healthy leaves with zero disease threat.',
+        kpiPestSub: 'Infestation detected',
+        kpiPestSubVal: 'None (Clear)',
+
+        // 16 Agronomic Matrix Cards (Layman English)
         sec1Title: '1. Crop Health & Emergence',
         card_ndvi_title: 'Crop Greenness Score (NDVI)',
+        card_ndvi_desc: 'Measures overall leaf greenness and crop growth vigor. Higher means healthier plants.',
         card_savi_title: 'Seedling Check - Normal Soil (SAVI)',
+        card_savi_desc: 'Checks young sprout emergence by removing bare soil reflection glare.',
         card_gndvi_title: 'Mid-Season Crop Strength (GNDVI)',
+        card_gndvi_desc: 'Checks chlorophyll deep inside mature crops to verify thick canopy stamina.',
         card_unif_title: 'Reliable Crop Greenness (VARI)',
+        card_unif_desc: 'Scans true leaf greenness through atmospheric morning mist and clouds.',
+
         sec2Title: '2. Water & Field Moisture',
         card_ndmi_title: 'Crop Water Stress Alert (NDMI)',
+        card_ndmi_desc: 'Measures leaf water content to detect thirst and drought stress before crops wilt.',
         card_bsi_title: 'Field Readiness Check (BSI)',
+        card_bsi_desc: 'Shows exposed bare soil vs covered ground to verify plowing or canopy spread.',
         card_salt_title: 'Soil Salt Warning (NDSI)',
+        card_salt_desc: 'Warns if white salt or alkaline patches are building up in your soil.',
         card_sm_title: 'TopSoil Moisture Check (SAR SM)',
+        card_sm_desc: 'All-weather radar scan of wetness in the top 5cm root zone.',
+
         sec3Title: '3. Canopy & Nutrients',
         card_lai_title: 'Leaf Cover Growth (LAI)',
+        card_lai_desc: 'Measures leaf layers per square meter to track canopy density and crop size.',
         card_fcover_title: 'Ground Cover Percentage (fCOVER)',
+        card_fcover_desc: 'Percentage of soil covered by leaves; prevents soil drying and suppresses weeds.',
         card_ccc_title: 'Total Field Nitrogen Stock (CCC)',
+        card_ccc_desc: 'Total nitrogen fertilizer absorbed and stored across field foliage.',
         card_spad_title: 'Leaf Nutrition Meter (ReCI)',
+        card_spad_desc: 'Digital chlorophyll meter showing if nitrogen fertilizer top-dressing is needed.',
+
         sec4Title: '4. Monsoon & SAR Radar',
         card_rvi_title: 'All-Weather Crop Growth Meter (SAR RVI)',
+        card_rvi_desc: 'Radar measuring total crop biomass through rain, clouds, and darkness.',
         card_rigidity_title: 'Crop Height & Falling Risk (SAR VH/VV)',
+        card_rigidity_desc: 'Monitors stem stiffness and crop height to warn against lodging/flattening from high winds.',
         card_water_title: 'Waterlogging & Flood Alert (SAR Inundated)',
-        card_wind_title: 'Pest & Sickness Alert (SIPI)'
+        card_water_desc: 'Detects standing water pools after heavy rainfall to prevent root rot.',
+        card_wind_title: 'Pest & Sickness Alert (SIPI)',
+        card_wind_desc: 'Scans leaf stress pigments for early fungal blight, rust, or insect damage.'
       },
       ta: {
         title: 'விளைநில பார்சல் எண் 1',
@@ -2844,34 +3001,79 @@
         targetYieldLabel: 'சர்வே பரப்பளவு',
         passIntervalLabel: 'செயற்கைக்கோள் இடைவெளி',
         allIndicesBtn: 'அனைத்து 24 குறியீடுகள்',
-        kpi1Title: 'பாசன அவசிய நிலை (Watering Need - MSI)',
-        kpi2Title: 'பயிர் பச்சைய குறியீடு (Crop Greenness Score - NDVI)',
-        kpi3Title: 'மேல்மண் ஈரப்பதம் ஆய்வு (TopSoil Moisture Check)',
-        kpi4Title: 'பூச்சி & நோய் தாக்குதல் எச்சரிக்கை (Pest & Sickness Alert - SIPI)',
+
+        // Top 4 Hero KPIs (Layman Tamil)
+        kpi1Title: 'பயிர் நீர் தேவை (Watering Need)',
+        kpi1Status: '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>போதுமான நீர் இருப்பு',
+        kpi1Desc: 'பயிர்களுக்கு தண்ணீர் போதுமானதாக உள்ளதா என காட்டுகிறது. (+) எண் நல்ல ஈரப்பதத்தை குறிக்கிறது; குறைந்தால் உடனே பாசனம் செய்ய வேண்டும்.',
+        kpiWateringSub: 'அடுத்த பாசனம்',
+        kpiWateringSubVal: 'இன்னும் 4 நாட்களில் (அக் 23)',
+
+        kpi2Title: 'பயிர் பச்சைய குறியீடு (Crop Greenness)',
+        kpi2Status: 'அதிகபட்ச பயிர் செழுமை',
+        kpi2Desc: 'இலைகளின் பச்சையம் மற்றும் செழுமையை 0 முதல் 100 வரை அளவிடுகிறது. 65க்கு மேல் இருந்தால் பயிர் மிக ஆரோக்கியமாக செழித்து வளர்கிறது.',
+        kpiDistrictSub: 'மாவட்ட சராசரி ஒப்பீடு',
+        kpiDistrictSubVal: '92% வயல்களை விட சிறந்தது',
+
+        kpi3Title: 'மேல்மண் ஈரப்பதம் ஆய்வு (Soil Moisture)',
+        kpi3Status: 'சரியான வடிகால் மற்றும் ஈரப்பதம்',
+        kpi3Desc: 'வேர் பகுதியில் உள்ள மண்ணின் ஈரப்பதத்தை ரேடார் மூலம் அளவிடுகிறது. 65% முதல் 75% வரை இருப்பது பயிர் சுவாசித்து வளர உகந்த அளவு.',
+        kpiOptimalSub: 'உகந்த வரம்பு',
+
+        kpi4Title: 'பூச்சி & நோய் எச்சரிக்கை (Pest & Sickness)',
+        kpi4Status: 'ஆரோக்கியமான இலைகள்',
+        kpi4Desc: 'கண்களுக்குத் தெரிவதற்கு முன்பே பூச்சி தாக்குதல் மற்றும் இலை நோய்களை கண்டறியும். "குறைவு" என்றால் பயிர் நோய் நொடியின்றி பாதுகாப்பாக உள்ளது.',
+        kpiPestSub: 'பூச்சி தாக்குதல் நிலை',
+        kpiPestSubVal: 'ஏதுமில்லை (பாதுகாப்பானது)',
+
+        // 16 Agronomic Matrix Cards (Layman Tamil)
         sec1Title: '1. பயிர் வளர்ச்சி & ஆரம்ப முளைப்பு நிலை',
         card_ndvi_title: 'பயிர் பச்சைய குறியீடு (NDVI)',
+        card_ndvi_desc: 'முழு பயிரின் செழுமை மற்றும் பச்சையத்தை அளவிடுகிறது. அதிக எண் பயிர் நன்றாக வளர்வதை குறிக்கும்.',
         card_savi_title: 'முளைப்பு ஆய்வு - சாதாரண மண் (SAVI)',
+        card_savi_desc: 'ஆரம்ப நிலைகளில் மண் வெளிச்சத்தை நீக்கி, இளம் நாற்றுகளின் முளைப்புத் திறனை துல்லியமாக காட்டுகிறது.',
         card_gndvi_title: 'பருவ வளர்ச்சி வலிமை (GNDVI)',
+        card_gndvi_desc: 'நடுப்பருவ பயிர்களில் அடர்ந்த இலைகளின் பச்சையத்தை ஆழமாக ஆராய்ந்து பயிரின் பலத்தை அளவிடுகிறது.',
         card_unif_title: 'மூடுபனி ஊடுருவும் பச்சையம் (VARI)',
+        card_unif_desc: 'பனி மூட்டம் மற்றும் மேக மூட்டத்தையும் தாண்டி பயிரின் உண்மையான பச்சையத்தை அளவிடுகிறது.',
+
         sec2Title: '2. நீர் தேவை & நில ஈரப்பதம்',
         card_ndmi_title: 'பயிர் நீர் தாகம் எச்சரிக்கை (NDMI)',
+        card_ndmi_desc: 'பயிர் இலைகளில் உள்ள நீர்ச்சத்தை அளந்து, பயிர் வாடி வதங்குவதற்கு முன்பே பாசன எச்சரிக்கை தருகிறது.',
         card_bsi_title: 'நிலப் பண்படுத்தல் ஆய்வு (BSI)',
+        card_bsi_desc: 'வெற்று நிலம் மற்றும் பயிர் படர்ந்த பரப்பை காட்டி, நில உழவு மற்றும் பயிர் மூட்டத்தை உறுதி செய்கிறது.',
         card_salt_title: 'மண் உவர் / களர் எச்சரிக்கை (NDSI)',
+        card_salt_desc: 'வயலில் வெள்ளை உவர் அல்லது களர் மண் படிந்து பயிர் வளர்ச்சியை தடுப்பதை முன்கூட்டியே எச்சரிக்கிறது.',
         card_sm_title: 'மேல்மண் ஈரப்பதம் ஆய்வு (SAR SM)',
+        card_sm_desc: 'எந்த காலநிலையிலும் மேகத்தை ஊடுருவி மேல்மண் வேர் பகுதியில் உள்ள ஈரப்பதத்தை ரேடார் மூலம் அளவிடுகிறது.',
+
         sec3Title: '3. இலை பரப்பு & உரச்சத்து மேலாண்மை',
         card_lai_title: 'இலை பரப்பு வளர்ச்சி (LAI)',
+        card_lai_desc: 'நிலப்பரப்பில் இலைகள் எத்தனை அடுக்கு படர்ந்துள்ளன என்பதைக் காட்டி பயிர் அடர்த்தியை அளவிடுகிறது.',
         card_fcover_title: 'தரை மூட்டம் சதவீதம் (fCOVER)',
+        card_fcover_desc: 'வயலின் தரைப்பரப்பில் எத்தனை சதவீதம் பசுமையான இலைகளால் மூடப்பட்டுள்ளது என்பதைக் காட்டி களைகளை தடுக்கிறது.',
         card_ccc_title: 'வயல் தழைச்சத்து கையிருப்பு (CCC)',
+        card_ccc_desc: 'வயலில் உள்ள அனைத்து பயிர்களின் இலைகளிலும் உறிஞ்சப்பட்டுள்ள மொத்த தழைச்சத்து மற்றும் யூரியா கையிருப்பு.',
         card_spad_title: 'இலை ஊட்டச்சத்து அளவி (ReCI)',
+        card_spad_desc: 'இலைகளில் உள்ள ஊட்டச்சத்து அளவை டிஜிட்டல் மீட்டர் போல காட்டி, மேலுரம் இட வேண்டுமா என வழிகாட்டுகிறது.',
+
         sec4Title: '4. பருவமழை & ரேடார் கண்காணிப்பு',
         card_rvi_title: 'அனைத்து பருவ ரேடார் பயிர் வளர்ச்சி (SAR RVI)',
+        card_rvi_desc: 'மேக மூட்டம், மழை அல்லது இரவு நேரத்திலும் பயிரின் மொத்த எடையை ரேடார் கதிர் மூலம் அளவிடுகிறது.',
         card_rigidity_title: 'பயிர் உயரம் & காற்று சாய்வு அபாயம் (SAR VH/VV)',
+        card_rigidity_desc: 'பயிர் தண்டு வலிமை மற்றும் உயரத்தை அளந்து, பலத்த காற்றில் பயிர் சாயும் அபாயத்தை முன்கூட்டியே எச்சரிக்கிறது.',
         card_water_title: 'நீர் தேக்கம் & வெள்ள எச்சரிக்கை (SAR Inundated)',
-        card_wind_title: 'பூச்சி & நோய் தாக்குதல் எச்சரிக்கை (SIPI)'
+        card_water_desc: 'மழைக்கு பின் வயலில் தண்ணீர் தேங்கி வேர் அழுகும் அபாயம் உள்ளதா என வெள்ள எச்சரிக்கை தருகிறது.',
+        card_wind_title: 'பூச்சி & நோய் தாக்குதல் எச்சரிக்கை (SIPI)',
+        card_wind_desc: 'இலை நிறமி மாற்றங்களை ஆராய்ந்து பூச்சி தாக்குதல் மற்றும் இலைக்கருகல் நோய்களை முன்கூட்டியே கண்டறிகிறது.'
       }
     };
 
+    window.langDict = langDict;
+    window.currentAppLang = 'en';
+
     window.switchAppLanguage = function(lang) {
+      window.currentAppLang = lang;
       const btnEn = document.getElementById('langEnBtn');
       const btnTa = document.getElementById('langTaBtn');
 
@@ -2890,6 +3092,11 @@
           el.innerHTML = dict[key];
         }
       });
+
+      // Instantly refresh telemetry subtitle and status labels in active language
+      if (window.activeParcelMetrics && typeof window.applyZarrMetrics === 'function') {
+        window.applyZarrMetrics(window.activeParcelMetrics, 'ZARR CLOUD');
+      }
     };
 
     const btnEn = document.getElementById('langEnBtn');
